@@ -1,1 +1,1 @@
-# Makueni Sand conseration and utilization authority
+# Makueni Sand conseration & Utilization Authority
