@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+        {% block title %}
+            Template demo
+        {% endblock title %}
+    </title>
+
+    <!-- goole fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,400;0,500;0,700;1,100;1,400&display=swap" rel="stylesheet">
+
+    <!-- fontawesome kit -->
+    <script src="https://kit.fontawesome.com/7f432974b7.js" crossorigin="anonymous"></script>
+
+    <!-- Custom css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="">
+        {% include 'navbar.html' %}
+        {% block body %}
+
+        {% endblock body %}
+        <footer>
+            <div class="footer">
+
+                <div class="footer__logo">
+                    <div class="footer__logo--container">
+                        <img src="{% static 'img/logo1.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="footer__content">
+                    <div class="footer__content--item">
+                        <h4>Get in Touch</h4>
+                        <div class="address">
+                            <p>P.O. Box 183-90300  Makueni</p>
+                            <p>
+                                Tel: +254 708 274961
+                            </p>
+                            <p>
+                                Email: sandauthority@makueni.go.ke
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="footer__content--item">
+                        <h4>Links</h4>
+                        <ul>
+                            <li><a href="">Home</a></li>
+                            <li><a href="">About</a></li>
+                            <li><a href="">Services</a></li>
+                            <li><a href="">contact</a></li>
+                            <li><a href="">Blog</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__content--item">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="">Feedback</a></li>
+                            <li><a href="">Photo Gallery</a></li>
+                            <li><a href="">FAQs</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__content--item">
+                        <h4>Oinion Poll</h4>
+                        <form action="">
+                            <input type="radio" name="" id="">
+                            <input type="radio" name="" id="">
+                            <input type="radio" name="" id="">
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2022 Makueni sand Conservation and Utilization Authority.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="{% static 'js/carousel.js' %}"></script>
+</body>
+
+</html>

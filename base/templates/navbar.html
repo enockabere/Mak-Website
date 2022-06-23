@@ -1,0 +1,21 @@
+{% load static %}
+<header class="header">
+    <div class="logo">
+        <img src="{% static 'img/logo1.png' %}" alt="">
+    </div>
+    <input type="checkbox" class="nav-toggle" id="nav-toggle">
+    <nav>
+        <ul class="pt-1">
+            <li><a href="/">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="{% url 'post' %}">Blog</a></li>
+            <li><a href="">portfolio</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </nav>
+    <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+    </label>
+
+</header>

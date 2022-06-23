@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Contact {% endblock title %}
+
+{% block body %}
+<section class="hero">
+    <div class="hero__title">
+        <h1>Home / Contact Us</h1>
+    </div>
+</section>
+<section class="contact mt-1 mb-1">
+    <div class="contact__form">
+        <div class="heading mb-3">
+            <h1>Get In Touch</h1>
+        </div>
+
+        <form action="">
+
+            <div class="form-control">
+                <label for="name"> Name</label>
+                <input type="text" id="name" placeholder="e.g  John Doe">
+            </div>
+
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="e.g. info@example.com">
+            </div>
+
+            <div class="form-control">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" placeholder="e.g Inqury">
+            </div>
+
+            <div class="form-control">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" placeholder="Message"></textarea>
+            </div>
+
+
+
+
+            <button class="btn btn-secondary"> Send</button>
+        </form>
+    </div>
+
+    <div class="contact__map">
+        <div class="mapouter">
+            <div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=mirage%20Towers,%20Nairobi&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br>
+                <a href="https://www.embedgooglemap.net"></a>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock body %}
