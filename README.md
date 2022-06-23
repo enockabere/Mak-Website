@@ -9,6 +9,16 @@ This is a website for the Makueni Sand conseration & Utilization Authority devel
 * User chat section
 * User Feedback form
 
+
+## Prerequisites
+
+Be sure you have the following installed on your development machine:
+
++ Python >= 3.10
++ Git
++ pip
++ Virtualenv
+
 ## Project Installation
 
 To setup a local development environment:
