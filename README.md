@@ -1,5 +1,13 @@
 # Makueni Sand conseration & Utilization Authority
 
+This is a website for the Makueni Sand conseration & Utilization Authority developed under the Python Django Framework
+
+## Features
+
+* Blog Post
+* Call to action featues
+* User chat section
+* User Feedback form
 
 ## Project Installation
 
