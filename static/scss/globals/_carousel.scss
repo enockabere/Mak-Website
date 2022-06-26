@@ -1,0 +1,88 @@
+@use '../utils/breakpoints' as u;
+
+.carousel {
+    position: relative;
+
+    &__item {
+        height: 100vh;
+        background: grey;
+        background-size: cover no-repeat;
+        font-weight: bold;
+        font-size: 2em;
+        color: $white;
+        display: none;
+
+        &--selected {
+            display: block;
+        }
+    }
+
+    &__nav {
+        position: absolute;
+        width: 100%;
+        padding-block: 20px;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+    }
+
+    &__button {
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        background: rgba(255, 255, 255, .2);
+        border-radius: 50%;
+        margin-inline: 5px;
+        cursor: pointer;
+
+        &--selected {
+            background: rgba(255, 255, 255, .5);
+        }
+    }
+
+    &__inner {
+        background: $dark_color_fade;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        padding-inline: 1em;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+
+        &--content {
+           
+            @include u.breakpoint(small) {
+                width: 70vw;
+            }
+            
+            @include u.breakpoint(medium) {
+                width: 50vw;
+            }
+
+            h1 {
+                font-size: 1.5em;
+                font-weight: 400;
+                margin-bottom: 1em;
+                padding-top: 2em;
+
+            }
+
+            p {
+                font-size: .7em;
+                font-weight: 400;
+                margin-bottom: 2em;
+
+            }
+
+            .action__btn {
+                @include set_background($primary_color);
+                padding: 10px 20px;
+                font-size: .7em;
+                font-weight: 400;
+                border-radius: 3px;
+            }
+        }
+    }
+}

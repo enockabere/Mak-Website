@@ -1,0 +1,537 @@
+@use '../utils/breakpoints' as u;
+
+.heading h1 {
+    font-size: 2em;
+    font-weight: 300;
+    text-transform: uppercase;
+
+}
+
+.paralax {
+
+    background: url(../img/paralax1.jpg) center no-repeat;
+    background-position: fixed;
+    background-size: cover;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    &__inner {
+        @include set_background($dark_color_fade);
+        width: 100%;
+        height: 100%;
+        padding: 2em;
+
+        @include u.breakpoint(large) {
+            padding: 3em;
+            text-align: center;
+        }
+    }
+
+    &__title {
+        margin-block: 2em;
+
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: 300;
+            padding-block: .5em;
+            text-transform: uppercase;
+
+        }
+
+
+    }
+
+    &__content {
+        margin-block: 2em;
+        line-height: 1.6em;
+        width: 60%;
+        margin-inline: auto;
+
+        @include u.breakpoint-down(small) {
+            width: 100%;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6em;
+            font-weight: 400;
+            padding-block: .5em;
+        }
+    }
+
+}
+
+.latest-post {
+    padding: 1em;
+    text-align: center;
+
+    h1 {
+        padding-block: 1em;
+        font-size: 3em;
+        font-weight: 300;
+
+    }
+}
+
+.post {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+
+
+    &__inner {
+        width: 18rem;
+        margin: 1em;
+        text-align: left;
+        background-color: $white;
+        border: 1px solid $secondary_color;
+        border-radius: 4px;
+
+        &--image {
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &--content {
+            padding: .5em;
+
+            h2 {
+                font-size: 1.3em;
+                font-weight: 500;
+                padding-block: .5em;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+    }
+
+    &--btn .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+// hero section
+.hero {
+    @include set_background($primary_color);
+    width: 100%;
+    height: 30vh;
+
+
+    &__title {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        align-items: flex-end;
+        justify-content: end;
+
+        h1 {
+            margin-bottom: 1.5em;
+            margin-inline-end: 2em;
+            font-size: 1.2em;
+            font-weight: 400;
+            color: inherit;
+        }
+    }
+}
+// patners section
+
+
+.patners{
+    text-align: center;
+    &__list{
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2em;
+
+        }
+    }
+}
+// action section
+.action {
+
+    background: $primary_color url(http://www.freeimageslive.com/galleries/nature/views/preview/kinder_scout_winter.jpg) no-repeat center center;
+    background-size: cover;
+
+    &__section {
+        @include set_background($dark_color_fade);
+
+        height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-inline: 2em;
+        text-align: center;
+
+        @include u.breakpoint-down(small) {
+            height: 80vh;
+        }
+
+        @include u.breakpoint-down(xsmall) {
+            height: 100vh;
+        }
+
+        &--title {
+            h1 {
+                text-transform: uppercase;
+                font-weight: 400;
+                font-size: 2em;
+                letter-spacing: .3em;
+            }
+        }
+
+        &--content {
+            @include u.breakpoint(large) {
+                width: 60vw;
+                margin-inline: auto;
+            }
+
+        }
+
+        &--button {
+            margin-block: 2em;
+
+            a {
+                @include set_background($primary_color);
+                border: 1px solid $white;
+                padding: 10px 20px;
+                font-weight: 700;
+
+                &:hover {
+                    @include set_background($white);
+                }
+            }
+        }
+
+    }
+}
+
+// testimonial
+
+.testimonial {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+
+    @include u.breakpoint-down(medium) {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+
+    &__start,
+    &__end {
+        padding: 1em;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+
+
+
+        p {
+            margin-bottom: 2em;
+            font-weight: 500;
+        }
+    }
+
+    &__mid {
+        width: 100%;
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    }
+
+}
+
+// about section
+
+.about {
+    display: flex;
+    width: 100%;
+    gap: 2em;
+    overflow: hidden;
+
+    @include u.breakpoint-down(medium) {
+        display: block;
+    }
+
+    &__title {
+        width: 50vw;
+        margin-inline: 1em;
+        text-align: center;
+
+        @include u.breakpoint-down(medium) {
+            width: 100vw;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        h4 {
+            font-size: 1.2em;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+    }
+
+    &__content {
+        width: 50vw;
+        padding: 1em;
+
+        @include u.breakpoint-down(medium) {
+            width: 100vw;
+            text-align: center;
+            padding: 1.5em;
+        }
+
+        p {
+            padding: 1em;
+        }
+    }
+}
+
+// leadership section
+
+.leadership {
+    text-align: center;
+
+
+
+    .leader {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &__content {
+            width: 210px;
+            margin-inline: 3em;
+
+            img {
+                width: 100%;
+                border-radius: 10px;
+
+            }
+
+            h1 {
+                font-size: 1.3em;
+                font-weight: 400;
+            }
+
+            h2 {
+                font-size: .9em;
+                font-weight: 400;
+                text-transform: uppercase;
+                margin-top: 0;
+                line-height: 1;
+                color: grey;
+            }
+
+            &--social {
+                display: block;
+                text-align: center;
+
+                ul {
+                    display: flex;
+                    justify-content: center;
+                    column-gap: 1em;
+
+                    li {
+                        i {
+                            font-size: 1.5em;
+                            color: $secondary_color;
+
+                            &:hover {
+                                transform: scale(1.3);
+                                transition: transform 200ms ease-in-out;
+                            }
+
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+
+// Contact us
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 4em;
+    gap: 1em;
+
+    @include u.breakpoint-down(medium) {
+        display: block;
+        margin-inline: 2em;
+    }
+
+    @include u.breakpoint-down(small) {
+        margin-inline: 0;
+    }
+
+    &__form {
+        @include set_background($white);
+        padding: 2em;
+        width: 50vw;
+
+        @include u.breakpoint-down(medium) {
+            width: 100%;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding-left: 1em;
+        }
+    }
+
+    &__map {
+        width: 50vw;
+
+        @include u.breakpoint-down(medium) {
+            width: 100%;
+        }
+
+        .mapouter {
+
+
+            @include u.breakpoint-down(small) {
+                margin-top: 0;
+            }
+
+            .gmap_canvas {
+                iframe {
+                    height: 500px;
+                }
+            }
+        }
+
+    }
+
+    &__address {
+        width: 100%;
+        text-align: center;
+        margin-top: 2em;
+        margin-bottom: 3em;
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 2em;
+            padding: 1em;
+
+            i {
+                font-size: 2em;
+                margin-bottom: 1em;
+                color: $secondary_color;
+            }
+
+        }
+    }
+
+
+
+}
+
+
+// Footer Section
+
+footer {
+    @include set_background($primary_color);
+
+    .footer {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 40px;
+        margin-inline: auto;
+
+        @include u.breakpoint(large) {
+            grid-template-columns: 1fr 4fr;
+            grid-template-rows: auto;
+        }
+
+        @include u.breakpoint-down(medium) {
+            gap: 0;
+        }
+
+        &__logo {
+            width: 100%;
+            display: table;
+            text-align: center;
+            align-items: center;
+            margin-block: 2em;
+
+            &--content {
+                display: table-cell;
+                align-items: center;
+            }
+
+            img {
+                width: 100px
+            }
+        }
+
+        &__content {
+            margin-block: 2em;
+            text-align: center;
+
+            @include u.breakpoint(medium) {
+                display: grid;
+                grid-template-columns: auto auto;
+                text-align: left;
+                margin-left: 2em;
+            }
+
+            @include u.breakpoint(large) {
+                display: grid;
+                gap: 2em;
+                grid-template-columns: auto auto auto auto;
+            }
+
+
+            &--item {
+                margin-bottom: 2em;
+
+                a {
+                    color: inherit;
+                }
+            }
+
+        }
+
+    }
+
+    .copyright {
+        text-align: center;
+        padding-block: 1em;
+    }
+}

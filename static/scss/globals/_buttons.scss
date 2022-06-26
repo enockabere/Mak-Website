@@ -1,0 +1,20 @@
+%btn{
+    display: inline-block;
+    border-radius: 3px;
+    padding: 7px 20px;
+    border: none;
+
+    &:hover{
+        border-radius: 50px; 
+    }
+}
+
+.btn-primary{
+    @extend %btn;
+    @include set_background($primary_color);
+}
+
+.btn-secondary{
+    @extend %btn;
+    @include set_background($secondary_color);
+}

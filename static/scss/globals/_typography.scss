@@ -1,0 +1,52 @@
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    line-height: 1.6;
+    margin-top: 0;
+
+}
+
+p {
+    margin-top: 0;
+}
+
+a,
+a:visited,
+a:active {
+    text-decoration: none;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+hr {
+    margin: 0;
+}
+
+input[type=text],
+input[type=email],
+input[type=date],
+input[type=search],
+textarea {
+    padding-block: 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-family: inherit;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+
+    &:focus,
+    &:focus-visible {
+        outline: none;
+        border-bottom: 3px solid $secondary_color;
+    }
+}
+
+textarea{
+    resize: none;
+    height: 100px;
+}
