@@ -1,0 +1,70 @@
+{% load static %}
+<header>
+    <div class="logo" title="Makueni sand Conservation and Utilization Authority">
+        <a href="/">
+            <img src="{% static 'img/logo1.png' %}" alt="">
+        </a>
+    </div>
+    <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+        <!-- <span class="sr-only">Menu</span> -->
+    </button>
+    <nav>
+        <ul id="primary-navigation" data-visible="false" class=" primary-navigation flex">
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li class="dropdown">
+                <span onclick="myFunction()" class="dropbtn">About <i class="fa-solid fa-caret-down"></i></span>
+                <div id="myDropdown" class="dropdown-content">
+                    <a  class="option" href="{% url 'about' %}">Who we are</a>
+                    <a  class="option" href="">Departments</a>
+                    <hr>
+                    <a  class="option" href="{% url 'team' %}">Board of directors</a>
+                    <a  class="option" href="{% url 'career' %}">Career</a>
+                    <a  class="option" href="">Tenders</a>
+                    <hr>
+                    <a  class="option" href="">Gallery</a>
+                    <a  class="option" href="">Archive</a>
+                    <a  class="option" href="">Complaints</a>
+                </div>
+            </li>
+            <li>
+                <a href="{% url 'services' %}">Services</a>
+            </li>
+            <li>
+                <a href="{% url 'post' %}">Blog</a>
+            </li>
+            <li>
+                <a href="{% url 'contact' %}">Contact</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<script type="text/javascript">
+    window.addEventListener('scroll', function(){
+        var header = document.querySelector('header');
+        header.classList.toggle("sticky", window.screenY > 0);
+    })
+
+
+
+    /* When the user clicks on the button,toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onhover = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>

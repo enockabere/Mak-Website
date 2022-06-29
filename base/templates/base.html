@@ -8,14 +8,16 @@
 
     <title>
         {% block title %}
-            Template demo
+        Template demo
         {% endblock title %}
     </title>
 
     <!-- goole fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,400;0,500;0,700;1,100;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,400;0,500;0,700;1,100;1,400&display=swap"
+        rel="stylesheet">
 
     <!-- fontawesome kit -->
     <script src="https://kit.fontawesome.com/7f432974b7.js" crossorigin="anonymous"></script>
@@ -25,84 +27,101 @@
 </head>
 
 <body>
-    <div class="">
-        {% include 'navbar.html' %}
-        <section class="social">
-            <div class="social__links">
-                <ul>
-                    <li><a href="" title="Image from freepnglogos.com"><img src="https://www.freepnglogos.com/uploads/facebook-logo-13.png" width="200" alt="logo facebook download png" /></a></li>
 
-                    <li><a href="" title="Image from freepnglogos.com"><img src="https://www.freepnglogos.com/uploads/linkedin-social-media-logo-7.png" width="200" alt="linkedin social media logo" /></a></li>
+    {% include 'header.html' %}
 
-                    <li><a href="" title="Image from freepnglogos.com"><img src="https://www.freepnglogos.com/uploads/twitter-logo-png/outline-twitter-latest-logo-transparent-13.png" width="200" alt="outline twitter latest logo transparent" /></a></li>
-                </ul>
-            </div>
-        </section>
+    <section class="social">
+        <div class="social__links">
+            <ul>
+                <li><a href="https://www.facebook.com/makuenicountysand" title="Facebook"><img
+                            src="https://www.freepnglogos.com/uploads/facebook-logo-13.png" width="200"
+                            alt="logo facebook download png" /></a></li>
 
-        {% block body %}
+                <li><a href="https://ke.linkedin.com/company/makueni-county-sand-conservation-and-utilization-authority"
+                        title="LinkedIn"><img
+                            src="https://www.freepnglogos.com/uploads/linkedin-social-media-logo-7.png" width="200"
+                            alt="linkedin social media logo" /></a></li>
 
-        {% endblock body %}
-        <footer>
-            <div class="footer">
+                <li><a href="https://mobile.twitter.com/makueni_sand" title="Twitter"><img
+                            src="https://www.freepnglogos.com/uploads/twitter-logo-png/outline-twitter-latest-logo-transparent-13.png"
+                            width="200" alt="outline twitter latest logo transparent" /></a></li>
+            </ul>
+        </div>
+    </section>
 
-                <div class="footer__logo">
-                    <div class="footer__logo--container">
-                        <img src="{% static 'img/logo1.png' %}" alt="">
-                    </div>
-                </div>
-                <div class="footer__content">
-                    <div class="footer__content--item">
-                        <h4>Get in Touch</h4>
-                        <div class="address">
-                            <p>P.O. Box 183-90300  Makueni</p>
-                            <p>
-                                Tel: +254 708 274961
-                            </p>
-                            <p>
-                                Email: sandauthority@makueni.go.ke
-                            </p>
+    {% block body %}
 
-                        </div>
-                    </div>
+    {% endblock body %}
+    <!-- Chat Bar Block -->
+    {% include 'chat.html' %}
+    <footer>
+        <div class="footer">
 
-                    <div class="footer__content--item">
-                        <h4>Links</h4>
-                        <ul>
-                            <li><a href="">Home</a></li>
-                            <li><a href="">About</a></li>
-                            <li><a href="">Services</a></li>
-                            <li><a href="">contact</a></li>
-                            <li><a href="">Blog</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer__content--item">
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li><a href="">Feedback</a></li>
-                            <li><a href="">Photo Gallery</a></li>
-                            <li><a href="">FAQs</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer__content--item">
-                        <h4>Oinion Poll</h4>
-                        <form action="">
-                            <input type="radio" name="" id="">
-                            <input type="radio" name="" id="">
-                            <input type="radio" name="" id="">
-                        </form>
-                    </div>
-
+            <div class="footer__logo">
+                <div class="footer__logo--container">
+                    <img src="{% static 'img/logo1.png' %}" alt="">
                 </div>
             </div>
+            <div class="footer__content">
+                <div class="footer__content--item">
+                    <h4>Get in Touch</h4>
+                    <div class="address">
+                        <p>P.O. Box 183-90300 Makueni</p>
+                        <p>
+                            Tel: +254 708 274961
+                        </p>
+                        <p>
+                            Email: sandauthority@makueni.go.ke
+                        </p>
 
-            <div class="copyright">
-                <p>&copy; 2022 Makueni sand Conservation and Utilization Authority.</p>
+                    </div>
+                </div>
+
+                <div class="footer__content--item">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Services</a></li>
+                        <li><a href="">contact</a></li>
+                        <li><a href="">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__content--item">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="">Feedback</a></li>
+                        <li><a href="">Photo Gallery</a></li>
+                        <li><a href="">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__content--item">
+                    <h4>Oinion Poll</h4>
+                    <form action="">
+                        <input type="radio" name="" id="">
+                        <input type="radio" name="" id="">
+                        <input type="radio" name="" id="">
+                    </form>
+                </div>
+
             </div>
-        </footer>
-    </div>
-    <script src="{% static 'js/carousel.js' %}"></script>
+        </div>
+
+        <div class="copyright ">
+            <p>&copy; 2022 Makueni sand Conservation and Utilization Authority.</p>
+        </div>
+    </footer>
+
+
+    <!-- Jquery code -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- custom js -->
+    <script src="{% static 'js/root.js' %}"></script>
+    <script src="{% static 'js/chat.js' %}"></script>
+    <script src="{% static 'js/responses.js' %}"></script>
 </body>
 
 </html>

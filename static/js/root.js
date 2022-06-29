@@ -1,3 +1,37 @@
+// mobile navigation
+const primaryNav = document.querySelector('.primary-navigation');
+const navToggle = document.querySelector('.mobile-nav-toggle');
+
+
+navToggle.addEventListener('click', (e) => {
+    const visibility = primaryNav.getAttribute('data-visible');
+
+    if (visibility === "false") {
+        primaryNav.setAttribute('data-visible', true);
+        navToggle.setAttribute('aria-expanded', true);
+    } else  {
+        primaryNav.setAttribute('data-visible', false);
+        navToggle.setAttribute('aria-expanded', false);
+    } 
+});
+
+
+
+function showHideNavStyling() {
+	
+    // if ($(window).scrollTop() > $(window).height() / 2 ) {
+    //     $("#header").addClass('visible');
+    //     console.log(visible);
+    // } else {
+    //     $("#header").removeClass('visible');
+    // }
+
+}
+
+
+
+
+// carousel selector
 document.querySelectorAll(".carousel").forEach(carousel => {
 
     const items = carousel.querySelectorAll(".carousel__item");
@@ -32,5 +66,5 @@ document.querySelectorAll(".carousel").forEach(carousel => {
     // select the first item on page load
     items[0].classList.add("carousel__item--selected");
     buttons[0].classList.add("carousel__button--selected");
-    
+
 });

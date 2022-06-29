@@ -1,9 +1,9 @@
 // Set color based on bg
 @function set_text_color($color) {
     @if(lightness($color) > 70) {
-        @return #333;
+        @return $black;
     } @else {
-        @return #fff;
+        @return $white;
     }
 }
 

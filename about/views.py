@@ -4,3 +4,15 @@ from django.shortcuts import render
 
 def about_view(request):
     return render(request, 'about.html')
+
+
+def our_team_view(request):
+    return render(request, 'team.html')
+
+
+def career_view(request):
+    return render(request, 'career.html')
+
+
+def career_info_view(request):
+    return render(request, 'career-info.html')

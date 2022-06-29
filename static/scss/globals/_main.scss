@@ -7,12 +7,28 @@
 
 }
 
+.linebg_1 {
+    width: 50px;
+    height: 2px;
+    background-color: $primary_color;
+    margin-inline: auto;
+    margin-top: 10px;
+}
+
+.linebg_2 {
+    width: 50px;
+    height: 2px;
+    background-color: $primary_color;
+    margin-inline-start: 5px;
+    margin-top: 10px;
+}
+
 .paralax {
 
     background: url(../img/paralax1.jpg) center no-repeat;
     background-position: fixed;
     background-size: cover;
-    height: 80vh;
+    // height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,6 +43,10 @@
         @include u.breakpoint(large) {
             padding: 3em;
             text-align: center;
+        }
+
+        @include u.breakpoint-down(small) {
+            padding: 1em;
         }
     }
 
@@ -70,55 +90,9 @@
     text-align: center;
 
     h1 {
-        padding-block: 1em;
         font-size: 3em;
         font-weight: 300;
 
-    }
-}
-
-.post {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-
-
-    &__inner {
-        width: 18rem;
-        margin: 1em;
-        text-align: left;
-        background-color: $white;
-        border: 1px solid $secondary_color;
-        border-radius: 4px;
-
-        &--image {
-            width: 100%;
-
-            img {
-                width: 100%;
-            }
-        }
-
-        &--content {
-            padding: .5em;
-
-            h2 {
-                font-size: 1.3em;
-                font-weight: 500;
-                padding-block: .5em;
-            }
-
-            p {
-                font-size: 14px;
-            }
-        }
-
-    }
-
-    &--btn .btn {
-        width: 100%;
-        text-align: center;
     }
 }
 
@@ -145,13 +119,13 @@
         }
     }
 }
+
 // patners section
-
-
-.patners{
+.patners {
     text-align: center;
-    &__list{
-        ul{
+
+    &__list {
+        ul {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -160,6 +134,7 @@
         }
     }
 }
+
 // action section
 .action {
 
@@ -376,7 +351,141 @@
     }
 }
 
+// services
+.services-hero {
+    @include set_background($dark_color);
+    background-image: url(https://scontent.fnbo2-1.fna.fbcdn.net/v/t39.30808-6/241544940_106931548396585_5615892500045863732_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=e3f864&_nc_ohc=LNxBu9Ai0R0AX87jh4A&_nc_ht=scontent.fnbo2-1.fna&oh=00_AT9-pHdyNpkKil8wx0QU_TmaYGWl21ZXCAa3G4OA5uBjVw&oe=62BE35D0);
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center center;
 
+    padding: 1em;
+    ;
+
+    @include u.breakpoint(medium) {
+        padding-inline: 2em;
+    }
+
+    &__title,
+    &__inner {
+        @include u.breakpoint(medium) {
+            margin-left: 20vw;
+        }
+    }
+
+    &__title {
+
+        @include u.breakpoint(medium) {
+            padding-left: 6em;
+        }
+
+        h1 {
+            text-transform: uppercase;
+            color: $primary_color;
+            font-weight: 600;
+            font-size: 2em;
+            line-height: 1;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 2.3em;
+            line-height: 1;
+        }
+    }
+
+    &__inner {
+        display: block;
+
+        @include u.breakpoint(medium) {
+            display: flex;
+            gap: 2em;
+
+        }
+
+        &--card {
+            @include set_background($white);
+            border-top: 3px solid $primary_color;
+            padding: 1em;
+            margin-bottom: 2em;
+
+            h1 {
+                font-size: 1.1em;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+
+            a {
+                text-transform: uppercase;
+                font-size: .8em;
+                color: $primary_color;
+                font-weight: 500;
+
+                &:hover {
+                    color: $secondary_color;
+                    font-weight: 600;
+                    font-size: .9em;
+                }
+            }
+        }
+
+    }
+}
+
+.services {
+    text-align: center;
+
+    
+
+    &__inner {
+        text-align: left;
+
+        &--section {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto;
+
+            @include u.breakpoint(medium) {
+                grid-template-columns: auto auto;
+                grid-template-rows: auto;
+            }
+
+            &-img {
+                width: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center center;
+                }
+            }
+            .section-info{
+                @include set_background($dark_color);
+                height: 100%;
+                padding: 2.5em;
+            }
+            &-info {
+                width: 100%;
+                align-items: center;
+                margin-bottom: 2em;
+
+                h2 {
+                    font-size: 1.3em;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    color: $primary_color;
+                }
+
+                p{
+                    font-size: 1.2em;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
 
 // Contact us
 
