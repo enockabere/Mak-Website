@@ -12,5 +12,6 @@
 @mixin set_background($color) {
     background-color: $color;
     color: set_text_color($color);
+    border-color: set_text_color($color);
 }
 

@@ -4,7 +4,7 @@
     position: relative;
 
     &__item {
-        height: 100vh;
+        height: 80vh;
         background: grey;
         background-size: cover no-repeat;
         font-weight: bold;
@@ -14,6 +14,11 @@
 
         &--selected {
             display: block;
+        }
+
+        img{
+            -o-object-fit: cover;
+            object-fit: cover;
         }
     }
 
@@ -41,6 +46,7 @@
     }
 
     &__inner {
+        position: absolute;
         background: $dark_color_fade;
         height: 100%;
         width: 100%;

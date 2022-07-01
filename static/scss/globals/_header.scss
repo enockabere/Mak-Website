@@ -6,25 +6,99 @@
 }
 
 .logo {
-    margin: 1rem;
-    width: 60px;
-    img{
+    padding: .5em;
+    margin-inline-start: clamp(1em, 3vw, 5em);
+    width: 90px;
+
+    img {
+
         width: 100%;
     }
 }
 
-header {
-    position: fixed;
+
+.header__top {
+    @include set_background($white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .8em;
+    width: 100%;
+
+    @include u.breakpoint-down(xsmall) {
+        position: fixed;
+        z-index: 9999;
+    }
+
+    .easy-contact {
+        display: none;
+
+    }
+
+    @include u.breakpoint(medium) {
+        .easy-contact {
+            display: flex;
+            gap: 1em;
+            justify-content: space-evenly;
+            margin-inline: 2em;
+
+            li {
+                display: flex;
+                align-items: center;
+
+                .easy-contact-icon i {
+                    font-size: 15px;
+                    margin-inline-end: .5em;
+                    padding: .4em;
+                    border-radius: 100%;
+                    border: 1px solid $secondary_color;
+                    color: $secondary_color;
+                }
+
+                .easy-contact-info {
+                    padding: .5em;
+
+                    span {
+                        font-size: x-small;
+                        color: grey;
+                        line-height: 1;
+                    }
+
+                    p {
+                        font-weight: 600;
+                        line-height: 1;
+                    }
+
+                }
+            }
+        }
+    }
+
+}
+
+.header {
+    position: -webkit-sticky;
+    position: sticky;
     top: 0;
-    left: 0;
     display: flex;
     gap: 2em;
-    @include set_background($white);
+    @include set_background($primary_color);
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    z-index: 999;
+    padding-block: 1em;
+    padding-inline-start: clamp(1rem, 3vw, 3rem);
+    margin: 0;
+    z-index: 9999;
+    transition: 500ms;
 
+    @include u.breakpoint-down(xsmall) {
+        background-color: transparent;
+    }
+
+    nav {
+        text-align: left;
+    }
 
     input,
     label {
@@ -33,15 +107,20 @@ header {
 
     .primary-navigation {
         list-style: none;
+        float: right;
+
+        i {
+            margin-inline-start: .5em;
+        }
 
         @include u.breakpoint(small) {
-            padding-inline: clamp(3rem, 10vw, 10rem);
+            padding-inline: clamp(1rem, 10vw, 3rem);
         }
 
         @include u.breakpoint-down(xsmall) {
             position: fixed;
             inset: 0 0 0 30%;
-            z-index: 1000;
+            z-index: -1;
 
 
             flex-direction: column;
@@ -58,12 +137,11 @@ header {
             @include set_background($header_bg_dark);
 
             @supports (backdrop-filter: blur(1rem)) {
-                @include set_background($header_bg_light);
+                @include set_background($white);
                 backdrop-filter: blur(1rem);
             }
         }
 
-        span,
         a {
             text-decoration: none;
             // text-transform: uppercase;
@@ -76,10 +154,10 @@ header {
             &::before {
                 content: '';
                 display: block;
-                height: 3px;
-                background-color: $secondary_color;
+                height: 5px;
+                background-color: $white;
                 position: absolute;
-                bottom: -0.75em;
+                bottom: -1.2em;
                 left: 0;
                 right: 0;
                 transform: scale(0, 1);
@@ -90,12 +168,75 @@ header {
                 transform: scale(1, 1);
             }
 
-            &:hover {
-                color: $secondary_color;
+        }
+
+        li {
+            cursor: pointer;
+        }
+
+        li:hover .sub-menu {
+            @include set_background($white);
+            display: block;
+            position: absolute;
+            z-index: 99;
+            margin-top: 0;
+            margin-left: -15px;
+
+
+            ul {
+                display: block;
+
+                li {
+                    width: 200px;
+                    padding: 10px;
+                    border-radius: 0;
+                    text-align: left;
+
+                    a {
+                        width: 100%;
+                    }
+
+                    &:hover {
+                        @include set_background($secondary_color);
+                    }
+                }
             }
 
-
         }
+
+
+    }
+
+    @include u.breakpoint-down(small) {
+        .cta {
+            display: none;
+        }
+    }
+
+    .cta {
+        padding-inline: clamp(1rem, 90vw, 3rem);
+
+        a {
+            @include set_background($white);
+            padding: .5em 2em;
+            border-radius: 20px;
+
+
+            &:hover {
+                @include set_background($primary_color);
+                border: 1px solid;
+            }
+        }
+    }
+
+    .sub-menu {
+        display: none;
+    }
+}
+
+@include breakpoint(small) {
+    .mobile-nav-toggle {
+        display: none;
     }
 }
 
@@ -132,96 +273,5 @@ header {
             @include set_background($header_bg_light);
             backdrop-filter: blur(1rem);
         }
-    }
-}
-
-.dropbtn {
-    cursor: pointer;
-
-    &>i {
-        margin-inline-start: 5px;
-    }
-
-
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-
-
-
-
-    /* Dropdown Content (Hidden by Default) */
-    .dropdown-content {
-        @include set_background($white);
-        display: none;
-        position: absolute;
-        min-width: 15em;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        margin-top: 1em;
-        border-radius: 8px;
-        border: 1px solid $secondary_color;
-        transition: display 350ms ease-in-out;
-
-        @include breakpoint-down(xsmall) {
-            position: relative;
-            box-shadow: unset;
-            z-index: unset;
-            background-color: unset;
-            margin-block: 1em;
-            border: none;
-            min-width: fit-content;
-
-
-        }
-
-        .option {
-            padding: .5em;
-            margin-block: .4em;
-
-            @include u.breakpoint-down(xsmall) {
-                padding-inline: 0;
-            }
-
-            &:hover::before {
-                display: none;
-            }
-
-            &:hover {
-                @include set_background($secondary_color);
-
-                @include u.breakpoint-down(xsmall) {
-                    background-color: transparent;
-                    color: $secondary_color;
-                    font-weight: 700;
-                }
-
-                background-blend-mode: overlay;
-            }
-
-        }
-
-        /* Links inside the dropdown */
-        &>a {
-            color: inherit;
-            // padding: 12px 16px;
-            font-weight: 500;
-            text-decoration: none;
-            display: block;
-
-
-
-
-        }
-    }
-
-
-    /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-    .show {
-        display: flex;
-        flex-direction: column;
-
     }
 }
