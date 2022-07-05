@@ -36,6 +36,65 @@
             width: 100%;
         }
 
+        &--tender{
+            @include set_background($white);
+
+            .description{
+                display: flex;
+                flex-direction: column;
+                padding: 1em;
+                margin-bottom: 2em;
+                border-radius: 5px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
+                &:hover{
+                    border: 1px solid;
+                }
+
+                .top{
+                    display: grid;
+                    gap: 2em;
+                    margin-bottom: 1em;
+                    grid-template-columns: 4fr 1fr;
+                    grid-template-rows: auto;
+
+                    li{
+                        margin-block: .5em;                        
+                    }
+
+                    span{
+                        font-weight: 700;
+                    }
+                }
+                .bottom{
+                    display: flex;
+                    justify-content: space-between;
+                    
+                    span{
+                        font-weight: 700;
+                    }
+                    .desc-btn a{
+                        padding: .5em 1em;
+                        text-align: center;
+                        border: 1px solid;
+                        border-radius: 5px;
+                        color: $primary_color;
+                        font-weight: 700;
+    
+                        &:hover{
+                            color:$secondary_color;
+                        }
+                    }
+    
+                    i{
+                        margin-right: .5em;
+                    }
+                }
+
+            }
+
+        }
+
         .more {
             @include set_background($primary_color);
             text-align: center;
@@ -87,6 +146,7 @@
 
                 ul {
                     display: flex;
+                    justify-content: space-between;
                     gap: 2em;
 
                     i {
@@ -95,20 +155,17 @@
                 }
             }
 
-            .desc-btn {
+            .desc-btn a{
                 justify-self: end;
-                padding: .8em;
+                padding: .5em 1em;
                 border: 1px solid black;
-                border-radius: 10px;
+                border-radius: 5px;
 
                 &:hover {
                     @include set_background($primary_color);
                     border: none;
                 }
 
-                a {
-                    color: inherit;
-                }
             }
         }
 

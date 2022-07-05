@@ -16,3 +16,10 @@ def career_view(request):
 
 def career_info_view(request):
     return render(request, 'career-info.html')
+
+
+def departments_view(request):
+    return render(request, 'departments.html')
+
+def tender_view(request):
+    return render(request, 'tenders.html')

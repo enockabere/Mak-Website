@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Tenders {% endblock title %}
+
+{% block body %}
+<section class="hero">
+    <div class="hero__title">
+        <h1>Home / Tenders</h1>
+    </div>
+</section>
+
+<div class="grid">
+    <main class="grid__main">
+        <div class="grid__main--item">
+            <div class="heading mb-3">
+                <h1>Tenders</h1>
+                <div class="linebg_2"></div>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus quibusdam quas ratione voluptates, ut cum eaque fuga eius architecto magnam.</p>
+            </div>
+            <div class="grid__main--list">
+                <div class="grid__main--tender">
+                    <div class="description">
+                        <ul class="top">
+                        <li>Printing And Delivery Of Passanger Tickets For Sgr Passenger Service</li>
+                        <li>Deadline: <span>11 Jul 2022</span></li>
+                        </ul>
+                        <ul class="bottom">
+                            <li><i class="fa-solid fa-location-dot"></i>Nairobi</li>
+                            <li>Tender Reference No: <span>68482319</span></li>
+                            <li>
+                                <div class="desc-btn">
+                                    <a href="">View Details</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    
+
+                </div>
+
+                <div class="grid__main--tender">
+                    <div class="description">
+                        <ul class="top">
+                        <li>Provision Of Cleaning, Sanitary Collection, Gardening, Fumigation, Garbage Collection, Sewer Exaustion Services For Kr Estates And Premises Western Region (kisumu, Malaba And Marine School)</li>
+                        <li>Deadline: <span>11 Jul 2022</span></li>
+                        </ul>
+                        <ul class="bottom">
+                            <li><i class="fa-solid fa-location-dot"></i>Nairobi</li>
+                            <li>Tender Reference No: <span>68482322</span></li>
+                            <li>
+                                <div class="desc-btn">
+                                    <a href="">View Details</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    
+
+                </div>
+
+            </div>
+            
+
+            <div class="more">
+                <a href="">Load More</a>
+            </div>
+        </div>
+
+    </main>
+    <aside class="grid__sidebar">
+        <h1>A Future Where People & Nature Thrive</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem quae, rerum praesentium odit cupiditate alias
+            porro culpa minima possimus, sint corporis, sunt doloribus obcaecati nulla? Quod soluta doloremque numquam
+            molestias!</p>
+        <hr class="my-1">
+        <div class="bloggrid__sidebar--categories">
+            <h1>Quick Links</h1>
+
+            <ul class="Category__list">
+                <li><a href="">TENDER &raquo;</a></li>
+                <li><a href="{% url 'career' %}">Career/Vacancies &raquo;</a></li>
+                <li><a href="">FAQs &raquo;</a></li>
+                <li><a href="">Feedback form &raquo;</a></li>
+                <li><a href="">Downloads &raquo;</a></li>
+                <li><a href="{% url 'post' %}">Articles &raquo;</a></li>
+            </ul>
+        </div>
+
+        <hr class="my-1">
+
+        <div class="recent__news">
+            <h2>Recent Articles</h2>
+            <div class="linebg_2 mb-1"></div>
+            <div class="recent__news--item">
+                <a href="{% url 'post-detail'%}">
+                    <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+                        alt="">
+                    <div class="info">
+                        <h2>Lorem ipsum dolor sit amet.</h2>
+                        <p class="info-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam,
+                            distinctio!</p>
+                        <p class="info-timeLine">3 Days Ago</p>
+                    </div>
+                </a>
+            </div>
+            <div class="recent__news--item">
+                <a href="{% url 'post-detail'%}">
+                    <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+                        alt="">
+                    <div class="info">
+                        <h2>Lorem ipsum dolor sit amet.</h2>
+                        <p class="info-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam,
+                            distinctio!</p>
+                        <p class="info-timeLine">3 Days Ago</p>
+                    </div>
+                </a>
+            </div>
+            <div class="recent__news--item">
+                <a href="{% url 'post-detail'%}">
+                    <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+                        alt="">
+                    <div class="info">
+                        <h2>Lorem ipsum dolor sit amet.</h2>
+                        <p class="info-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam,
+                            distinctio!</p>
+                        <p class="info-timeLine">3 Days Ago</p>
+                    </div>
+                </a>
+            </div>
+            <div class="recent__news--item">
+                <a href="{% url 'post-detail'%}">
+                    <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+                        alt="">
+                    <div class="info">
+                        <h2>Lorem ipsum dolor sit amet.</h2>
+                        <p class="info-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam,
+                            distinctio!</p>
+                        <p class="info-timeLine">3 Days Ago</p>
+                    </div>
+                </a>
+            </div>
+            <div class="recent__news--item">
+                <a href="{% url 'post-detail'%}">
+                    <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+                        alt="">
+                    <div class="info">
+                        <h2>Lorem ipsum dolor sit amet.</h2>
+                        <p class="info-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam,
+                            distinctio!</p>
+                        <p class="info-timeLine">3 Days Ago</p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </aside>
+</div>
+
+{% endblock body %}

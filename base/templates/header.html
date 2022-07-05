@@ -38,7 +38,7 @@
 
     </ul>
 </div>
-<div class="header .sticky">
+<div class="header">
 
     <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
     </button>
@@ -52,7 +52,7 @@
                 <div class="sub-menu">
                     <ul>
                         <li><a href="{% url 'about' %}">Who we are</a></li>
-                        <li><a href="">Departments</a></li>
+                        <li><a href="{% url 'departments' %}">Departments</a></li>
                         <hr>
                         <li><a href="{% url 'team' %}">Board of directors</a></li>
                     </ul>
@@ -75,14 +75,14 @@
                         <li><a href="">Archive</a></li>
                         <li><a href="">Gallery</a></li>
                         <li><a href="">Complaints</a></li>
-                        <li><a href="{% url 'career' %}">Career</a></li>
-                        <li><a href="">Tenders</a></li>
+                        <li><a href="{% url 'career' %}">Career/Vacancies</a></li>
+                        <li><a href="{% url 'tender' %}">TENDERS</a></li>
                     </ul>
                 </div>
             </li>
         </ul>
     </nav>
     <div class="cta">
-        <a href="">Get Started</a>
+        <a href="">Take Action</a>
     </div>
 </div>

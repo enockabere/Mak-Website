@@ -102,7 +102,23 @@
     @include set_background($secondary_color);
     width: 100%;
     height: 30vh;
-   
+    z-index: -1;
+    overflow: hidden;
+
+    // &__bg {
+    //     position: absolute;
+    //     top: 245px;
+    //     left: 0;
+    //     // bottom: 0;
+    //     // right: 0;
+    //     // z-index: -2;
+    //     overflow: hidden;
+    //     color: rgba(255, 255, 255, 0.466);
+    //     font-size: 10em;
+    //     font-weight: 900;
+    //     text-transform: uppercase;
+    // }
+
 
 
     &__title {
@@ -647,4 +663,16 @@ footer {
         text-align: center;
         padding-block: 1em;
     }
+}
+
+#preloader {
+    background: #fff;
+    background-image: url(../img/assets/bar.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35em;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 99999;
 }

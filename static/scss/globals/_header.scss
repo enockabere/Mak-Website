@@ -100,10 +100,7 @@
         text-align: left;
     }
 
-    input,
-    label {
-        display: none;
-    }
+    
 
     .primary-navigation {
         list-style: none;
@@ -144,7 +141,6 @@
 
         a {
             text-decoration: none;
-            // text-transform: uppercase;
             font-weight: 500;
             font-size: 1em;
             color: inherit;
@@ -181,14 +177,17 @@
             z-index: 99;
             margin-top: 0;
             margin-left: -15px;
+            @include u.breakpoint-down(xsmall){
+                position: relative;
+            }
 
 
             ul {
                 display: block;
 
-                li {
+                li{
                     width: 200px;
-                    padding: 10px;
+                    padding: .5em  1em ;
                     border-radius: 0;
                     text-align: left;
 
@@ -198,6 +197,9 @@
 
                     &:hover {
                         @include set_background($secondary_color);
+                        @include u.breakpoint-down(xsmall){
+                            @include set_background($white);
+                        }
                     }
                 }
             }
