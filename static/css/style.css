@@ -246,10 +246,12 @@ hr {
   margin: 0;
 }
 
+input,
 input[type=text],
 input[type=email],
 input[type=date],
 input[type=search],
+input[type=tel],
 textarea {
   padding-block: 12px;
   margin: 8px 0;
@@ -259,13 +261,17 @@ textarea {
   border: none;
   border-bottom: 1px solid black;
 }
-input[type=text]:focus, input[type=text]:focus-visible,
+input:focus, input:focus-visible,
+input[type=text]:focus,
+input[type=text]:focus-visible,
 input[type=email]:focus,
 input[type=email]:focus-visible,
 input[type=date]:focus,
 input[type=date]:focus-visible,
 input[type=search]:focus,
 input[type=search]:focus-visible,
+input[type=tel]:focus,
+input[type=tel]:focus-visible,
 textarea:focus,
 textarea:focus-visible {
   outline: none;
@@ -277,13 +283,24 @@ textarea {
   height: 100px;
 }
 
-.btn-secondary, .btn-primary {
+.form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  display: flex;
+  gap: 1em;
+}
+
+.btn-white, .btn-secondary, .btn-primary {
   display: inline-block;
   border-radius: 3px;
   padding: 7px 20px;
+  margin: 1em;
   border: none;
 }
-.btn-secondary:hover, .btn-primary:hover {
+.btn-white:hover, .btn-secondary:hover, .btn-primary:hover {
   border-radius: 50px;
 }
 
@@ -297,6 +314,12 @@ textarea {
   background-color: rgb(184, 121, 5);
   color: rgb(255, 255, 255);
   border-color: rgb(255, 255, 255);
+}
+
+.btn-white {
+  background-color: rgb(255, 255, 255);
+  color: #333333;
+  border-color: #333333;
 }
 
 .m-1 {
@@ -663,7 +686,7 @@ textarea {
   position: absolute;
   z-index: 99;
   margin-top: 0;
-  margin-left: -15px;
+  margin-left: 1px;
 }
 @media (max-width: 699.98px) {
   .header .primary-navigation li:hover .sub-menu {
@@ -787,17 +810,18 @@ textarea {
 }
 @media (max-width: 899.98px) {
   .social__links ul > li {
-    width: 35px;
+    width: 40px;
   }
 }
-.social__links ul > li:hover {
-  background-color: rgba(12, 12, 12, 0.644);
-}
-.social__links ul > li img {
-  width: 100%;
-  height: 100%;
+.social__links ul > li i {
+  margin: 0.2em;
+  font-size: 30px;
   object-fit: cover;
   -o-object-fit: cover;
+  color: #90cd4b;
+}
+.social__links ul > li i:hover {
+  color: rgb(184, 121, 5);
 }
 
 .grid {
@@ -1450,7 +1474,7 @@ textarea {
   color: rgb(255, 255, 255);
   border-color: rgb(255, 255, 255);
   width: 100%;
-  height: 30vh;
+  height: 20vh;
   z-index: -1;
   overflow: hidden;
 }
@@ -1458,8 +1482,8 @@ textarea {
   display: flex;
   height: 100%;
   width: 100%;
-  align-items: flex-end;
-  justify-content: end;
+  align-items: center;
+  justify-content: center;
 }
 .hero__title h1 {
   margin-bottom: 1.5em;
@@ -1911,6 +1935,10 @@ footer .footer__content--item {
 footer .footer__content--item a {
   color: inherit;
 }
+footer .footer__content--item .opinion-poll form {
+  display: flex;
+  flex-direction: column;
+}
 footer .copyright {
   text-align: center;
   padding-block: 1em;
@@ -2262,4 +2290,93 @@ footer .copyright {
   transition: height 0.3s ease-out;
   height: 0;
   overflow: hidden;
+}
+
+.tabs {
+  max-width: 80vw;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-inline: auto;
+  margin-block: 1em;
+}
+.tabs__head {
+  display: flex;
+  align-items: stretch;
+}
+.tabs__toggle {
+  display: flex;
+  padding: 1em 2em;
+  align-items: center;
+  justify-content: center;
+  background-color: #ddd9d9;
+  cursor: pointer;
+}
+.tabs__toggle.is-active {
+  background-color: #90cd4b;
+  color: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
+}
+.tabs__body {
+  background-color: rgb(255, 255, 255);
+  color: #333333;
+  border-color: #333333;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.tabs__content {
+  padding: 1em;
+  display: none;
+}
+.tabs__content.is-active {
+  display: block;
+}
+
+.modal {
+  padding: 1em;
+  min-width: 320px;
+  max-width: 70ch;
+  border: 0;
+  margin: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.modal h1 {
+  font-weight: 400;
+  font-size: 1.7em;
+}
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+@supports (backdrop-filter: blur(1rem)) {
+  .modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(1rem);
+  }
+}
+.modal > * {
+  margin: 0 0 0.5rem 0;
+}
+.modal form {
+  width: 100%;
+}
+.modal form input,
+.modal form textarea {
+  width: 100%;
+  padding-left: 1em;
+}
+.modal .close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1em;
+  font-size: 1.2em;
+  background-color: transparent;
+  border: none;
+  height: 24px;
+  aspect-ratio: 1;
+}
+.modal .close-button:hover {
+  background-color: rgb(184, 121, 5);
+  color: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
+  border-radius: 100%;
 }

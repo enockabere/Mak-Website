@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Gallery {% endblock title %}
+
+{% block body %}
+<section class="hero">
+    <div class="hero__title">
+        <h1>Home / Gallery</h1>
+    </div>
+</section>
+
+<!-- Tab links -->
+<div class="tabs">
+    <div class="tabs__head">
+        <span class="tabs__toggle is-active">Images</span>
+        <span class="tabs__toggle">Videos</span>
+        <span class="tabs__toggle">Tab 3</span>
+    </div>
+    <div class="tabs__body">
+        <div class="tabs__content is-active">
+            <h3 class="tabs__title">London</h3>
+            <p class="tabs__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore repudiandae temporibus earum sequi at, repellendus aspernatur exercitationem, laboriosam atque unde ad velit nesciunt inventore harum, vero accusantium. Esse, harum eius!</p>
+        </div>
+        
+        <div class="tabs__content">
+            <h3 class="tabs__title">Paris</h3>
+            <p class="tabs__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore repudiandae temporibus earum sequi at, repellendus aspernatur exercitationem, laboriosam atque unde ad velit nesciunt inventore harum, vero accusantium. Esse, harum eius!</p>
+        </div>
+        
+        <div class="tabs__content">
+            <h3 class="tabs__title">Tokyo</h3>
+            <p class="tabs__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore repudiandae temporibus earum sequi at, repellendus aspernatur exercitationem, laboriosam atque unde ad velit nesciunt inventore harum, vero accusantium. Esse, harum eius!</p>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

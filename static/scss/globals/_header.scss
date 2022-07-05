@@ -176,7 +176,7 @@
             position: absolute;
             z-index: 99;
             margin-top: 0;
-            margin-left: -15px;
+            margin-left: 1px;
             @include u.breakpoint-down(xsmall){
                 position: relative;
             }

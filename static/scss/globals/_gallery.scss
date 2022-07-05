@@ -1,0 +1,39 @@
+.tabs {
+    max-width: 80vw;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-inline: auto;
+    margin-block: 1em;
+
+
+    &__head {
+        display: flex;
+        align-items: stretch;
+    }
+
+    &__toggle {
+        display: flex;
+        padding: 1em 2em;
+        align-items: center;
+        justify-content: center;
+        background-color: #ddd9d9;
+        cursor: pointer;
+
+        &.is-active {
+            @include set_background($primary_color)
+        }
+    }
+    &__body{
+        @include set_background($white);
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+    &__content {
+        padding: 1em;
+        display: none;
+
+        &.is-active {
+            display: block;
+        }
+    }
+}

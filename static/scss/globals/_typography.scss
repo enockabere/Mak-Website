@@ -29,11 +29,12 @@ ul {
 hr {
     margin: 0;
 }
-
+input,
 input[type=text],
 input[type=email],
 input[type=date],
 input[type=search],
+input[type=tel],
 textarea {
     padding-block: 12px;
     margin: 8px 0;
@@ -53,4 +54,14 @@ textarea {
 textarea{
     resize: none;
     height: 100px;
+}
+
+.form-control{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group{
+    display: flex;
+    gap: 1em;
 }
