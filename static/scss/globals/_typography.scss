@@ -59,9 +59,16 @@ textarea{
 .form-control{
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .input-group{
     display: flex;
+    justify-content: stretch;
     gap: 1em;
+    width: 100%;
+
+    input{
+        width: 100%;
+    }
 }

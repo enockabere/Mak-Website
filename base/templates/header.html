@@ -2,18 +2,13 @@
 
 
 <div class="header__top">
-    <div class="logo" title="Makueni sand Conservation and Utilization Authority">
-        <a href="/">
-            <img src="{% static 'img/logo1.png' %}" alt="">
-        </a>
-    </div>
     <ul class="easy-contact">
         <li>
             <div class="easy-contact-icon">
                 <span><i class="fa-solid fa-clock"></i></span>
             </div>
             <div class="easy-contact-info">
-                <span>Open Hours</span>
+                <!-- <span>Open Hours</span> -->
                 <p>Mon - Fri, 8:00am - 5:00pm</p>
             </div>
         </li>
@@ -22,7 +17,7 @@
                 <span><i class="fa-solid fa-phone"></i></span>
             </div>
             <div class="easy-contact-info">
-                <span>Call Us</span>
+                <!-- <span>Call Us</span> -->
                 <p>+254 708 274961</p>
             </div>
         </li>
@@ -31,24 +26,36 @@
                 <span><i class="fa-solid fa-envelope"></i></span>
             </div>
             <div class="easy-contact-info">
-                <span>Email Us</span>
+                <!-- <span>Email Us</span> -->
                 <p>sandauthority@makueni.go.ke</p>
             </div>
         </li>
 
     </ul>
+    <div class="cta">
+        <a href="">Take Action</a>
+    </div>
 </div>
+
+
 <div class="header">
 
     <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
     </button>
+    <div class="logo" title="Makueni sand Conservation and Utilization Authority">
+        <a href="/">
+            <img src="{% static 'img/logo1.png' %}" alt="">
+        </a>
+    </div>
+
+
     <nav>
         <ul id="primary-navigation" data-visible="false" class=" primary-navigation flex">
             <li>
                 <a href="/">Home</a>
             </li>
             <li>
-                <a>About</a> <i class="fa-solid fa-caret-down"></i>
+                <a>About Us</a> <i class="fa-solid fa-caret-down"></i>
                 <div class="sub-menu">
                     <ul>
                         <li><a href="{% url 'about' %}">Who we are</a></li>
@@ -65,24 +72,22 @@
                 <a href="{% url 'post' %}">Blog</a>
             </li>
             <li>
-                <a href="{% url 'contact' %}">Contact</a>
+                <a href="{% url 'contact' %}">Contact Us</a>
             </li>
 
             <li>
                 <a>Resources</a><i class="fa-solid fa-caret-down"></i>
                 <div class="sub-menu">
                     <ul>
-                        <li><a href="">Archive</a></li>
                         <li><a href="{% url 'gallery' %}">Gallery</a></li>
-                        <li><a href="">Complaints</a></li>
                         <li><a href="{% url 'career' %}">Career/Vacancies</a></li>
                         <li><a href="{% url 'tender' %}">TENDERS</a></li>
+                        <li><a href="{% url 'feedback' %}">Feedback</a></li>
+                        <li><a href="">Downloads</a></li>
                     </ul>
                 </div>
             </li>
         </ul>
+        
     </nav>
-    <div class="cta">
-        <a href="">Take Action</a>
-    </div>
 </div>

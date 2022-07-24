@@ -9,29 +9,79 @@
     </div>
 </section>
 
-<!-- Tab links -->
+
 <div class="tabs">
     <div class="tabs__head">
         <span class="tabs__toggle is-active">Images</span>
         <span class="tabs__toggle">Videos</span>
-        <span class="tabs__toggle">Tab 3</span>
+        
     </div>
     <div class="tabs__body">
         <div class="tabs__content is-active">
-            <h3 class="tabs__title">London</h3>
-            <p class="tabs__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore repudiandae temporibus earum sequi at, repellendus aspernatur exercitationem, laboriosam atque unde ad velit nesciunt inventore harum, vero accusantium. Esse, harum eius!</p>
+            <div class="tabs__media--container">
+                
+                <div class="img">
+                    <img src="https://makueni-sa.S3.amazonaws.com/img/slide4.png" alt="">
+                </div>
+                
+                <div class="img">
+                    <img src="https://makueni-sa.S3.amazonaws.com/img/slide4.png" alt="">
+                </div>
+                
+                <div class="img">
+                    <img src="https://makueni-sa.S3.amazonaws.com/img/slide4.png" alt="">
+                </div>
+                
+                <div class="img">
+                    <img src="https://makueni-sa.S3.amazonaws.com/img/slide4.png" alt="">
+                </div>
+                
+                <div class="img">
+                    <img src="https://makueni-sa.S3.amazonaws.com/img/slide4.png" alt="">
+                </div>
+                
+                <div class="img">
+                    <img src="https://makueni-sa.S3.amazonaws.com/img/slide4.png" alt="">
+                </div>
+                
+                <div class="img">
+                    <img src="https://makueni-sa.S3.amazonaws.com/img/slide4.png" alt="">
+                </div>
+                
+                <div class="img">
+                    <img src="https://makueni-sa.S3.amazonaws.com/img/slide4.png" alt="">
+                </div>
+                
+                <div class="img">
+                    <img src="https://makueni-sa.S3.amazonaws.com/img/slide4.png" alt="">
+                </div>
+                
+            </div>
         </div>
-        
+
         <div class="tabs__content">
-            <h3 class="tabs__title">Paris</h3>
-            <p class="tabs__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore repudiandae temporibus earum sequi at, repellendus aspernatur exercitationem, laboriosam atque unde ad velit nesciunt inventore harum, vero accusantium. Esse, harum eius!</p>
+            <div class="tabs__media--container">
+                <div class="video">
+                    <video src="https://www.youtube.com/watch?v=YjzcfPax4As&ab_channel=SandDamsWorldwide"></video>
+                </div>
+            </div>
         </div>
+       >
         
-        <div class="tabs__content">
-            <h3 class="tabs__title">Tokyo</h3>
-            <p class="tabs__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore repudiandae temporibus earum sequi at, repellendus aspernatur exercitationem, laboriosam atque unde ad velit nesciunt inventore harum, vero accusantium. Esse, harum eius!</p>
-        </div>
     </div>
 </div>
+<script>
+    var video = document.querySelectorAll('video');
+    var image = document.querySelectorAll('img');
 
+    video.forEach(play => play.addEventListener('click'), () =>{
+        play.classList.toggle('active');
+    });
+
+    image.forEach(show => show.addEventListener('click'), () =>{
+        show.classList.toggle('active');
+    });
+
+    
+</script>
 {% endblock body %}

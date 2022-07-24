@@ -1,9 +1,11 @@
 # Makueni Sand conseration & Utilization Authority
-
 This is a website for the Makueni Sand conseration & Utilization Authority developed under the Python Django Framework
 
-## Features
+## Live link
+Visit the test application on [Heroku](https://makueni-sand-authotiry.herokuapp.com/)
 
+
+## Features
 * Blog Post
 * Call to action featues
 * User chat section
@@ -11,16 +13,13 @@ This is a website for the Makueni Sand conseration & Utilization Authority devel
 
 
 ## Prerequisites
-
 Be sure you have the following installed on your development machine:
-
 + Python >= 3.10
 + Git
 + pip
 + Virtualenv
 
 ## Project Installation
-
 To setup a local development environment:
 
 Create a virtual environment in which to install Python pip packages. With [virtualenv](https://pypi.python.org/pypi/virtualenv),

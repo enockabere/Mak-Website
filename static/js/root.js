@@ -152,6 +152,6 @@ openModal.addEventListener('click', () => {
   modal.showModal();
 })
 
-closeModal.addEventListener('click', (e) => {
+closeModal.addEventListener('click', () => {
   modal.close();
 })
