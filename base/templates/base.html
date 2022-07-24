@@ -48,76 +48,7 @@
     {% endblock body %}
     <!-- Chat Bar Block -->
     {% include 'chat.html' %}
-    <footer>
-        <div class="footer">
-
-            <div class="footer__logo">
-                <div class="footer__logo--container">
-                    <img src="{% static 'img/logo1.png' %}" alt="">
-                </div>
-            </div>
-            <div class="footer__content">
-                <div class="footer__content--item">
-                    <h4>Get in Touch</h4>
-                    <div class="address">
-                        <p>P.O. Box 183-90300 Makueni</p>
-                        <p>
-                            Tel: +254 708 274961
-                        </p>
-                        <p>
-                            Email: sandauthority@makueni.go.ke
-                        </p>
-
-                    </div>
-                </div>
-
-                <div class="footer__content--item">
-                    <h4>Links</h4>
-                    <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Services</a></li>
-                        <li><a href="">contact</a></li>
-                        <li><a href="">Blog</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer__content--item">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="">Feedback</a></li>
-                        <li><a href="">Photo Gallery</a></li>
-                        <li><a href="">FAQs</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer__content--item opinion-poll">
-                    <h4>Oinion Poll</h4>
-                    <p>Rate our Services</p>
-                    <form action="">
-                        <div class="list">
-                            <input type="radio" name="opinion" id="excelent">
-                            <label for="excelent">Excelent</label>
-                        </div>
-                        <div class="list">
-                            <input type="radio" name="opinion" id="average">
-                            <label for="average">Average</label>
-                        </div>
-                        <div class="list">
-                            <input type="radio" name="opinion" id="poor">
-                            <label for="poor">poor</label>
-                        </div>
-                        <button class="btn btn-white" type="submit">Results</button>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="copyright ">
-            <p>&copy; 2022 Makueni sand Conservation and Utilization Authority.</p>
-        </div>
-    </footer>
+    {% include 'footer.html' %}
 
     <script>
         var loader = document.getElementById("preloader");

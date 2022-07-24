@@ -1,0 +1,74 @@
+{% load static %}
+<footer>
+    <div class="footer">
+
+        <div class="footer__logo">
+            <div class="footer__logo--container">
+                <img src="{% static 'img/logo1.png' %}" alt="">
+            </div>
+        </div>
+        <div class="footer__content">
+            <div class="footer__content--item">
+                <h4>Get in Touch</h4>
+                <div class="address">
+                    <p>P.O. Box 183-90300 Makueni</p>
+                    <p>
+                        Tel: +254 708 274961
+                    </p>
+                    <p>
+                        Email: sandauthority@makueni.go.ke
+                    </p>
+
+                </div>
+            </div>
+
+
+
+            <div class="footer__content--item">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="">Feedback</a></li>
+                    <li><a href="">Photo Gallery</a></li>
+                    <li><a href="">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content--item opinion-poll">
+                <h4>Rate our Services</h4>
+                <form action="">
+                    <div class="list">
+                        <input type="radio" name="opinion" id="excelent">
+                        <label for="excelent">Excelent</label>
+                    </div>
+                    <div class="list">
+                        <input type="radio" name="opinion" id="average">
+                        <label for="average">Average</label>
+                    </div>
+                    <div class="list">
+                        <input type="radio" name="opinion" id="poor">
+                        <label for="poor">poor</label>
+                    </div>
+                    <button class="btn btn-white" type="submit">Results</button>
+                </form>
+            </div>
+
+            <div class="footer__content--item">
+                <h4>Subscribe to our Newsletter</h4>
+                <form action="">
+                    <div class="form-control">
+                        <input type="email" id="subscribe" placeholder="name@example.com">
+                    </div>
+                    <button class="btn btn-secondary">Subscribe</button>
+                </form>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <div class="copyright ">
+        <p>&copy; 2022 Makueni sand Conservation and Utilization Authority.</p>
+    </div>
+</footer>

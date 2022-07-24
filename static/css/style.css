@@ -1897,7 +1897,7 @@ footer .footer__content {
     display: grid;
     grid-template-columns: auto auto;
     text-align: left;
-    margin-left: 2em;
+    padding-inline: 1em;
   }
 }
 @media (min-width: 1024px) {
@@ -1916,6 +1916,12 @@ footer .footer__content--item a {
 footer .footer__content--item .opinion-poll form {
   display: flex;
   flex-direction: column;
+}
+footer .footer__content--item form input {
+  background-color: rgb(255, 255, 255);
+  color: #333333;
+  border-color: #333333;
+  padding-inline: 10px;
 }
 footer .copyright {
   text-align: center;
