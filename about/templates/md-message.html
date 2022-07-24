@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Message from the MD {% endblock title %}
+
+{% block body %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&display=swap');
+</style>
+<section class="hero">
+    <div class="hero__title">
+        <h1>Home / About Us / Message from the Managing Director</h1>
+    </div>
+</section>
+
+<div class="grid">
+    <main class="grid__main">
+        <div class="grid__main--item">
+            <div class="heading mb-2">
+                <h1>Managing Director</h1>
+                <div class="linebg_2"></div>
+            </div>
+
+            <div class="message-container">
+                <p class="mb-1">Dear Reader, <br></p>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, impedit hic? Assumenda,
+                    expedita eveniet. Maxime vitae, unde veniam debitis hic assumenda nulla, amet, laborum aliquid
+                    dolorum consequuntur repellendus fugit animi!
+                    <br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim in saepe sequi, distinctio cum maiores
+                    doloribus molestiae illo impedit pariatur, cupiditate fugit obcaecati numquam praesentium facere,
+                    dolores qui ipsum? Cupiditate!
+                    <br>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet, maiores! Laudantium est accusamus
+                    vero sequi eum illo, atque rerum autem blanditiis, cumque voluptatum aliquam. Similique delectus
+                    eligendi dolor non quo, tenetur ducimus quod ipsum! Accusantium ipsum minus excepturi expedita
+                    obcaecati!
+                    <br><br>
+
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, enim, dolorum perspiciatis tenetur in libero, voluptates consequuntur optio dolore atque quibusdam earum similique! Doloremque molestias unde quidem enim sint iure sapiente, tenetur deleniti optio velit, ducimus itaque consequuntur quas. Reiciendis, incidunt quis deserunt consectetur nobis dicta quas omnis culpa blanditiis voluptas! Explicabo perferendis, recusandae iusto optio minima non rem exercitationem tenetur repellendus odio magnam sequi necessitatibus delectus debitis impedit aperiam est voluptate excepturi molestiae labore eum, incidunt quisquam! Laborum consequatur sequi fugiat quidem debitis saepe, velit atque sunt perspiciatis accusantium amet error, deleniti obcaecati ad perferendis reprehenderit dolore ducimus odio?
+                </p>
+                <div class="md-info mt-2">
+                    <div class="signature my-1">
+                        <p style="font-family:'Dawning of a New Day', cursive; font-size: 3em;">jonDoe</p>
+                    </div>
+                    <h3>Jonh Doe</h3>
+                    <p>Managing Director</p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+    <aside class="grid__sidebar">
+        <h1>A Future Where People & Nature Thrive</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem quae, rerum praesentium odit cupiditate alias
+            porro culpa minima possimus, sint corporis, sunt doloribus obcaecati nulla? Quod soluta doloremque numquam
+            molestias!</p>
+        <hr class="my-1">
+        <div class="bloggrid__sidebar--categories">
+            <h1>Quick Links</h1>
+
+            <ul class="Category__list">
+                <li><a href="">TENDER &raquo;</a></li>
+                <li><a href="{% url 'career' %}">Career/Vacancies &raquo;</a></li>
+                <li><a href="">FAQs &raquo;</a></li>
+                <li><a href="">Feedback form &raquo;</a></li>
+                <li><a href="">Downloads &raquo;</a></li>
+                <li><a href="{% url 'post' %}">Articles &raquo;</a></li>
+            </ul>
+        </div>
+
+        <hr class="my-1">
+
+        <div class="recent__news">
+            <h2>Recent Articles</h2>
+            <div class="linebg_2 mb-1"></div>
+            <div class="recent__news--item">
+                <a href="{% url 'post-detail'%}">
+                    <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+                        alt="">
+                    <div class="info">
+                        <h2>Lorem ipsum dolor sit amet.</h2>
+                        <p class="info-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam,
+                            distinctio!</p>
+                        <p class="info-timeLine">3 Days Ago</p>
+                    </div>
+                </a>
+            </div>
+            <div class="recent__news--item">
+                <a href="{% url 'post-detail'%}">
+                    <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+                        alt="">
+                    <div class="info">
+                        <h2>Lorem ipsum dolor sit amet.</h2>
+                        <p class="info-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam,
+                            distinctio!</p>
+                        <p class="info-timeLine">3 Days Ago</p>
+                    </div>
+                </a>
+            </div>
+            <div class="recent__news--item">
+                <a href="{% url 'post-detail'%}">
+                    <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+                        alt="">
+                    <div class="info">
+                        <h2>Lorem ipsum dolor sit amet.</h2>
+                        <p class="info-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam,
+                            distinctio!</p>
+                        <p class="info-timeLine">3 Days Ago</p>
+                    </div>
+                </a>
+            </div>
+            <div class="recent__news--item">
+                <a href="{% url 'post-detail'%}">
+                    <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+                        alt="">
+                    <div class="info">
+                        <h2>Lorem ipsum dolor sit amet.</h2>
+                        <p class="info-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam,
+                            distinctio!</p>
+                        <p class="info-timeLine">3 Days Ago</p>
+                    </div>
+                </a>
+            </div>
+            <div class="recent__news--item">
+                <a href="{% url 'post-detail'%}">
+                    <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+                        alt="">
+                    <div class="info">
+                        <h2>Lorem ipsum dolor sit amet.</h2>
+                        <p class="info-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam,
+                            distinctio!</p>
+                        <p class="info-timeLine">3 Days Ago</p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </aside>
+</div>
+
+
+{% endblock body %}

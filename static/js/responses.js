@@ -16,6 +16,6 @@ function getBotResponse(input) {
     }else if (input == "I love Your work!") {
         return "Thank you!";
     } else {
-        return "Try asking something else!";
+        return "Sorry didn't get that, Try asking something else!";
     }
 }

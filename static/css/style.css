@@ -565,22 +565,21 @@ textarea {
     display: flex;
     gap: 1em;
     justify-content: space-evenly;
-    margin-inline: 2em;
-    margin-block: 10px;
+    margin-inline: clamp(1em, 3vw, 5em);
+    padding-block: 10px;
   }
   .header__top .easy-contact li {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
   .header__top .easy-contact li .easy-contact-icon i {
     font-size: 15px;
-    margin-inline-end: 0.5em;
-    padding: 0.4em;
+    margin-inline-end: 5px;
     border-radius: 100%;
     background-color: #90cd4b;
     color: rgb(255, 255, 255);
     border-color: rgb(255, 255, 255);
-    border: 1px solid;
   }
   .header__top .easy-contact li .easy-contact-info {
     padding: 0.5em;
@@ -637,7 +636,9 @@ textarea {
 }
 @media (max-width: 699.98px) {
   .header {
-    background-color: transparent;
+    background-color: rgb(255, 255, 255);
+    color: #333333;
+    border-color: #333333;
   }
 }
 .header nav {
@@ -739,6 +740,9 @@ textarea {
 .header .primary-navigation li:hover .sub-menu ul li a {
   width: 100%;
 }
+.header .primary-navigation li:hover .sub-menu ul li a::before {
+  display: none;
+}
 .header .primary-navigation li:hover .sub-menu ul li:hover {
   background-color: rgb(184, 121, 5);
   color: rgb(255, 255, 255);
@@ -831,7 +835,7 @@ textarea {
   font-size: 30px;
   object-fit: cover;
   -o-object-fit: cover;
-  color: #90cd4b;
+  color: #333333;
 }
 .social__links ul > li i:hover {
   color: rgb(184, 121, 5);

@@ -23,3 +23,6 @@ def departments_view(request):
 
 def tender_view(request):
     return render(request, 'tenders.html')
+    
+def md_message_view(request):
+    return render(request, 'md-message.html')

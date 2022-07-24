@@ -40,20 +40,20 @@
             display: flex;
             gap: 1em;
             justify-content: space-evenly;
-            margin-inline: 2em;
-            margin-block: 10px;
+            margin-inline: clamp(1em, 3vw, 5em);
+            padding-block: 10px;
 
             li {
                 display: flex;
                 align-items: center;
+                justify-content: center;
 
                 .easy-contact-icon i {
                     font-size: 15px;
-                    margin-inline-end: .5em;
-                    padding: .4em;
+                    margin-inline-end: 5px;
                     border-radius: 100%;
                     @include set_background($primary_color);
-                    border: 1px solid;
+                    // border: 1px solid;
                 }
 
                 .easy-contact-info {
@@ -115,7 +115,7 @@
     transition: 500ms;
 
     @include u.breakpoint-down(xsmall) {
-        background-color: transparent;
+        @include set_background($white)
     }
 
     nav {
@@ -222,6 +222,11 @@
 
                     a {
                         width: 100%;
+
+                        &::before {
+                            display: none;
+                           
+                        }
                     }
 
                     &:hover {
@@ -291,6 +296,6 @@
 
 
 
-    
-    
+
+
 }
