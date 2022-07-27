@@ -588,7 +588,7 @@ footer {
         margin-inline: auto;
 
         @include u.breakpoint(large) {
-            grid-template-columns: 1fr 4fr;
+            grid-template-columns: 1fr 6fr;
             grid-template-rows: auto;
         }
 

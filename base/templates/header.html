@@ -72,9 +72,6 @@
             <li>
                 <a href="{% url 'post' %}">Blog</a>
             </li>
-            <li>
-                <a href="{% url 'contact' %}">Contact Us</a>
-            </li>
 
             <li>
                 <a>Resources</a><i class="fa-solid fa-caret-down"></i>
@@ -84,11 +81,21 @@
                         <li><a href="{% url 'career' %}">Career/Vacancies</a></li>
                         <li><a href="{% url 'tender' %}">TENDERS</a></li>
                         <li><a href="{% url 'feedback' %}">Feedback</a></li>
-                        <li><a href="">Downloads</a></li>
+                        <hr>
+                        <li><a href="{% url 'publication' %}">Downloads</a></li>
+                        <li><a href="{% url 'faq' %}">FAQs</a></li>
                     </ul>
                 </div>
             </li>
-        </ul>
 
+            <li>
+                <a href="{% url 'contact' %}">Contact Us</a>
+            </li>
+        </ul>
+        
     </nav>
+    <form>
+        <label for="gsearch"></label>
+        <input type="search" id="gsearch" name="gsearch" placeholder="Search here...">
+    </form>
 </div>

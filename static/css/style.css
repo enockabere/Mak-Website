@@ -628,7 +628,7 @@ textarea {
   border-color: #333333;
   width: 100%;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
   padding-block: 0.1em;
   margin: 0;
   z-index: 9999;
@@ -684,7 +684,8 @@ textarea {
 }
 .header .primary-navigation a {
   text-decoration: none;
-  font-weight: 500;
+  text-transform: uppercase;
+  font-weight: 700;
   font-size: 1em;
   color: inherit;
   opacity: 1;
@@ -704,6 +705,9 @@ textarea {
 }
 .header .primary-navigation a:hover::before {
   transform: scale(1, 1);
+}
+.header .primary-navigation a:hover {
+  color: rgb(184, 121, 5);
 }
 .header .primary-navigation li {
   cursor: pointer;
@@ -739,9 +743,14 @@ textarea {
 }
 .header .primary-navigation li:hover .sub-menu ul li a {
   width: 100%;
+  text-transform: capitalize;
+  font-weight: 500;
 }
 .header .primary-navigation li:hover .sub-menu ul li a::before {
   display: none;
+}
+.header .primary-navigation li:hover .sub-menu ul li a:hover {
+  color: unset;
 }
 .header .primary-navigation li:hover .sub-menu ul li:hover {
   background-color: rgb(184, 121, 5);
@@ -1865,7 +1874,7 @@ footer .footer {
 }
 @media (min-width: 1024px) {
   footer .footer {
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 6fr;
     grid-template-rows: auto;
   }
 }

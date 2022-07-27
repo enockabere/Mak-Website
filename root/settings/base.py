@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'blog',
     'service',
     'gallery',
+    'resources',
+
 ]
 
 # from easy_thumbnails.conf import Settings as thumbnail_settings
