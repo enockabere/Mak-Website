@@ -15,7 +15,7 @@ import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
-TEMPLATES_DIRS = os.path.join(BASE_DIR,'templates')
+TEMPLATES_DIRS = os.path.join(BASE_DIR, 'templates')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -123,9 +123,6 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 
 # Path where media is stored
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/') 
-
-
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 django_heroku.settings(locals())
