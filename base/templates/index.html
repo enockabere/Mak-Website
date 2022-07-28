@@ -4,24 +4,28 @@
 
 {% block body %}
 <div class="carousel">
-    <div class="carousel__item" style="background-image: url('https://makueni-sa.S3.amazonaws.com/img/slide4.png'); background-size: cover;">
+    <div class="carousel__item"
+        style="background-image: url('https://makueni-sa.S3.amazonaws.com/img/slide4.png'); background-size: cover;">
         <div class="carousel__inner">
             <div class="carousel__inner--content">
                 <h1>Our Sand , Our Water, Our Livelihood</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis explicabo aspernatur itaque sapiente consequatur qui.
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis explicabo aspernatur itaque
+                    sapiente consequatur qui.
                 </p>
-                <a href="" class="action__btn"> See what we can do <strong>Together </strong>  &rarr;</a>
+                <a href="" class="action__btn"> See what we can do <strong>Together </strong> &rarr;</a>
             </div>
         </div>
     </div>
-    <div class="carousel__item" style="background-image: url('https://makueni-sa.S3.amazonaws.com/img/slide5.webp'); background-size: cover;">
+    <div class="carousel__item"
+        style="background-image: url('https://makueni-sa.S3.amazonaws.com/img/slide5.webp'); background-size: cover;">
         <div class="carousel__inner">
             <div class="carousel__inner--content">
                 <h1>Our Goal</h1>
             </div>
         </div>
     </div>
-    <div class="carousel__item" style="background-image: url('https://makueni-sa.S3.amazonaws.com/img/slide6.webp'); background-size: cover;">
+    <div class="carousel__item"
+        style="background-image: url('https://makueni-sa.S3.amazonaws.com/img/slide6.webp'); background-size: cover;">
         <div class="carousel__inner">
             <div class="carousel__inner--content">
                 <h1>Making Lives Better</h1>
@@ -86,137 +90,141 @@
 
     <ul class="cards mb-3">
         <li class="card">
-            <div class="card__img">
-                <div class="img__cover">
-                    <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
-                        alt="" />
+            <a href="{% url 'post-detail'%}">
+                <div class="card__img">
+                    <div class="img__cover">
+                        <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+                            alt="" />
+                    </div>
+                    <div class="img__profile">
+                        <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200" alt="">
+                    </div>
                 </div>
-                <div class="img__profile">
-                    <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200"
-                        alt="">
+                <div class="[ card__text ] [ flow ]">
+                    <h2>
+                        <a href="{% url 'post-detail'%}">Architecture Centre Launches New Design Lorem, ipsum dolor.</a>
+                    </h2>
+                    <div class="meta">
+                        <p class="meta__info">
+                            <span class="visually-hidden">This Podcast has</span>
+                            <span class="meta__posts">678 Posts</span>
+                            <span class="visually-hidden">And </span>
+                            <span class="meta__creators">267 Creators</span>
+                        </p>
+                    </div>
+                    <p>The series is in English with nine episodes available on iTunes and Spotify</p>
+                    <small>
+                        <span class="visuallyhidden">Uploaded</span>
+                        2 weeks ago
+                    </small>
                 </div>
-            </div>
-            <div class="[ card__text ] [ flow ]">
-                <h2>
-                    <a href="{% url 'post-detail'%}">Architecture Centre Launches New Design Lorem, ipsum dolor.</a>
-                </h2>
-                <div class="meta">
-                    <p class="meta__info">
-                        <span class="visually-hidden">This Podcast has</span>
-                        <span class="meta__posts">678 Posts</span>
-                        <span class="visually-hidden">And </span>
-                        <span class="meta__creators">267 Creators</span>
-                    </p>
-                </div>
-                <p>The series is in English with nine episodes available on iTunes and Spotify</p>
-                <small>
-                    <span class="visuallyhidden">Uploaded</span>
-                    2 weeks ago
-                </small>
-            </div>
+            </a>
         </li>
         <li class="card">
-            <div class="card__img">
-                <div class="img__cover">
-                    <img src="https://images.unsplash.com/photo-1531206266563-27319e334a96?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
-                        alt="" />
+            <a href="{% url 'post-detail'%}">
+                <div class="card__img">
+                    <div class="img__cover">
+                        <img src="https://images.unsplash.com/photo-1531206266563-27319e334a96?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+                            alt="" />
+                    </div>
+                    <div class="img__profile">
+                        <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200" alt="">
+                    </div>
                 </div>
-                <div class="img__profile">
-                    <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200"
-                        alt="">
+                <div class="[ card__text ] [ flow ]">
+                    <h2>
+                        <a href="#">Rethinking Traditional Glazing in Two Adaptive Designs</a>
+                    </h2>
+                    <div class="meta">
+                        <p class="meta__info">
+                            <span class="visually-hidden">This Podcast has</span>
+                            <span class="meta__posts">
+                                1.2<abbr title="Thousand">k</abbr> Posts
+                            </span>
+                            <span class="visually-hidden">And </span>
+                            <span class="meta__creators">704 Creators</span>
+                        </p>
+                    </div>
+                    <p>Studio completed two remodel projects in the Netherlands</p>
+                    <small>
+                        <span class="visuallyhidden">Uploaded</span>
+                        1 month ago
+                    </small>
                 </div>
-            </div>
-            <div class="[ card__text ] [ flow ]">
-                <h2>
-                    <a href="#">Rethinking Traditional Glazing in Two Adaptive Designs</a>
-                </h2>
-                <div class="meta">
-                    <p class="meta__info">
-                        <span class="visually-hidden">This Podcast has</span>
-                        <span class="meta__posts">
-                            1.2<abbr title="Thousand">k</abbr> Posts
-                        </span>
-                        <span class="visually-hidden">And </span>
-                        <span class="meta__creators">704 Creators</span>
-                    </p>
-                </div>
-                <p>Studio completed two remodel projects in the Netherlands</p>
-                <small>
-                    <span class="visuallyhidden">Uploaded</span>
-                    1 month ago
-                </small>
-            </div>
+            </a>
         </li>
         <li class="card">
-            <div class="card__img">
-                <div class="img__cover">
-                    <img src="https://images.unsplash.com/photo-1525935944571-4e99237764c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80"
-                        alt="" />
+            <a href="{% url 'post-detail'%}">
+                <div class="card__img">
+                    <div class="img__cover">
+                        <img src="https://images.unsplash.com/photo-1525935944571-4e99237764c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80"
+                            alt="" />
+                    </div>
+                    <div class="img__profile">
+                        <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200" alt="">
+                    </div>
                 </div>
-                <div class="img__profile">
-                    <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200"
-                        alt="">
+                <div class="[ card__text ] [ flow ]">
+                    <h2>
+                        <a href="{% url 'post-detail'%}">Reparametrize Studio Envisions the Future of Smart City</a>
+                    </h2>
+                    <div class="meta">
+                        <p class="meta__info">
+                            <span class="visually-hidden">This Podcast has</span>
+                            <span class="meta__posts">
+                                7.2<abbr title="Thousand">k</abbr> Posts
+                            </span>
+                            <span class="visually-hidden">And</span>
+                            <span class="meta__creators">
+                                5.8<abbr title="Thousand">k</abbr> Creators
+                            </span>
+                        </p>
+                    </div>
+                    <p>The investigation can distinguish the areas in need of reconstruction</p>
+                    <small>
+                        <span class="visuallyhidden">Uploaded</span>
+                        1 year ago
+                    </small>
                 </div>
-            </div>
-            <div class="[ card__text ] [ flow ]">
-                <h2>
-                    <a href="{% url 'post-detail'%}">Reparametrize Studio Envisions the Future of Smart City</a>
-                </h2>
-                <div class="meta">
-                    <p class="meta__info">
-                        <span class="visually-hidden">This Podcast has</span>
-                        <span class="meta__posts">
-                            7.2<abbr title="Thousand">k</abbr> Posts
-                        </span>
-                        <span class="visually-hidden">And</span>
-                        <span class="meta__creators">
-                            5.8<abbr title="Thousand">k</abbr> Creators
-                        </span>
-                    </p>
-                </div>
-                <p>The investigation can distinguish the areas in need of reconstruction</p>
-                <small>
-                    <span class="visuallyhidden">Uploaded</span>
-                    1 year ago
-                </small>
-            </div>
+            </a>
         </li>
 
         <li class="card">
-            <div class="card__img">
-                <div class="img__cover">
-                    <img src="https://images.unsplash.com/photo-1525935944571-4e99237764c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80"
-                        alt="" />
+            <a href="{% url 'post-detail'%}">
+                <div class="card__img">
+                    <div class="img__cover">
+                        <img src="https://images.unsplash.com/photo-1525935944571-4e99237764c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80"
+                            alt="" />
+                    </div>
+                    <div class="img__profile">
+                        <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200" alt="">
+                    </div>
                 </div>
-                <div class="img__profile">
-                    <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200"
-                        alt="">
+                <div class="card__text">
+                    <h2>
+                        <a href="{% url 'post-detail'%}">Reparametrize Studio Envisions the Future of Smart City</a>
+                    </h2>
+                    <div class="meta">
+                        <p class="meta__info">
+                            <span class="visually-hidden">This Podcast has</span>
+                            <span class="meta__posts">
+                                7.2<abbr title="Thousand">k</abbr> Posts
+                            </span>
+                            <span class="visually-hidden">And</span>
+                            <span class="meta__creators">
+                                5.8<abbr title="Thousand">k</abbr> Creators
+                            </span>
+                        </p>
+                    </div>
+                    <p>The investigation can distinguish the areas in need of reconstruction</p>
+                    <small>
+                        <span class="visuallyhidden">Uploaded</span>
+                        1 year ago
+                    </small>
                 </div>
-            </div>
-            <div class="card__text">
-                <h2>
-                    <a href="{% url 'post-detail'%}">Reparametrize Studio Envisions the Future of Smart City</a>
-                </h2>
-                <div class="meta">
-                    <p class="meta__info">
-                        <span class="visually-hidden">This Podcast has</span>
-                        <span class="meta__posts">
-                            7.2<abbr title="Thousand">k</abbr> Posts
-                        </span>
-                        <span class="visually-hidden">And</span>
-                        <span class="meta__creators">
-                            5.8<abbr title="Thousand">k</abbr> Creators
-                        </span>
-                    </p>
-                </div>
-                <p>The investigation can distinguish the areas in need of reconstruction</p>
-                <small>
-                    <span class="visuallyhidden">Uploaded</span>
-                    1 year ago
-                </small>
-            </div>
+            </a>
         </li>
-        
+
     </ul>
 
 </section>
@@ -228,13 +236,19 @@
             <div class="linebg_1"></div>
         </div>
         <ul>
-            <li><a href=""><img src="https://www.freepnglogos.com/uploads/google-logo-png/file-google-logo-svg-wikimedia-commons-23.png" width="200" alt="google" /></a></li>
+            <li><a href=""><img
+                        src="https://www.freepnglogos.com/uploads/google-logo-png/file-google-logo-svg-wikimedia-commons-23.png"
+                        width="200" alt="google" /></a></li>
 
-            <li><a href=""><img src="https://www.freepnglogos.com/uploads/yahoo-logo-png/yahoo-transparent-logo-free-image-5.png" width="200" alt="Yahoo " /></a></li>
+            <li><a href=""><img
+                        src="https://www.freepnglogos.com/uploads/yahoo-logo-png/yahoo-transparent-logo-free-image-5.png"
+                        width="200" alt="Yahoo " /></a></li>
 
-            <li><a href=""><img src="https://www.freepnglogos.com/uploads/linkedin-logo-transparent-png-16.png" width="200" alt="linkedIn" /></li>
+            <li><a href=""><img src="https://www.freepnglogos.com/uploads/linkedin-logo-transparent-png-16.png"
+                        width="200" alt="linkedIn" /></li>
 
-            <li><a href=""><img src="https://www.freepnglogos.com/uploads/microsoft-logo-4.png" width="200" alt="microsoft logo" /></a></li>
+            <li><a href=""><img src="https://www.freepnglogos.com/uploads/microsoft-logo-4.png" width="200"
+                        alt="microsoft logo" /></a></li>
         </ul>
     </div>
 </section>
@@ -247,7 +261,8 @@
             </div>
             <div class="action__section--content">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora maiores, iste, voluptatum quas eaque
-                    molestias impedit harum maxime amet cum rerum perspiciatis officiis corrupti voluptate nihil adipisci,
+                    molestias impedit harum maxime amet cum rerum perspiciatis officiis corrupti voluptate nihil
+                    adipisci,
                     sapiente saepe eius beatae dolorem tenetur odio. Quo nostrum facilis accusamus aliquid possimus.</p>
             </div>
             <div class="action__section--button">
