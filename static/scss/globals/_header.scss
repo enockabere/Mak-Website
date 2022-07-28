@@ -236,13 +236,13 @@
                         }
 
                         &:hover{
-                            color: unset;
+                            color: $secondary_color;
+                            font-weight: 700;
                         }
                     }
 
                     &:hover {
-                        @include set_background($secondary_color);
-
+                        
                         @include u.breakpoint-down(xsmall) {
                             @include set_background($white);
                         }
