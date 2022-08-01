@@ -1,3 +1,48 @@
 @use 'utils' as u;
 @import 'globals';
 
+
+// back to top
+
+#back-to-top {
+    position: fixed;
+    z-index: 1010;
+    right: 10px;
+    bottom: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    color: #fafafa;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    opacity: 0.5;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+
+    i {
+        font-size: 24px;
+        line-height: 40px;
+        font-weight: normal;
+        vertical-align: top;
+        -webkit-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+    }
+
+    &:hover i {
+        color: #fff;
+    }
+
+    &:hover {
+        border-radius: 10px;
+    }
+
+    &.visible {
+        right: 40px;
+    }
+
+    &.gone {
+        right: -40px;
+    }
+}

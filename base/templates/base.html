@@ -33,12 +33,14 @@
     <section class="social">
         <div class="social__links">
             <ul>
-                <li><a href="https://www.facebook.com/makuenicountysand" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="https://www.facebook.com/makuenicountysand" title="Facebook"><i
+                            class="fa-brands fa-facebook-f"></i></a></li>
 
                 <li><a href="https://ke.linkedin.com/company/makueni-county-sand-conservation-and-utilization-authority"
                         title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
 
-                <li><a href="https://mobile.twitter.com/makueni_sand" title="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="https://mobile.twitter.com/makueni_sand" title="Twitter"><i
+                            class="fa-brands fa-twitter"></i></a></li>
             </ul>
         </div>
     </section>
@@ -50,24 +52,37 @@
     {% include 'chat.html' %}
     {% include 'footer.html' %}
 
+    <a id="back-to-top" href="#">
+        <i class="ifc-up4">&#94;</i>
+    </a>
+
     <script>
         var loader = document.getElementById("preloader");
-        window.addEventListener("load", function(){
+        window.addEventListener("load", function () {
             loader.style.display = "none";
+  
+        });
+        
+        // smooth scroll
+        
+        var scroll = new SmoothScroll('a[href*="#"]', {
+            speed: 1000
+        });
 
-        })
     </script>
 
 
     <!-- Jquery code -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.14.3/js/uikit-core.min.js" integrity="sha512-PVuP9mKKMDlQ0zH2LYiyawFfgS/VTBQb06/sjwd2uitTb+IdMWIj2EMm4tQWt9wP9iaPIcN6CyvZDLFVgQaKAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.14.3/js/uikit-core.min.js"
+        integrity="sha512-PVuP9mKKMDlQ0zH2LYiyawFfgS/VTBQb06/sjwd2uitTb+IdMWIj2EMm4tQWt9wP9iaPIcN6CyvZDLFVgQaKAw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- custom js -->
-    <script src="{% static 'js/root.js' %}" type="text/javascript" ></script>
-    <script src="{% static 'js/chat.js' %}" type="text/javascript" ></script>
-    <script src="{% static 'js/responses.js' %}" type="text/javascript" ></script>
+    <script src="{% static 'js/root.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/chat.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/responses.js' %}" type="text/javascript"></script>
 </body>
 
 </html>

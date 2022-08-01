@@ -139,6 +139,30 @@ tabs.forEach((tab, index) => {
   })
 })
 
+// handleBackToTop
+   
+
+function handleBackToTop() {
+
+  $('#back-to-top').on("click", function () {
+    $('html, body').animate({ scrollTop: 0 }, 800);
+    return false;
+  });
+
+}
+
+// showHidebackToTop
+   
+
+function showHidebackToTop() {
+
+  if ($(window).scrollTop() > $(window).height() / 2) {
+    $("#back-to-top").removeClass('gone').addClass('visible');
+  } else {
+    $("#back-to-top").removeClass('visible').addClass('gone');
+  }
+
+}
 
 
 
@@ -155,3 +179,12 @@ openModal.addEventListener('click', () => {
 closeModal.addEventListener('click', () => {
   modal.close();
 })
+
+
+// smooth scroll
+
+var scroll = new SmoothScroll('a[href*="#"]', {
+  speed: 1000
+});
+
+
