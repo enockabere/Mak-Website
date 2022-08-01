@@ -663,6 +663,7 @@ textarea {
     z-index: -1;
     flex-direction: column;
     padding-inline: 2em;
+    gap: 1.3em;
     padding-block: min(15vh, 10rem);
     transform: translateX(100%);
     transition: transform 400ms ease-in-out;
