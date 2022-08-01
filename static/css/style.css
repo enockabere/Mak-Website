@@ -717,6 +717,11 @@ textarea {
 .header .primary-navigation li:last-child {
   border-inline-end: none;
 }
+@media (max-width: 699.98px) {
+  .header .primary-navigation li {
+    border-inline-end: none;
+  }
+}
 .header .primary-navigation li:hover .sub-menu {
   background-color: rgb(255, 255, 255);
   color: #333333;

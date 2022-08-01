@@ -203,6 +203,10 @@
             &:last-child {
                 border-inline-end: none;
             }
+
+            @include u.breakpoint-down(xsmall){
+                border-inline-end: none;
+            }
         }
 
         li:hover .sub-menu {
