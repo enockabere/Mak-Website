@@ -16,11 +16,10 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from django.conf import settings
+from django.conf import Settings, settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', include('base.urls')),
     path('', include('about.urls')),
     path('', include('contact.urls')),
@@ -28,7 +27,10 @@ urlpatterns = [
     path('', include('service.urls')),
     path('', include('gallery.urls')),
     path('', include('resources.urls')),
-]
+    path('', include('projects.urls')),
+    path('admin/', admin.site.urls),
+
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
 if settings.DEBUG:

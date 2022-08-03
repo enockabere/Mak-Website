@@ -80,17 +80,24 @@
                         <li><a href="{% url 'gallery' %}">Gallery</a></li>
                         <li><a href="{% url 'career' %}">Career/Vacancies</a></li>
                         <li><a href="{% url 'tender' %}">TENDERS</a></li>
-                        <li><a href="{% url 'feedback' %}">Feedback</a></li>
                         <hr>
                         <li><a href="{% url 'publication' %}">Downloads</a></li>
-                        <li><a href="{% url 'faq' %}">FAQs</a></li>
                     </ul>
                 </div>
             </li>
 
             <li>
+                <a href="{% url 'projects' %}">Projects</a>
+            </li>
+
+            <li>
+                <a href="{% url 'faq' %}">FAQs</a>
+            </li>
+
+            <li>
                 <a href="{% url 'contact' %}">Contact Us</a>
             </li>
+
 
             <li class="search__global" >
                 <button onclick="search()" class="search__global--btn"><i class="fa-solid fa-magnifying-glass"></i></button>

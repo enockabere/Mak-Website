@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'service',
     'gallery',
     'resources',
+    'projects',
 
 ]
 

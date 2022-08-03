@@ -29,6 +29,7 @@ ul {
 hr {
     margin: 0;
 }
+
 input,
 input[type=text],
 input[type=email],
@@ -51,24 +52,82 @@ textarea {
     }
 }
 
-textarea{
+textarea {
     resize: none;
     height: 100px;
 }
 
-.form-control{
+.form-control {
     display: flex;
     flex-direction: column;
     width: 100%;
+
+    .select {
+        position: relative;
+        margin-block: 1em;
+        border-bottom: 1px solid;
+        padding-block: 12px;
+        font-size: inherit;
+
+        select {
+            display: none;
+        }
+
+        &__selected {
+            &::after {
+                position: absolute;
+                content: "";
+                top: 14px;
+                right: 10px;
+                width: 0;
+                height: 0;
+                border: 6px solid transparent;
+
+            }
+
+            .select--active::after {
+                top: 7px;
+            }
+        }
+
+        &__items {
+            position: absolute;
+            @include set_background($primary_color);
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 99;
+            cursor: pointer;
+
+            div:hover{
+                background-color: rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+            }
+
+            div,
+            .select__selected {
+                color: inherit;
+                padding: 8px 16px;
+                cursor: pointer;
+            }
+        }
+
+        &__hide {
+            display: none;
+        }
+    }
+    .same-as-selected {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
 }
 
-.input-group{
+.input-group {
     display: flex;
     justify-content: stretch;
     gap: 1em;
     width: 100%;
 
-    input{
+    input {
         width: 100%;
     }
 }

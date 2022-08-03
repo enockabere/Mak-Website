@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.safestring import mark_safe
 from django.template.defaultfilters import truncatechars
 from django.contrib.auth.models import User
-
+ 
 
 class Category(models.Model):
     name = models.CharField(max_length=100)

@@ -288,6 +288,55 @@ textarea {
   flex-direction: column;
   width: 100%;
 }
+.form-control .select {
+  position: relative;
+  margin-block: 1em;
+  border-bottom: 1px solid;
+  padding-block: 12px;
+  font-size: inherit;
+}
+.form-control .select select {
+  display: none;
+}
+.form-control .select__selected::after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+}
+.form-control .select__selected .select--active::after {
+  top: 7px;
+}
+.form-control .select__items {
+  position: absolute;
+  background-color: #90cd4b;
+  color: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  cursor: pointer;
+}
+.form-control .select__items div:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.form-control .select__items div,
+.form-control .select__items .select__selected {
+  color: inherit;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.form-control .select__hide {
+  display: none;
+}
+.form-control .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 
 .input-group {
   display: flex;
