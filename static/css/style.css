@@ -700,12 +700,12 @@ textarea {
 .header .primary-navigation i {
   margin-inline-start: 0.5em;
 }
-@media (min-width: 700px) {
+@media (min-width: 900px) {
   .header .primary-navigation {
     padding-inline: clamp(1rem, 10vw, 3rem);
   }
 }
-@media (max-width: 699.98px) {
+@media (max-width: 899.98px) {
   .header .primary-navigation {
     position: fixed;
     inset: 0 0 0 30%;
@@ -854,12 +854,12 @@ textarea {
   display: block;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 900px) {
   .mobile-nav-toggle {
     display: none;
   }
 }
-@media (max-width: 699.98px) {
+@media (max-width: 1023.98px) {
   .mobile-nav-toggle {
     position: absolute;
     background-image: url(../img/assets/menu-b.png);

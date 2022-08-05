@@ -1,15 +1,22 @@
-from django.shortcuts import render
+from django.views.generic import ListView, DetailView
+from django.shortcuts import render,  get_object_or_404
 from django.db.models import Q
-from . import models
+from .models import Post
+
 
 # Create your views here.
 
-def post_view(request):
-    return render(request, 'post.html')
+class PostList(ListView):
+    template_name = 'post.html'
+    paginate_by: int = 12
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
 
 
-def post_detail_view(request):
-    return render(request, 'post-detail.html')
+class PostDetail(DetailView):
+    model = Post
+    template_name = 'post-detail.html'
+    
+
 
 
 def search(request):

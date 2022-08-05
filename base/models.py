@@ -2,6 +2,7 @@ from django.utils.safestring import mark_safe
 from django.template.defaultfilters import truncatechars
 from django.db import models
 from blog.models import STATUS
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -38,7 +39,7 @@ class Subscription(models.Model):
 
 class Patner(models.Model):
     name =  models.CharField(max_length=100, primary_key=True)
-    image = models.ImageField()
+    image = models.ImageField(upload_to='media')
     url = models.URLField(max_length=200)
     status = models.IntegerField(choices=STATUS, default=0, help_text = 'Change to Publish for it to be seen')
 
@@ -59,7 +60,7 @@ class Patner(models.Model):
 class CallToActionPanel(models.Model):
     title = models.CharField(max_length=200, primary_key=True)
     image = models.ImageField()
-    description = models.TextField(blank=True, null=True)
+    description = RichTextField(blank=True, null=True)
     url = models.URLField(blank=True, null=True)
     status = models.IntegerField(choices=STATUS, default=0, help_text = 'Change to Publish for it to be seen')
 

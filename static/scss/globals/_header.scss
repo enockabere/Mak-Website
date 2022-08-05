@@ -133,11 +133,11 @@
             margin-inline-start: .5em;
         }
 
-        @include u.breakpoint(small) {
+        @include u.breakpoint(medium) {
             padding-inline: clamp(1rem, 10vw, 3rem);
         }
 
-        @include u.breakpoint-down(xsmall) {
+        @include u.breakpoint-down(small) {
             position: fixed;
             inset: 0 0 0 30%;
             z-index: -1;
@@ -316,13 +316,13 @@
     display: block;
 }
 
-@include breakpoint(small) {
+@include breakpoint(medium) {
     .mobile-nav-toggle {
         display: none;
     }
 }
 
-@include breakpoint-down(xsmall) {
+@include breakpoint-down(medium) {
     .mobile-nav-toggle {
         position: absolute;
         background-image: url(../img/assets/menu-b.png);
