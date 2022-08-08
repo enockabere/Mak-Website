@@ -1,14 +1,19 @@
 from django.shortcuts import render
+from django.views.generic import ListView, DetailView
+from .models import JobAdvert
 
 # Create your views here.
 
+class CareerList(ListView):
+    template_name = 'career.html'
+    paginate_by: int = 8
+    queryset = JobAdvert.objects.filter(status=1).order_by('pub_date')
 
-def career_view(request):
-    return render(request, 'career.html')
 
+class careerDetail(DetailView):
+    model = JobAdvert
+    template_name = 'career-info.html'
 
-def career_info_view(request):
-    return render(request, 'career-info.html')
 
 
 def tender_view(request):

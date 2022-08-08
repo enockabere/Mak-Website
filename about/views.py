@@ -1,12 +1,21 @@
+from unicodedata import category
 from django.shortcuts import render
 from blog.models import Post
-from .models import MDsMessage
+from .models import MDsMessage, AboutUs, Mission, Personel
 
 # Create your views here.
 
 
 def about_view(request):
-    return render(request, 'about.html')
+    about_us = AboutUs.objects.filter(status=1)[:1]
+    mission = Mission.objects.filter(status=1)[:1]
+    leader = Personel.objects.filter(status=1, category=1)
+    context = {
+        'about_us': about_us,
+        'mission': mission,
+        'leader' : leader
+    }
+    return render(request, 'about.html', context)
 
 
 def our_team_view(request):

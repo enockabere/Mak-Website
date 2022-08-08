@@ -6,8 +6,13 @@ from blog.models import STATUS
 
 class PhotoGallery(models.Model):
     title = models.CharField(max_length=200)
-    image = models.ImageField()
-    caption = models.TextField()
+    image = models.ImageField(upload_to='media')
+    caption = models.TextField(blank=True)
+    status = models.IntegerField(choices=STATUS, default=0,help_text = 'Change to Publish for it to be seen')
+
+    
+    class Meta:
+        verbose_name_plural = 'Photo Galleries'
 
     @property
     def short_description(self):
@@ -25,8 +30,13 @@ class PhotoGallery(models.Model):
 
 class VideoGallery(models.Model):
     title = models.CharField(max_length=200)
-    video = models.FileField()
-    caption = models.TextField()
+    video = models.FileField(upload_to='media')
+    caption = models.TextField( blank=True)
+    status = models.IntegerField(choices=STATUS, default=0,help_text = 'Change to Publish for it to be seen')
+
+
+    class Meta:
+        verbose_name_plural = 'Video Galleries'
 
     @property
     def short_description(self):

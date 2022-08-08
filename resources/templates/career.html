@@ -16,17 +16,18 @@
                 <h1>Vacancies</h1>
                 <div class="linebg_2"></div>
             </div>
+            {% for job in object_list %}
             <div class="grid__main--list">
                 <div class="grid__main--card">
                     <div class="icon">
                         <i class="fa-solid fa-building-circle-arrow-right"></i>
                     </div>
                     <div class="description">
-                        <h2>Junior developer</h2>
+                        <h2>{{ job.title }}</h2>
                         <ul>
                             <li><i class="fa-solid fa-location-dot"></i>Nairobi</li>
-                            <li><i class="fa-solid fa-briefcase"></i>Full time</li>
-                            <li><i class="fa-solid fa-clock"></i>3 Days ago</li>
+                            <li><i class="fa-solid fa-briefcase"></i>{{ job.job_type | safe }}</li>
+                            <li><i class="fa-solid fa-clock"></i>{{ job.pub_date| date }}</li>
                         </ul>
                     </div>
 
@@ -36,106 +37,7 @@
 
                 </div>
             </div>
-            <div class="grid__main--list">
-                <div class="grid__main--card">
-                    <div class="icon">
-                        <i class="fa-solid fa-building-circle-arrow-right"></i>
-                    </div>
-                    <div class="description">
-                        <h2>Junior developer</h2>
-                        <ul>
-                            <li><i class="fa-solid fa-location-dot"></i>Nairobi</li>
-                            <li><i class="fa-solid fa-briefcase"></i>Full time</li>
-                            <li><i class="fa-solid fa-clock"></i>3 Days ago</li>
-                        </ul>
-                    </div>
-
-                    <div class="desc-btn">
-                        <a href="{% url 'career-info'%}">More Info</a>
-                    </div>
-
-                </div>
-            </div>
-            <div class="grid__main--list">
-                <div class="grid__main--card">
-                    <div class="icon">
-                        <i class="fa-solid fa-building-circle-arrow-right"></i>
-                    </div>
-                    <div class="description">
-                        <h2>Junior developer</h2>
-                        <ul>
-                            <li><i class="fa-solid fa-location-dot"></i>Nairobi</li>
-                            <li><i class="fa-solid fa-briefcase"></i>Full time</li>
-                            <li><i class="fa-solid fa-clock"></i>3 Days ago</li>
-                        </ul>
-                    </div>
-
-                    <div class="desc-btn">
-                        <a href="{% url 'career-info'%}">More Info</a>
-                    </div>
-
-                </div>
-            </div>
-            <div class="grid__main--list">
-                <div class="grid__main--card">
-                    <div class="icon">
-                        <i class="fa-solid fa-building-circle-arrow-right"></i>
-                    </div>
-                    <div class="description">
-                        <h2>Junior developer</h2>
-                        <ul>
-                            <li><i class="fa-solid fa-location-dot"></i>Nairobi</li>
-                            <li><i class="fa-solid fa-briefcase"></i>Full time</li>
-                            <li><i class="fa-solid fa-clock"></i>3 Days ago</li>
-                        </ul>
-                    </div>
-
-                    <div class="desc-btn">
-                        <a href="{% url 'career-info'%}">More Info</a>
-                    </div>
-
-                </div>
-            </div>
-            <div class="grid__main--list">
-                <div class="grid__main--card">
-                    <div class="icon">
-                        <i class="fa-solid fa-building-circle-arrow-right"></i>
-                    </div>
-                    <div class="description">
-                        <h2>Junior developer</h2>
-                        <ul>
-                            <li><i class="fa-solid fa-location-dot"></i>Nairobi</li>
-                            <li><i class="fa-solid fa-briefcase"></i>Full time</li>
-                            <li><i class="fa-solid fa-clock"></i>3 Days ago</li>
-                        </ul>
-                    </div>
-
-                    <div class="desc-btn">
-                        <a href="{% url 'career-info'%}">More Info</a>
-                    </div>
-
-                </div>
-            </div>
-            <div class="grid__main--list">
-                <div class="grid__main--card">
-                    <div class="icon">
-                        <i class="fa-solid fa-building-circle-arrow-right"></i>
-                    </div>
-                    <div class="description">
-                        <h2>Junior developer</h2>
-                        <ul>
-                            <li><i class="fa-solid fa-location-dot"></i>Nairobi</li>
-                            <li><i class="fa-solid fa-briefcase"></i>Full time</li>
-                            <li><i class="fa-solid fa-clock"></i>3 Days ago</li>
-                        </ul>
-                    </div>
-
-                    <div class="desc-btn">
-                        <a href="{% url 'career-info'%}">More Info</a>
-                    </div>
-
-                </div>
-            </div>
+            {% endfor %}
 
             <div class="more">
                 <a href="">Load More</a>

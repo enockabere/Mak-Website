@@ -13,7 +13,7 @@ CATEGORY = [
 
 class Personel(models.Model):
     first_name = models.CharField(max_length=50)
-    middle_name = models.CharField(max_length=50, blank=True, null=True, help_text='Optional')
+    middle_name = models.CharField(max_length=50, blank=True, help_text='Optional')
     last_name = models.CharField(max_length=50)
     position = models.CharField(max_length=100)
     description = RichTextField(null=True, blank=True)

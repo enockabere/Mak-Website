@@ -18,75 +18,40 @@
     </div>
     <div class="tabs__body">
         <div class="tabs__content is-active">
+            {% for photo in photos %}
             <div class="tabs__media--container">
                 
                 <div class="img">
-                    <img src="https://makueni-sa.S3.amazonaws.com/img/slide4.png" alt="" onclick="openFullMedia(this.src)">
-                </div>
-                
-                <div class="img">
-                    <img src="https://makueni-sa.S3.amazonaws.com/img/slide5.webp" alt="" onclick="openFullMedia(this.src)">
-                </div>
-                
-                <div class="img">
-                    <img src="https://makueni-sa.S3.amazonaws.com/img/slide6.webp" alt="" onclick="openFullMedia(this.src)">
-                </div>
-                
-                <div class="img">
-                    <img src="https://makueni-sa.S3.amazonaws.com/img/slide4.png" alt="" onclick="openFullMedia(this.src)">
-                </div>
-                
-                <div class="img">
-                    <img src="https://makueni-sa.S3.amazonaws.com/img/slide4.png" alt="" onclick="openFullMedia(this.src)">
-                </div>
-                
-                <div class="img">
-                    <img src="https://makueni-sa.S3.amazonaws.com/img/slide4.png" alt="" onclick="openFullMedia(this.src)">
-                </div>
-                
-                <div class="img">
-                    <img src="https://makueni-sa.S3.amazonaws.com/img/slide6.webp" alt="" onclick="openFullMedia(this.src)">
-                </div>
-                
-                <div class="img">
-                    <img src="https://makueni-sa.S3.amazonaws.com/img/slide4.png" alt="" onclick="openFullMedia(this.src)">
-                </div>
-                
-                <div class="img">
-                    <img src="https://makueni-sa.S3.amazonaws.com/img/slide5.webp" alt="" onclick="openFullMedia(this.src)">
+                    <img src="{{ photo.image.url }}" alt="" onclick="openFullMedia(this.src)">
                 </div>
                 
             </div>
             <!-- full image prieview -->
             <div class="full__media--image" id="fullMediaBox">
 
-                <img src="https://makueni-sa.S3.amazonaws.com/img/slide5.webp" alt="" id="fullMedia">
+                <img src="{{ photo.image.url }}" alt="" id="fullMedia">
                 <span onclick="closeFullMedia()"><i class="fa-solid fa-xmark"></i></span>
            </div>
+           {% endfor %}
         </div>
 
         <div class="tabs__content">
+
+            {% for video in videos %}
             <div class="tabs__media--container">
                 <div class="video">
-                    <video src="https://makueni-sa.S3.amazonaws.com/img/vid-1.mp4"  onclick="openFullVideo(this.src)"></video>
+                    <video src="{{ video.video.url }}"  onclick="openFullVideo(this.src)"></video>
                 </div>
-                <div class="video">
-                    <video src="https://makueni-sa.S3.amazonaws.com/img/vid-2.mp4"  onclick="openFullVideo(this.src)"></video>
-                </div>
-                <div class="video">
-                    <video src="https://makueni-sa.S3.amazonaws.com/img/vid-1.mp4"  onclick="openFullVideo(this.src)"></video>
-                </div>
-                <div class="video">
-                    <video src="https://makueni-sa.S3.amazonaws.com/img/vid-2.mp4"  onclick="openFullVideo(this.src)"></video>
-                </div>
+                
             </div>
 
             <!-- Full Video preview -->
             <div class="full__media--image" id="fullVideoBox">
     
-                <video src="https://makueni-sa.S3.amazonaws.com/img/vid-1.mp4" id="fullMedia" controls></video>
+                <video src="Video.video.url " id="fullMedia" controls></video>
                 <span onclick="closeFullVideo()"><i class="fa-solid fa-xmark"></i></span>
            </div>
+           {% endfor %}
         </div>
 
         
