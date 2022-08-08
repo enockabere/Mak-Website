@@ -2578,7 +2578,7 @@ footer .copyright {
   position: fixed;
   z-index: 1010;
   right: 10px;
-  bottom: 20px;
+  bottom: 60px;
   width: 40px;
   height: 40px;
   background-color: #000;
@@ -2599,15 +2599,14 @@ footer .copyright {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
-#back-to-top:hover i {
+#back-to-top i:hover {
   color: #fff;
 }
 #back-to-top:hover {
-  border-radius: 10px;
+  border-radius: 50%;
+  background-color: rgb(184, 121, 5);
+  opacity: 1;
 }
 #back-to-top.visible {
   right: 40px;
-}
-#back-to-top.gone {
-  right: -40px;
 }

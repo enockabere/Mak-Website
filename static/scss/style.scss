@@ -8,7 +8,7 @@
     position: fixed;
     z-index: 1010;
     right: 10px;
-    bottom: 20px;
+    bottom: 60px;
     width: 40px;
     height: 40px;
     background-color: #000;
@@ -28,21 +28,20 @@
         vertical-align: top;
         -webkit-transition: all 0.3s ease 0s;
         transition: all 0.3s ease 0s;
+
+        &:hover {
+            color: #fff;
+        }
     }
 
-    &:hover i {
-        color: #fff;
-    }
 
     &:hover {
-        border-radius: 10px;
+        border-radius: 50%;
+        background-color: $secondary_color;
+        opacity: 1;
     }
 
     &.visible {
         right: 40px;
-    }
-
-    &.gone {
-        right: -40px;
     }
 }

@@ -1,12 +1,11 @@
 from unicodedata import category
 from django.db import models
-from ckeditor.fields import RichTextField
 from blog.models import STATUS
 
 # Create your models here.
 class Faq(models.Model):
     question = models.CharField(max_length=500)
-    answer = RichTextField(null=True, blank=True)
+    answer = models.TextField(null=True, blank=True)
     date_created = models.DateField(auto_now_add=True)
 
     def __str__(self):
@@ -40,9 +39,9 @@ class JobAdvert(models.Model):
     title = models.CharField(max_length=200)
     job_ID = models.CharField(max_length=50)
     slug = models.SlugField(max_length=200)
-    job_description = RichTextField()
-    resposibilities = RichTextField()
-    qualification = RichTextField()
+    job_description = models.TextField()
+    resposibilities = models.TextField()
+    qualification = models.TextField()
     advert_file = models.FileField(upload_to='media', blank=True)
     pub_date = models.DateTimeField(auto_now_add=True, help_text='Date Published')
     status = models.IntegerField(choices=STATUS, default=0,help_text = 'Change to Publish for it to be seen')

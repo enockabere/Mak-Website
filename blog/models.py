@@ -2,7 +2,6 @@ from django.db import models
 from django.utils.safestring import mark_safe
 from django.template.defaultfilters import truncatechars
 from django.contrib.auth.models import User
-from ckeditor.fields import RichTextField
  
 
 class Category(models.Model):
@@ -27,7 +26,7 @@ class Post(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='blog_posts')
     updated_on = models.DateTimeField(auto_now=True, editable=False)
-    content = RichTextField(null=True, blank=True)
+    content = models.TextField(null=True, blank=True)
     image = models.ImageField(upload_to='media', null=True, blank=True, help_text = 'Image size should be in .jpg or .png')
     created_on = models.DateTimeField(auto_now_add=True, editable=False)
     category = models.ForeignKey(

@@ -1,12 +1,15 @@
-from unicodedata import category
 from django.contrib import admin
 from blog.models import Post,Category
+from django_summernote.admin import SummernoteModelAdmin
 # Register your models here.
 
 
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(SummernoteModelAdmin):
+    summernote_fields = 'content'
+
     fields = ('image', 'title', 'slug', 'content',
               'author', 'category', 'blog_photo', 'status')
+
     list_display = [
         'blog_photo',
         'title',
@@ -20,7 +23,9 @@ class PostAdmin(admin.ModelAdmin):
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
     readonly_fields = ['blog_photo', 'created_on', ]
-    # actions = [Publish,Unpublish]
+    
+
+
 
 
 # Register your models here.
