@@ -1,6 +1,8 @@
+from turtle import pos
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from .models import JobAdvert
+from .models import JobAdvert, Faq, Tender, Publication
+from blog.models import Post
 
 # Create your views here.
 
@@ -17,12 +19,27 @@ class careerDetail(DetailView):
 
 
 def tender_view(request):
-    return render(request, 'tenders.html')
+    tender = Tender.objects.filter(status=1).all()
+    post = Post.objects.filter(status=1).order_by('-created_on')[:4]
+    context = {
+        'tender': tender,
+        'post': post,
+    }
+    return render(request, 'tenders.html', context)
 
 
 def publication_view(request):
-    return render(request, 'publications.html')
+    publication = Publication.objects.filter(status=1).all()
+    # post = Post.objects.filter(status=1).order_by('-pub_date')[:1]
+    context = {
+        'pub': publication,
+    }
+    return render(request, 'publications.html', context)
 
 
 def faq_view(request):
-    return render(request, 'faq.html')
+    faq = Faq.objects.filter(status=1).all()
+    context = {
+        'faq': faq,
+    }
+    return render(request, 'faq.html', context)

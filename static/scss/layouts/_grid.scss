@@ -113,10 +113,10 @@
             width: 100%;
         }
 
-        &--tender{
+        &--tender {
             @include set_background($white);
 
-            .description{
+            .description {
                 display: flex;
                 flex-direction: column;
                 padding: 1em;
@@ -124,46 +124,51 @@
                 border-radius: 5px;
                 box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 
-                &:hover{
+                &:hover {
                     border: 1px solid;
                 }
 
-                .top{
+                .top {
                     display: grid;
                     gap: 2em;
                     margin-bottom: 1em;
                     grid-template-columns: 4fr 1fr;
                     grid-template-rows: auto;
 
-                    li{
-                        margin-block: .5em;                        
+                    li {
+                        margin-block: .5em;
                     }
 
-                    span{
+                    span {
                         font-weight: 700;
                     }
                 }
-                .bottom{
+
+                .bottom {
                     display: flex;
                     justify-content: space-between;
-                    
-                    span{
+
+                    span {
                         font-weight: 700;
                     }
-                    .desc-btn a{
-                        padding: .5em 1em;
-                        text-align: center;
-                        border: 1px solid;
-                        border-radius: 5px;
-                        color: $primary_color;
-                        font-weight: 700;
-    
-                        &:hover{
-                            color:$secondary_color;
+
+                    .desc-btn {
+
+                        a {
+                            padding: .5em 1em;
+                            text-align: center;
+                            border: 1px solid;
+                            border-radius: 5px;
+                            color: $primary_color;
+                            font-weight: 700;
+
+                            &:hover {
+                                color: $secondary_color;
+                            }
                         }
                     }
-    
-                    i{
+
+                    i {
                         margin-right: .5em;
                     }
                 }
@@ -232,17 +237,20 @@
                 }
             }
 
-            .desc-btn a{
-                justify-self: end;
-                padding: .5em 1em;
-                border: 1px solid black;
-                border-radius: 5px;
+            .desc-btn {
+                text-align: right;
+                a {
+                    justify-self: end;
+                    padding: .5em 1em;
+                    border: 1px solid black;
+                    border-radius: 5px;
 
-                &:hover {
-                    @include set_background($primary_color);
-                    border: none;
+                    &:hover {
+                        @include set_background($primary_color);
+                        border: none;
+                    }
+
                 }
-
             }
         }
 
@@ -255,16 +263,17 @@
 
             }
 
-            &--top-rqm{
+            &--top-rqm {
                 display: grid;
                 gap: .5em;
                 grid-template-columns: auto auto;
                 grid-template-rows: auto;
                 margin-block: .5em;
 
-                p{
+                p {
                     padding: .5em;
-                    &> i{
+
+                    &>i {
                         margin-inline-end: .5em;
                         width: 1em;
                         aspect-ratio: 1;
@@ -292,26 +301,29 @@
                 }
             }
 
-            &--share{
+            &--share {
                 @include set_background($white);
                 border-radius: 1em;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                p{
+
+                p {
                     padding: 1em;
                 }
-                ul{
+
+                ul {
                     display: flex;
                     gap: 1em;
                     justify-content: end;
                     padding: 1em;
-                    li{
-                        & > a{
+
+                    li {
+                        &>a {
                             font-size: 20px;
                             color: inherit;
 
-                            &:hover{
+                            &:hover {
                                 color: $primary_color;
                             }
                         }
@@ -319,25 +331,27 @@
                 }
             }
 
-            &--qlf{
-                ul{
+            &--qlf {
+                ul {
                     list-style: number;
                     padding: 1em;
-                    li{
+
+                    li {
                         padding-inline-start: .5em;
                     }
                 }
             }
 
-            &--button{
+            &--button {
                 text-align: center;
                 margin: 2em;
-                a{
+
+                a {
                     @include set_background($primary_color);
                     padding: 10px 20px;
                     border-radius: .5em;
 
-                    &:hover{
+                    &:hover {
                         background-color: transparent;
                         border: 1px solid black;
                         color: inherit;
@@ -367,8 +381,9 @@
                 h2 {
                     font-weight: 400;
                 }
+
                 // &--item,
-                &--item a{
+                &--item a {
                     display: grid;
                     grid-template-columns: 1fr 3fr;
                     width: 100%;

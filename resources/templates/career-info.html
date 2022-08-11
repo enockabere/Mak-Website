@@ -12,55 +12,26 @@
     <main class="grid__main">
         <div class="grid__main-job">
             <div class="job__desc">
-                <h1>Junior Developer</h1>
-                <p><span>Job ID:</span> J-DSC/2022/01/005A</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus impedit voluptatum voluptas sit
-                    esse. Doloribus modi quod ducimus quos nulla?</p>
+                <h1>{{ object.title }}</h1>
+                <p><span>Job ID:</span> {{ object.job_ID }}</p>
+                <p>{{ object.description | safe }}</p>
                 <div class="job__desc--top-rqm">
-                    <p><i class="fa-solid fa-location-dot"></i>Location: Nairobi</p>
                     <p><i class="fa-solid fa-clock"></i>Post Date: 3 Days ago</p>
-                    <p><i class="fa-solid fa-briefcase"></i>Job Type: Part Time</p>
-                    <p><i class="fa-solid fa-money-bill-1"></i>Salary:  N/A</p>
+                    <p><i class="fa-solid fa-briefcase"></i>Job Type: {{ object.job_type |safe }}</p>
                 </div>
                 <div class="job__desc--items">
                     <div class="job__desc--rqm">
                         <h1>Responsibilities</h1>
-                        <ul>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                        </ul>
+                        <div>{{ object.resposibilities | safe }}</div>
                     </div>
                     <div class="job__desc--rqm">
-                        <h1>Why work with us</h1>
-                        <ul>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                            <li>Lorem ipsum dolor sit amet.</li>
-                        </ul>
+                        <h1>Qualification</h1>
+                        <div>{{ object.qualification | safe }}</div>
                     </div>
 
                 </div>
-                <div class="job__desc--qlf">
-                    <h3>Qualification</h3>
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing Lorem, ipsum.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing Lorem, ipsum.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing Lorem, ipsum.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing Lorem, ipsum.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing Lorem, ipsum.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing Lorem, ipsum.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing Lorem, ipsum.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing Lorem, ipsum.</li>
-                    </ul>
+                <div class="advert__file py-3">
+                    <a style="text-decoration: underline;" href="{{ object.advert_file }}">Download the job advertisement &rarr;</a>
                 </div>
                 <div class="job__desc--button">
                     <button class="btn btn-primary open-button">Apply</button>

@@ -1,7 +1,8 @@
 from unicodedata import category
 from django.shortcuts import render
 from blog.models import Post
-from .models import MDsMessage, AboutUs, Mission, Personel
+from .models import MDsMessage, AboutUs, Mission, Personel, Department
+from base.models import CallToActionPanel
 
 # Create your views here.
 
@@ -10,10 +11,12 @@ def about_view(request):
     about_us = AboutUs.objects.filter(status=1)[:1]
     mission = Mission.objects.filter(status=1)[:1]
     leader = Personel.objects.filter(status=1, category=1)
+    cta = CallToActionPanel.objects.filter(status=1)[:1]
     context = {
         'about_us': about_us,
         'mission': mission,
-        'leader' : leader
+        'leader' : leader,
+        'cta': cta,
     }
     return render(request, 'about.html', context)
 
@@ -29,8 +32,10 @@ def our_team_view(request):
 
 def departments_view(request):
     post = Post.objects.filter(status=1).order_by('-created_on')[:5]
+    department = Department.objects.filter(status=1).all()
     context = {
-        'post': post
+        'post': post,
+        'dept': department,
     }
     return render(request, 'departments.html', context)
 

@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.models import Group
 from django_summernote.admin import SummernoteModelAdmin
-from base.models import Carousel, Patner, Subscription, CallToActionPanel
+from base.models import Carousel, Patner, Subscription, CallToActionPanel, Empowerment
 
 
 class CarouselAdmin(admin.ModelAdmin):
@@ -55,11 +55,20 @@ class CallToActionPanelAdmin(admin.ModelAdmin):
     list_filter = ["status",]
     search_fields = ['title', 'description']
 
+
+class EmpowermentAdmin(admin.ModelAdmin):
+    list_display = ['bg_photo','title', 'short_desctiption', 'status']
+    list_filter = ['pub_date']
+
+
+
+
 # Register your models here.
 admin.site.register(Carousel, CarouselAdmin)
 admin.site.register(Patner, PatnerAdmin)
 admin.site.register(Subscription)
 admin.site.register(CallToActionPanel, CallToActionPanelAdmin)
+admin.site.register(Empowerment)
 
 
 # Dashboad Customization

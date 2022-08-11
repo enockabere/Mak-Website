@@ -36,9 +36,9 @@ workon {{project_name}}   # reactivate existing environment
 
 Clone GitHub Project,
 ```bash
-https://github.com/motanyaFrancis/makueni-sand-conservation-web
+https://github.com/KobbyTechnologies/MCSCUA-Website
 
-cd makueni-sand-conservation-web
+cd MCSCUA-Website
 ```
 
 Install development dependencies,

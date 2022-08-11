@@ -1,0 +1,23 @@
+<!---------------------------------------------------------------- 
+        CTA Begin
+ ----------------------------------------------------------------->
+
+ {% for cta in cta %}
+<div class="action" style="background-image: url('{{cta.image.url}}'); background-size: cover;">
+    <div class="action__section ">
+        <div class="action__section--inner">
+            <div class="action__section--title mb-2">
+                <h1>{{cta.title}}</h1>
+            </div>
+            <div class="action__section--content">
+                <p>{{cta.description | safe}}</p>
+            </div>
+            <div class="action__section--button">
+                <a href="{{ cta.url }}" target="_blank">See what you can Do &rarr;</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+<!-- CTA end -->

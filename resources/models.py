@@ -1,12 +1,22 @@
-from unicodedata import category
+from operator import truediv
 from django.db import models
+from django.utils.safestring import mark_safe
+from django.template.defaultfilters import truncatechars
 from blog.models import STATUS
 
 # Create your models here.
 class Faq(models.Model):
     question = models.CharField(max_length=500)
-    answer = models.TextField(null=True, blank=True)
-    date_created = models.DateField(auto_now_add=True)
+    answer = models.TextField(blank=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+    status = models.IntegerField(choices=STATUS, default=0,help_text = 'Change to Publish for it to be seen')
+
+    class Meta:
+        verbose_name = 'Frequently Asked Question'
+
+    @property
+    def short_description(self):
+        return truncatechars(self.answer, 30)
 
     def __str__(self):
         return self.question
@@ -16,13 +26,16 @@ class Publication(models.Model):
 
     PUB_CATEGORY = [
 
-        (0, 'default'),
-        (1, 'advertisement')
+        (0, 'Default'),
+        (1, 'Advertisement')
     ]
 
     name = models.CharField(max_length=200)
     file = models.FileField(upload_to='media')
+    pub_date = models.DateTimeField(auto_now_add=True)
     category = models.IntegerField(choices=PUB_CATEGORY, default=0)
+    status = models.IntegerField(choices=STATUS, default=0)
+
 
     def __str__(self):
         return self.name
@@ -30,8 +43,8 @@ class Publication(models.Model):
 
 class JobAdvert(models.Model):
     POSITION_TYPE = [
-        (0, 'Fulltime'),
-        (1, 'Parttime'),
+        (0, 'Full Time'),
+        (1, 'Part Time'),
         (2, 'Internship'),
         (3, 'Attachment')
     ]
@@ -47,6 +60,33 @@ class JobAdvert(models.Model):
     status = models.IntegerField(choices=STATUS, default=0,help_text = 'Change to Publish for it to be seen')
     job_type = models.IntegerField(choices=POSITION_TYPE, default=0,help_text = 'Choose the appropriate job type to advertise')
 
+
+    class Meta:
+        verbose_name = 'Job Advert'
+
+    @property
+    def short_description(self):
+         return truncatechars(self.job_description, 50)
+
     def __str__(self):
         return self.title
 
+class Tender(models.Model):
+    title = models.CharField(max_length=200)
+    ref_number = models.CharField(max_length=50, unique=True)
+    description = models.TextField()
+    file = models.FileField(upload_to='media')
+    pub_date = models.DateTimeField(auto_now_add=True)
+    deadline = models.DateTimeField()
+    status = models.IntegerField(choices=STATUS, default=0,help_text = 'Change to Publish for it to be seen')
+
+
+    class Meta:
+        ordering = ['-pub_date']
+
+    @property
+    def short_description(self):
+        return truncatechars(self.description, 30)
+
+    def __str__(self):
+        return self.title

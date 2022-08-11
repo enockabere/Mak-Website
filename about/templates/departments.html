@@ -19,20 +19,23 @@
             <!-- Accordion 1 -->
             <section class="accordion" role="tablist" aria-live="polite" data-behavior="accordion">
 
+                {% for dept in dept %}
+
                 <article class="accordion__item js-show-item-default" data-binding="expand-accordion-item">
                     <span id="tab1" tabindex="0" class="accordion__title" aria-controls="panel1" role="tab"
                         aria-selected="false" aria-expanded="false" data-binding="expand-accordion-trigger">
-                        <h5>Department 1</h5>
+                        <h5>{{ dept.title }}</h5>
                     </span>
 
                     <div id="panel1" class="accordion__content" role="tabpanel" aria-hidden="true"
                         aria-labelledby="tab1" data-binding="expand-accordion-container">
                         <div class="accordion__content-inner">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sunt officiis ab sit, id cupiditate dolor quae exercitationem hic quo architecto possimus pariatur dignissimos eius esse suscipit soluta aliquid, animi harum rerum nulla quos eveniet quod! Facilis, repellendus? Minima, quod.</p>
+                            <div>{{ dept.content | safe }}</div>
                         </div>
                     </div>
 
                 </article>
+                {% endfor %}
 
             </section>
 

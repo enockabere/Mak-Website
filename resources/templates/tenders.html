@@ -12,55 +12,40 @@
 <div class="grid">
     <main class="grid__main">
         <div class="grid__main--item">
+
+<!-- ---------------------------------------------------------
+                    tenders listing
+ -------------------------------------------------------------->
             <div class="heading mb-3">
                 <h1>Tenders</h1>
                 <div class="linebg_2"></div>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus quibusdam quas ratione voluptates, ut cum eaque fuga eius architecto magnam.</p>
             </div>
             <div class="grid__main--list">
+
+                {% for tender in tender %}
                 <div class="grid__main--tender">
                     <div class="description">
                         <ul class="top">
-                        <li>Printing And Delivery Of Passanger Tickets For Sgr Passenger Service</li>
-                        <li>Deadline: <span>11 Jul 2022</span></li>
+                        <li>{{ tender.title }}</li>
+                        <li>Deadline: <span>{{tender.deadline}}</span></li>
                         </ul>
                         <ul class="bottom">
-                            <li><i class="fa-solid fa-location-dot"></i>Nairobi</li>
-                            <li>Tender Reference No: <span>68482319</span></li>
+                            <li>Tender Reference No: <span>{{ tender.ref_number }}</span></li>
                             <li>
                                 <div class="desc-btn">
-                                    <a href="">View Details</a>
+                                    <a href="{{ tender.file }}" download="">Download</a>
                                 </div>
                             </li>
                         </ul>
                     </div>
 
-                    
-
                 </div>
-
-                <div class="grid__main--tender">
-                    <div class="description">
-                        <ul class="top">
-                        <li>Provision Of Cleaning, Sanitary Collection, Gardening, Fumigation, Garbage Collection, Sewer Exaustion Services For Kr Estates And Premises Western Region (kisumu, Malaba And Marine School)</li>
-                        <li>Deadline: <span>11 Jul 2022</span></li>
-                        </ul>
-                        <ul class="bottom">
-                            <li><i class="fa-solid fa-location-dot"></i>Nairobi</li>
-                            <li>Tender Reference No: <span>68482322</span></li>
-                            <li>
-                                <div class="desc-btn">
-                                    <a href="">View Details</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    
-
-                </div>
+                {% endfor %}
 
             </div>
+
+            <!-- end tender listing  -->
             
         </div>
 

@@ -9,8 +9,7 @@
  ------------------------------------------------------------->
 <div class="carousel">
     {% for carousel in carousel%}
-    <div class="carousel__item"
-        style="background-image: url('{{ carousel.image.url }}'); background-size: cover;">
+    <div class="carousel__item" style="background-image: url('{{ carousel.image.url }}'); background-size: cover;">
         <div class="carousel__inner">
             <div class="carousel__inner--content">
                 <h1>{{carousel.title}}</h1>
@@ -21,7 +20,7 @@
         </div>
     </div>
     {% endfor %}
-    
+
 </div>
 <!-- end main slider -->
 
@@ -65,19 +64,22 @@
     </aside>
 </div>
 
-<section class="paralax">
+<!---------------------------------------------------------------- 
+        Recent Articles Begin
+ ----------------------------------------------------------------->
+{% for emp in emp %}
+<section class="paralax" style="background: url('{{ emp.image.url }}') center no-repeat;">
     <div class="paralax__inner">
         <div class="paralax__title">
             <h1>Community Empowerment</h1>
         </div>
         <div class="paralax__content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora maiores, iste, voluptatum quas eaque
-                molestias impedit harum maxime amet cum rerum perspiciatis officiis corrupti voluptate nihil adipisci,
-                sapiente saepe eius beatae dolorem tenetur odio. Quo nostrum facilis accusamus aliquid possimus.</p>
+            <p>{{emp.message}}</p>
         </div>
     </div>
 </section>
-
+{% endfor %}
+<!-- end empowerment -->
 
 <!---------------------------------------------------------------- 
         Recent Articles Begin
@@ -95,15 +97,14 @@
 
                     <div class="card__img">
                         <div class="img__cover">
-                            <img src="{{ post.image.url }}"
-                            alt="" />
+                            <img src="{{ post.image.url }}" alt="" />
                         </div>
                     </div>
                     <div class="[ card__text ] [ flow ]">
                         <h2>
                             <a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
                         </h2>
-                        
+
                         <p>{{post.content|slice:":150"}}...</p>
                         <small>
                             <span class="visuallyhidden">Uploaded</span>
@@ -114,10 +115,10 @@
                         <a href="{% url 'post_detail' post.slug %}">Read More &rarr;</a>
                     </div>
                 </div>
-            </li>
+        </li>
         </a>
         {% endfor %}
-        
+
     </ul>
 </section>
 <!-- recent Articles end -->
@@ -140,30 +141,14 @@
                 </a>
             </li>
             {% endfor %}
-            
+
         </ul>
     </div>
 </section>
 
 <!-- Patners end -->
 
-<section class="action">
-    <div class="action__section ">
-        <div class="action__section--inner">
-            <div class="action__section--title mb-2">
-                <h1>Our Sand , Our Water, Our Livelihood</h1>
-            </div>
-            <div class="action__section--content">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora maiores, iste, voluptatum quas eaque
-                    molestias impedit harum maxime amet cum rerum perspiciatis officiis corrupti voluptate nihil
-                    adipisci,
-                    sapiente saepe eius beatae dolorem tenetur odio. Quo nostrum facilis accusamus aliquid possimus.</p>
-            </div>
-            <div class="action__section--button">
-                <a href="">See what you can Do &rarr;</a>
-            </div>
-        </div>
-    </div>
-</section>
+{% include 'section/cta_panel.html' %}
+
 
 {% endblock body %}

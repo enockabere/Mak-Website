@@ -25,11 +25,8 @@
 }
 
 .paralax {
-
-    background: url(../img/paralax1.jpg) center no-repeat;
     background-position: fixed;
     background-size: cover;
-    // height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,8 +137,7 @@
 // action section
 .action {
 
-    background: $primary_color url(http://www.freeimageslive.com/galleries/nature/views/preview/kinder_scout_winter.jpg) no-repeat center center;
-    background-size: cover;
+    background-color: $primary_color;
 
     &__section {
         @include set_background($dark_color_fade);

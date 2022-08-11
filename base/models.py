@@ -1,3 +1,5 @@
+from email import message
+from inspect import trace
 from django.utils.safestring import mark_safe
 from django.template.defaultfilters import truncatechars
 from django.db import models
@@ -73,6 +75,30 @@ class CallToActionPanel(models.Model):
 
     photo.short_description = 'Image'
     photo.allow_tags = True
+
+    def __str__(self):
+        return self.title
+
+
+class Empowerment(models.Model):
+    title = models.CharField(max_length=200)
+    message = models.TextField()
+    image = models.ImageField(upload_to='media') #0704521519
+    pub_date = models.DateTimeField(auto_now_add=True)
+    status = models.IntegerField(choices=STATUS, default=0, help_text='change to published to show front end')
+
+    class Meta:
+        ordering = ['-pub_date']
+
+    @property
+    def short_description(self):
+        return truncatechars(self.message, 30)
+
+    def bg_photo(self):
+        return mark_safe('<img src="{}" width="150px" />'.format(self.image.url))
+
+    bg_photo.short_description = 'Image'
+    bg_photo.allow_tags = True
 
     def __str__(self):
         return self.title

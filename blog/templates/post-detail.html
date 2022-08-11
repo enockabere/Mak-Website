@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %} Blog detail {% endblock title %}
+
 
 {% block body %}
 <section class="hero mb-1">
@@ -13,13 +13,13 @@
     <div class="bloggrid__main">
 
         <div class="bloggrid__main--content">
-            <h3>Sub-heading of page</h3>
+            <!-- <h3>Sub-heading of page</h3> -->
 
             <div class="bloggrid__main--content-img pb-2">
                 <img src="{{ object.image.url }}"
                     alt="">
             </div>
-            <h1 class="mb-2">{{object.title}}</h1>
+            <h1 class="mb-2">{% block title %} {{object.title}} {% endblock title %}</h1>
             <div class="bloggrid__main--content--txt">
                 <p>{{object.content|safe}}</p>
                 <div class="share pt-2">

@@ -1,7 +1,7 @@
 from dataclasses import fields
 from django.contrib import admin
 
-from about.models import AboutUs, Personel, Mission, MDsMessage
+from about.models import AboutUs, Personel, Mission, MDsMessage, Department
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -59,10 +59,13 @@ class MDsMessageAdmin(SummernoteModelAdmin):
     list_filter = ["status", ]
     search_fields = ['name_of_md',]
     
-
+class DepartmentAdmin(SummernoteModelAdmin):
+    list_display = ['title', 'short_content', 'status']
+    list_filter = ['status']
 
 # Register your models here.
 admin.site.register(AboutUs, AboutUsAdmin)
 admin.site.register(Personel, PersonelAdmin)
 admin.site.register(Mission)
 admin.site.register(MDsMessage, MDsMessageAdmin)
+admin.site.register(Department, DepartmentAdmin)

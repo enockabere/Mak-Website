@@ -32,16 +32,17 @@
                     </div>
 
                     <div class="desc-btn">
-                        <a href="{% url 'career-info'%}">More Info</a>
+                        <a href="{% url 'career_info' job.slug %}">Apply</a>
                     </div>
 
                 </div>
             </div>
             {% endfor %}
 
-            <div class="more">
+            <!-- <div class="more">
                 <a href="">Load More</a>
-            </div>
+            </div> -->
+            
         </div>
 
     </main>

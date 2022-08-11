@@ -1,3 +1,4 @@
+from math import trunc
 from django.utils.safestring import mark_safe
 from django.template.defaultfilters import truncatechars
 from django.db import models
@@ -102,3 +103,16 @@ class Mission(models.Model):
 
     class Meta:
         verbose_name = 'Mission Statement'
+
+
+class Department(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    status = models.IntegerField(choices=STATUS, default=0, help_text='Change to Publish for it to be seen')
+
+    @property
+    def short_content(self):
+        return truncatechars(self.content, 30)
+
+    def __str__(self):
+        return self.title

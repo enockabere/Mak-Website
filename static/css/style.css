@@ -1129,6 +1129,9 @@ textarea {
 .grid__main--card .description ul i {
   margin-inline-end: 5px;
 }
+.grid__main--card .desc-btn {
+  text-align: right;
+}
 .grid__main--card .desc-btn a {
   justify-self: end;
   padding: 0.5em 1em;
@@ -1480,7 +1483,6 @@ textarea {
 }
 
 .paralax {
-  background: url(../img/paralax1.jpg) center no-repeat;
   background-position: fixed;
   background-size: cover;
   display: flex;
@@ -1577,8 +1579,7 @@ textarea {
 }
 
 .action {
-  background: #90cd4b url(http://www.freeimageslive.com/galleries/nature/views/preview/kinder_scout_winter.jpg) no-repeat center center;
-  background-size: cover;
+  background-color: #90cd4b;
 }
 .action__section {
   background-color: rgba(12, 12, 12, 0.644);
