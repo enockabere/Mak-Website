@@ -1,4 +1,3 @@
-from turtle import pos
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import JobAdvert, Faq, Tender, Publication
