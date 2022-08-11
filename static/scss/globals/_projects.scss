@@ -1,0 +1,36 @@
+
+.projects{
+    margin-inline: 2em;
+    margin-block: 1em;
+
+    .header h1{
+        text-align: center;
+    }
+
+    &__main{
+
+        border-bottom: 1px solid;
+        margin-bottom: 1em;
+        padding: 1em;
+
+        &:last-child{
+            border-bottom: none;
+        }
+
+        h1{
+            font-size: 1.8em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        img{
+            width: 100%;
+        }
+        @include breakpoint(medium){
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto;
+            gap: 2em;
+        }
+
+    }
+}

@@ -698,14 +698,14 @@ textarea {
   float: right;
 }
 .header .primary-navigation i {
-  margin-inline-start: 0.5em;
+  margin-inline-start: 0.1em;
 }
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   .header .primary-navigation {
-    padding-inline: clamp(1rem, 10vw, 3rem);
+    padding-inline: 1em;
   }
 }
-@media (max-width: 899.98px) {
+@media (max-width: 1023.98px) {
   .header .primary-navigation {
     position: fixed;
     inset: 0 0 0 30%;
@@ -736,7 +736,8 @@ textarea {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 1em;
+  font-size: 0.7em;
+  line-height: 1;
   color: inherit;
   opacity: 1;
   position: relative;
@@ -766,7 +767,7 @@ textarea {
 .header .primary-navigation li:last-child {
   border-inline-end: none;
 }
-@media (max-width: 699.98px) {
+@media (max-width: 1023.98px) {
   .header .primary-navigation li {
     border-inline-end: none;
   }
@@ -854,7 +855,7 @@ textarea {
   display: block;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   .mobile-nav-toggle {
     display: none;
   }
@@ -1876,6 +1877,36 @@ textarea {
   font-size: 1.2em;
   font-weight: 500;
 }
+.services__listing {
+  margin-inline: 2em;
+  text-align: left;
+}
+@media (min-width: 900px) {
+  .services__listing {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    gap: 2em;
+  }
+}
+.services__listing--item {
+  padding-inline: 1em;
+  margin-bottom: 2em;
+}
+.services__listing--item h1 {
+  color: #90cd4b;
+  font-size: 1.5em;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.services__listing--item p {
+  text-align: justify;
+}
+.services__listing--item a {
+  padding: 1em;
+  margin-top: 2em;
+  color: #90cd4b;
+}
 
 .contact {
   display: flex;
@@ -2573,6 +2604,38 @@ footer .copyright {
 }
 .publication__main--item li {
   list-style: number;
+}
+
+.projects {
+  margin-inline: 2em;
+  margin-block: 1em;
+}
+.projects .header h1 {
+  text-align: center;
+}
+.projects__main {
+  border-bottom: 1px solid;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+.projects__main:last-child {
+  border-bottom: none;
+}
+.projects__main h1 {
+  font-size: 1.8em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.projects__main img {
+  width: 100%;
+}
+@media (min-width: 900px) {
+  .projects__main {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    gap: 2em;
+  }
 }
 
 #back-to-top {

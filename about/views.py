@@ -10,7 +10,7 @@ from base.models import CallToActionPanel
 def about_view(request):
     about_us = AboutUs.objects.filter(status=1)[:1]
     mission = Mission.objects.filter(status=1)[:1]
-    leader = Personel.objects.filter(status=1, category=1)
+    leader = Personel.objects.filter(status=1, category=1).all()
     cta = CallToActionPanel.objects.filter(status=1)[:1]
     context = {
         'about_us': about_us,
@@ -23,8 +23,10 @@ def about_view(request):
 
 def our_team_view(request):
     post = Post.objects.filter(status=1).order_by('-created_on')[:5]
+    board_member = Personel.objects.filter(status=1, category=0).all()
     context = {
-        'post': post
+        'post': post,
+        'board_members': board_member,
     }
 
     return render(request, 'team.html', context)

@@ -18,13 +18,16 @@
             </div>
 
             <div class="leader mt-3 mb-3">
+
+                {% for bm in board_members %}
                 <div class="leader__content ">
-                    <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200" alt="">
-                    <h2>Position</h2>
-                    <h1>John Doe</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi cupiditate modi ullam, architecto quas debitis?</p>
+                    <img src="{{ bm.image.url }}" alt="profile picture">
+                    <h2>{{ bm.position }}</h2>
+                    <h1>{{ bm.first_name }} {{ bm.middle_name }} {{ bm.last_name }}</h1>
+                    <p>{{ bm.description | safe }}</p>
                     
                 </div>
+                {% endfor %}
 
                 
             </div>

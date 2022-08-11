@@ -18,63 +18,23 @@
 
             <!-- Accordion 1 -->
             <section class="accordion" role="tablist" aria-live="polite" data-behavior="accordion">
-
+                {% for faq in faq %}
                 <article class="accordion__item js-show-item-default" data-binding="expand-accordion-item">
                     <span id="tab1" tabindex="0" class="accordion__title" aria-controls="panel1" role="tab"
                         aria-selected="false" aria-expanded="false" data-binding="expand-accordion-trigger">
-                        <h5>Question 1</h5>
+                        <h5>{{faq.question}}</h5>
                     </span>
 
                     <div id="panel1" class="accordion__content" role="tabpanel" aria-hidden="true"
                         aria-labelledby="tab1" data-binding="expand-accordion-container">
                         <div class="accordion__content-inner">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sunt officiis ab sit, id cupiditate dolor quae exercitationem hic quo architecto possimus pariatur dignissimos eius esse suscipit soluta aliquid, animi harum rerum nulla quos eveniet quod! Facilis, repellendus? Minima, quod.</p>
+                            <p>{{faq.answer}}</p>
                         </div>
                     </div>
 
                 </article>
-
-                <article class="accordion__item js-show-item-default" data-binding="expand-accordion-item">
-                    <span id="tab2" tabindex="0" class="accordion__title" aria-controls="panel2" role="tab"
-                        aria-selected="false" aria-expanded="false" data-binding="expand-accordion-trigger">
-                        <h5>Question 2</h5>
-                    </span>
-
-                    <div id="panel2" class="accordion__content" role="tabpanel" aria-hidden="true"
-                        aria-labelledby="tab2" data-binding="expand-accordion-container">
-                        <div class="accordion__content-inner">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, laboriosam autem eos incidunt dolores similique aperiam magnam repellendus quaerat culpa mollitia atque quia aliquam maxime ipsum amet? Sint animi possimus ipsa, quas, officiis perferendis voluptate tempora ullam, non id at mollitia quasi placeat deleniti quo. Vitae officiis nisi illo fugiat! Ipsam vel cum, saepe aliquid dolore corporis deserunt esse dolores eveniet voluptates iusto id suscipit consequatur non delectus repellat unde.</p>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="accordion__item js-show-item-default" data-binding="expand-accordion-item">
-                    <span id="tab3" tabindex="0" class="accordion__title" aria-controls="panel3" role="tab"
-                        aria-selected="false" aria-expanded="false" data-binding="expand-accordion-trigger">
-                        <h5>Question 3</h5>
-                    </span>
-
-                    <div id="panel3" class="accordion__content" role="tabpanel" aria-hidden="true"
-                        aria-labelledby="tab3" data-binding="expand-accordion-container">
-                        <div class="accordion__content-inner">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus odio, nemo voluptate eveniet accusamus esse numquam ex assumenda modi tenetur quaerat aperiam inventore expedita aliquam a sequi culpa dolore quas.</p>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="accordion__item js-show-item-default" data-binding="expand-accordion-item">
-                    <span id="tab4" tabindex="0" class="accordion__title" aria-controls="panel4" role="tab"
-                        aria-selected="false" aria-expanded="false" data-binding="expand-accordion-trigger">
-                        <h5>Question 4</h5>
-                    </span>
-
-                    <div id="panel4" class="accordion__content" role="tabpanel" aria-hidden="true"
-                        aria-labelledby="tab4" data-binding="expand-accordion-container">
-                        <div class="accordion__content-inner">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse repellat magni neque repudiandae illum ipsum ut ipsa fuga iure voluptatibus id, aperiam incidunt ducimus consequuntur rem facere repellendus magnam dolore rerum animi porro. Dolorem provident porro inventore fuga quos molestiae libero numquam, dolorum iusto, maxime cum! Voluptatum ratione est perspiciatis.</p>
-                        </div>
-                    </div>
-                </article>
+                {% endfor %}
+               
 
             </section>
         </div>

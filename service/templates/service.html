@@ -9,10 +9,35 @@
     </div>
 </section>
 
+<div class="services my-2">
+    <div class="heading mb-2 mt-2">
+        <h1>What we offer</h1>
+        <div class="linebg_1"></div>
+    </div>
+    <div class="services__listing">
+        {% for service in services %}
+        <div class="services__listing--item">
+            <h1>{{service.title}}</h1>
+            <p>{{service.content}}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+
+
+{% include 'section/cta_panel.html' %}
+
+{% endblock body %}
+
+<!----------------------------------------------------
+        services hero
+ ------------------------------------------------------>
 <div class="services-hero">
     <div class="services-hero__title my-2">
-        <h1>Join Us</h1>
-        <h2>Lorem ipsum dolor sit amet.
+        <h1>Our Services</h1>
+        <h2>Check out What we do.
         </h2>
     </div>
 
@@ -42,46 +67,13 @@
                 repellat
                 tenetur voluptates suscipit optio blanditiis fugit.</p>
             <a href="">Read More &rarr;</a>
-        </div>
-
-        <div class="services-hero__inner--card">
-            <h1>Lorem, ipsum dolor.</h1>
-            <div class="linebg_2 mb-1"></div>
-            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste excepturi ea velit delectus
-                repellat
-                tenetur voluptates suscipit optio blanditiis fugit.</p>
-            <a href="">Read More &rarr;</a>
-        </div>
-
-        <div class="services-hero__inner--card">
-            <h1>Lorem, ipsum dolor.</h1>
-            <div class="linebg_2 mb-1"></div>
-            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste excepturi ea velit delectus
-                repellat
-                tenetur voluptates suscipit optio blanditiis fugit.</p>
-            <a href="">Read More &rarr;</a>
-        </div>
-
-        <div class="services-hero__inner--card">
-            <h1>Lorem, ipsum dolor.</h1>
-            <div class="linebg_2 mb-1"></div>
-            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste excepturi ea velit delectus
-                repellat
-                tenetur voluptates suscipit optio blanditiis fugit.</p>
-            <a href="">Read More &rarr;</a>
-        </div>
-
-        <div class="services-hero__inner--card">
-            <h1>Lorem, ipsum dolor.</h1>
-            <div class="linebg_2 mb-1"></div>
-            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste excepturi ea velit delectus
-                repellat
-                tenetur voluptates suscipit optio blanditiis fugit.</p>
-            <a href="">Read More &rarr;</a>
-        </div>
+        </div>    
 
     </div>
 </div>
+
+
+
 
 <div class="services mb-2">
     <div class="heading mb-2 mt-3">
@@ -133,8 +125,3 @@
         </div>
     </div>
 </div>
-
-
-{% include 'section/cta_panel.html' %}
-
-{% endblock body %}
