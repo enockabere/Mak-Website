@@ -616,7 +616,7 @@ footer {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
         gap: 40px;
-        margin-inline: auto;
+        margin-inline: 1em;
 
         @include u.breakpoint(large) {
             grid-template-columns: 1fr 6fr;
@@ -632,7 +632,7 @@ footer {
             display: table;
             text-align: center;
             align-items: center;
-            margin-block: 2em;
+            margin-block-start: 2em;
 
             &--content {
                 display: table-cell;
@@ -645,7 +645,7 @@ footer {
         }
 
         &__content {
-            margin-block: 2em;
+            margin-block-start: 2em;
             text-align: center;
 
             @include u.breakpoint(medium) {
@@ -663,7 +663,7 @@ footer {
 
 
             &--item {
-                margin-bottom: 2em;
+                // margin-bottom: 2em;
 
                 a {
                     color: inherit;
