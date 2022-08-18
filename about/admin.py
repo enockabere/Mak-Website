@@ -48,7 +48,7 @@ class MDsMessageAdmin(SummernoteModelAdmin):
     )
 
     list_display = [
-        # 'profile_photo',
+        'profile_photo',
         'title',
         'name_of_md',
         'status',
