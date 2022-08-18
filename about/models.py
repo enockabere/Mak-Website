@@ -54,25 +54,15 @@ class MDsMessage(models.Model):
         max_length=200, help_text="e.g. John's Message", default='Message from the Managing Director')
     message = models.TextField()
     image = models.ImageField(
-        upload_to='media', help_text='The profile picture shoulde be at least 512px by 512px and either .jpg or .png')
+        upload_to='media', help_text='picture shoulde be at least 512px by 512px and either .jpg or .png')
     name_of_md = models.CharField(
         max_length=255, help_text='Write the full name')
-    position = models.CharField(max_length=50)
+    position = models.CharField(max_length=50, default='Managing Director')
     status = models.IntegerField(
-        choices=STATUS, default=0, help_text='Change to Publish for it to be seen')
+        choices=STATUS, default=0, help_text='Change to Published for it to be seen')
 
     class Meta:
         verbose_name = 'MDs Message'
-
-    @property
-    def short_description(self):
-        return truncatechars(self.message, 50)
-
-    def profile_image(self):
-        return mark_safe('<img src="{}" width="100px" />'.format(self.image.url))
-
-    profile_image.short_description = 'Image'
-    profile_image.allow_tags = True
 
     def __str__(self):
         return self.title
