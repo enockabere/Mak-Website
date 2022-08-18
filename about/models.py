@@ -39,11 +39,11 @@ class Personel(models.Model):
     full_name.short_description = 'Name'
     full_name.allow_tags = True
 
-    def profile_image(self):
+    def profile_photo(self):
         return mark_safe('<img src="{}" width="100px" />'.format(self.image.url))
 
-    profile_image.short_description = 'Image'
-    profile_image.allow_tags = True
+    profile_photo.short_description = 'Image'
+    profile_photo.allow_tags = True
 
     def __str__(self):
         return '%s %s %s' % (self.first_name, self.middle_name, self.last_name)
@@ -63,6 +63,16 @@ class MDsMessage(models.Model):
 
     class Meta:
         verbose_name = 'MDs Message'
+
+    @property
+    def short_description(self):
+        return truncatechars(self.message, 50)
+
+    # def profile_image(self):
+    #     return mark_safe('<img src="{}" width="100px" />'.format(self.image.url))
+
+    # profile_image.short_description = 'Image'
+    # profile_image.allow_tags = True
 
     def __str__(self):
         return self.title
