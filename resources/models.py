@@ -36,7 +36,41 @@ class Publication(models.Model):
     category = models.IntegerField(choices=PUB_CATEGORY, default=0)
     status = models.IntegerField(choices=STATUS, default=0)
 
+    class Meta:
+        verbose_name = 'Resource'
+
 
     def __str__(self):
         return self.name
 
+class Privacy(models.Model):
+    title = models.CharField(max_length=200, default='Privacy Policy')
+    content = models.TextField()
+    pub_date = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+    file = models.FileField(upload_to='media')
+    status = models.IntegerField(choices=STATUS, default=0, help_text='change to published to be seen')
+
+    class Meta:
+        verbose_name = 'Privacy Policy'
+        verbose_name_plural = 'Privacy Policy'
+
+
+    def __str__(self):
+        return self.title
+
+class Terms(models.Model):
+    title = models.CharField(max_length=200, default='Terms of Service')
+    content = models.TextField()
+    pub_date = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+    file = models.FileField(upload_to='media')
+    status = models.IntegerField(choices=STATUS, default=0, help_text='change to published to be seen')
+
+    class Meta:
+        verbose_name = 'Terms of Service'
+        verbose_name_plural = 'Terms of Service'
+
+
+    def __str__(self):
+        return self.title

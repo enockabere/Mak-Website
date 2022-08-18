@@ -1,5 +1,5 @@
 from django.contrib import admin
-from resources.models import Faq, Publication
+from resources.models import Faq, Publication, Privacy,Terms
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -12,7 +12,16 @@ class FaqAdmin(SummernoteModelAdmin):
     list_filter = ['date_created', ]
     search_fields = ['question', 'answer']
 
+class PrivacyAdmin(SummernoteModelAdmin):
+    list_display = ['title', 'modified', 'status']
+
+class TermsAdmin(SummernoteModelAdmin):
+    list_display = ['title', 'modified', 'status']
+
+
 
 # Register your models here.
 admin.site.register(Publication)
 admin.site.register(Faq, FaqAdmin)
+admin.site.register(Terms, TermsAdmin)
+admin.site.register(Privacy, PrivacyAdmin)

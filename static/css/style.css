@@ -2672,6 +2672,21 @@ footer .copyright ul li:hover {
   list-style: number;
 }
 
+.file a {
+  padding: 0.5em;
+  border: 1px solid;
+  border-radius: 4px;
+}
+.file a:hover {
+  background-color: #90cd4b;
+  color: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
+  border: none;
+}
+.file a i {
+  font-size: 16px;
+}
+
 .projects {
   margin-inline: 2em;
   margin-block: 1em;
