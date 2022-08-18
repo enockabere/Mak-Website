@@ -1,5 +1,3 @@
-from math import trunc
-from turtle import title
 from django.utils.safestring import mark_safe
 from django.template.defaultfilters import truncatechars
 from django.db import models
