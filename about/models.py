@@ -69,7 +69,7 @@ class MDsMessage(models.Model):
         return truncatechars(self.message, 50)
 
     def profile_photo(self):
-        return mark_safe('<img src="{}" width="100px" />'.format(self.image.url))
+        return mark_safe('<img src="{}" width="100px" />'.format( self.image, 'url' ))
 
     profile_photo.short_description = 'Image'
     profile_photo.allow_tags = True
