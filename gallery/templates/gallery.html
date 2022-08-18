@@ -28,8 +28,13 @@
             </div>
             <!-- full image prieview -->
             <div class="full__media--image" id="fullMediaBox">
-
+                
                 <img src="{{ photo.image.url }}" alt="" id="fullMedia">
+                
+                <div class="caption">
+                    <caption>{{ photo.caption | safe }}</caption>
+                </div>
+
                 <span onclick="closeFullMedia()"><i class="fa-solid fa-xmark"></i></span>
            </div>
            {% endfor %}
@@ -49,6 +54,11 @@
             <div class="full__media--image" id="fullVideoBox">
     
                 <video src="Video.video.url " id="fullMedia" controls></video>
+
+                <div class="caption">
+                    <caption>{{ photo.caption | safe }}</caption>
+                </div>
+
                 <span onclick="closeFullVideo()"><i class="fa-solid fa-xmark"></i></span>
            </div>
            {% endfor %}

@@ -3,5 +3,5 @@ from . import views
 
 
 urlpatterns = [
-    path('gallery', views.gallery_view, name='gallery'),
+    path('media-hub', views.gallery_view, name='gallery'),
 ]

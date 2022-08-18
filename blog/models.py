@@ -16,7 +16,7 @@ class Category(models.Model):
 
 STATUS = (
     (0, "Draft"),
-    (1, "Publish")
+    (1, "Published")
 )
 
 

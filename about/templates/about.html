@@ -16,33 +16,83 @@
     </div>
     <div class="about__content">
         {% for content in about_us %}
-        <p>{{content.description | safe}}</p>
+
+        <p>
+        
+            {{ content.description | safe }}
+        
+        </p>
         {% endfor %}
+
     </div>
 
 </setion>
 
 <section class="paralax paralax__about">
-    <div class="paralax__inner">
-        {% for statement in mission %}
+    {% for statement in mission %}
+    <div class="paralax__inner" style="background-image:url('{{ statement.image.url }}') ;">
         <div class="paralax__title">
-            <h1>{{ statement.title }}</h1>
+            <h1>{{statement.title}}</h1>
         </div>
         <div class="paralax__content">
-             <p>{{ statement.statement | safe }}</p>
+
+            <p>
+                {{ statement.statement | safe }}
+            </p>
+            
         </div>
-       {% endfor %}
     </div>
+    {% endfor %}
 </section>
 
+<div class="mandate">
+    <div class="heading mb-3">
+        <h1>Mandate & Functions</h1>
+        <div class="linebg_2"></div>
+    </div>
+    {% for statement in functions %}
+    <div style="list-style: letter;">{{statement.content | safe }}</div>
+
+    {% endfor %}
+
+</div>
+
+<section class="paralax paralax__about">
+    {% for statement in vision %}
+    <div class="paralax__inner" style="background-image:url('{{ statement.image.url }}')">
+        <div class="paralax__title">
+            <h1>Our Vision</h1>
+        </div>
+        <div class="paralax__content">
+
+            <p>
+                {{ statement.statement | safe }}
+            </p>
+
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+<div class="mandate">
+    <div class="heading mb-3">
+        <h1>Strategic Objectives</h1>
+        <div class="linebg_2"></div>
+    </div>
+    {% for statement in objectives %}
+
+    <div>{{ statement.content | safe }}</div>
+
+    {% endfor %}
+</div>
 
 <section class="leadership mt-2">
 
-    <div class="heading mb-3" >
+    <div class="heading mb-3">
         <h1>Our leadership</h1>
         <div class="linebg_1"></div>
     </div>
-    
+
 
     <div class="leader mt-3 mb-3">
         {% for leader in leader %}
@@ -53,7 +103,7 @@
         </div>
         {% endfor %}
 
-        
+
 </section>
 
 {% include 'section/cta_panel.html' %}

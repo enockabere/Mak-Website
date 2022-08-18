@@ -15,17 +15,19 @@
         <div class="linebg_1"></div>
     </div>
 
-    {% for project in projects %}
-    <div class="projects__main">
-        <div class="projects__content--image">
-            <img src="{% static '{{ project.image.url }}' %}" alt="">
+    <div class="projects__items">
+        {% for project in projects %}
+        <div class="projects__main">
+            <div class="projects__content--image">
+                <img src="{{project.image.url}}" alt="">
+            </div>
+            <div class="projects__content--content">
+                <h1>{{ project.title }}</h1>
+                <p>{{ project.description | safe}}</p>
+            </div>
         </div>
-        <div class="projects__content--content">
-            <h1>{{ project.title }}</h1>
-            <p>{{ project.description }}</p>
-        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 </div>
 
 

@@ -13,7 +13,8 @@ $breakpoints_down: (
     "xsmall": 699.98px,
     "small": 899.98px,
     "medium":1023.98px,
-    "large": 1439.98px
+    "large": 1439.98px,
+    'custom': 1100px,
 );
 
 @mixin breakpoint($size) {

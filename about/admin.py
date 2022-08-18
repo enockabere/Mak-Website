@@ -1,15 +1,12 @@
-from dataclasses import fields
 from django.contrib import admin
-
-from about.models import AboutUs, Personel, Mission, MDsMessage, Department
+from about.models import AboutUs, Personel, Mission, MDsMessage, Department, Functions, Objectives, Vision
 from django_summernote.admin import SummernoteModelAdmin
-
 
 
 class AboutUsAdmin(SummernoteModelAdmin):
     fields = ('description', 'status')
-    list_display = ['short_description', 'status']
-    list_display_links = ['short_description']
+    list_display = ['title', 'status']
+    list_display_links = ['title']
 
 
 class PersonelAdmin(SummernoteModelAdmin):
@@ -23,12 +20,12 @@ class PersonelAdmin(SummernoteModelAdmin):
         'image',
         'category',
         'status'
-     )
+    )
 
     list_display = [
         'profile_photo',
         'full_name',
-        'short_description',
+        'category',
         'status',
     ]
     list_display_links = ['full_name']
@@ -39,13 +36,14 @@ class PersonelAdmin(SummernoteModelAdmin):
         'last_name',
     ]
 
+
 class MDsMessageAdmin(SummernoteModelAdmin):
     fields = (
-        'image', 
-        'title',  
+        'image',
+        'title',
         'message',
-        'name_of_md', 
-        'position', 
+        'name_of_md',
+        'position',
         'status'
     )
 
@@ -55,13 +53,24 @@ class MDsMessageAdmin(SummernoteModelAdmin):
         'name_of_md',
         'status',
     ]
-    list_display_links = ['title','name_of_md']
+    list_display_links = ['title', 'name_of_md']
     list_filter = ["status", ]
-    search_fields = ['name_of_md',]
-    
+    search_fields = ['name_of_md', ]
+
+
 class DepartmentAdmin(SummernoteModelAdmin):
-    list_display = ['title', 'short_content', 'status']
+    list_display = ['title', 'status']
     list_filter = ['status']
+
+
+class FunctionsAdmin(SummernoteModelAdmin):
+    list_display = ['title', 'status']
+
+class ObjectivesAdmin(SummernoteModelAdmin):
+    list_display = ['title', 'status']
+
+class VisionAdmin(admin.ModelAdmin):
+    list_display = ['title', 'status']
 
 # Register your models here.
 admin.site.register(AboutUs, AboutUsAdmin)
@@ -69,3 +78,6 @@ admin.site.register(Personel, PersonelAdmin)
 admin.site.register(Mission)
 admin.site.register(MDsMessage, MDsMessageAdmin)
 admin.site.register(Department, DepartmentAdmin)
+admin.site.register(Functions, FunctionsAdmin)
+admin.site.register(Objectives, ObjectivesAdmin)
+admin.site.register(Vision, VisionAdmin)

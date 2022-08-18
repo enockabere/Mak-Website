@@ -5,7 +5,7 @@
 {% block body %}
 <section class="hero">
     <div class="hero__title">
-        <h1>Home / Downloads & Publications</h1>
+        <h1>Home / Resources</h1>
     </div>
 </section>
 
@@ -13,18 +13,21 @@
     <main class="grid__main">
         <div class="grid__main--item">
             <div class="heading mb-3">
-                <h1>Downloads & Publications</h1>
+                <h1>Resources</h1>
                 <div class="linebg_2"></div>
             </div>
             <div class="grid__main--list">
                 <div class="publication">
                     <div class="publication__sidenav">
-                        <form action="">
+                        <!-- <form action="">
                             <input type="search" placeholder="Search">
                         </form>
-                        <h4 class="my-1">years</h4>
+                        <h4 class="my-1">Links</h4> -->
                         <ul>
-                            <li><a href="">2022</a></li>
+                            <li><a href="">Acts</a></li>
+                            <li><a href="">Strategic plan</a></li>
+                            <li><a href="">Service Charter</a></li>
+                            <li><a href="">Application Forms</a></li>
                         </ul>
                         
 
@@ -35,7 +38,7 @@
                             <ol>
                                 {% for pub in pub %}
                                 <li>
-                                    <a href="{% static '{{ pub.file.url }}' %}" download="">{{ pub.name }}</a>
+                                    <a href="{{ pub.file.url }}" download="">{{ pub.name }}</a>
                                 </li>                             
                                 {% endfor %}
                             </ol>

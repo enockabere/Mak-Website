@@ -1,4 +1,5 @@
 from math import trunc
+from turtle import title
 from django.utils.safestring import mark_safe
 from django.template.defaultfilters import truncatechars
 from django.db import models
@@ -7,8 +8,8 @@ from blog.models import STATUS
 # Create your models here.
 
 CATEGORY = [
-    (0, 'Board of management'),
-    (1, "Leadership")
+    (0, 'Board of Directors'),
+    (1, "Management Team")
 ]
 
 
@@ -51,9 +52,10 @@ class Personel(models.Model):
 
 
 class MDsMessage(models.Model):
-    title = models.CharField(max_length=200, help_text="e.g. John's Message")
+    title = models.CharField(
+        max_length=200, help_text="e.g. John's Message", default='Message from the Managing Director')
     message = models.TextField()
-    image = models.ImageField(
+    image = models.ImageField( upload_to='media',
         blank=True, help_text='The profile picture shoulde be at least 512px by 512px and either .jpg or .png')
     name_of_md = models.CharField(
         max_length=255, help_text='Write the full name')
@@ -79,25 +81,54 @@ class MDsMessage(models.Model):
 
 
 class AboutUs(models.Model):
+    title = models.CharField(max_length=200, default='Who we are')
     description = models.TextField()
     status = models.IntegerField(
         choices=STATUS, default=0, help_text='Change to Publish for it to be seen')
 
     class Meta:
-        verbose_name_plural = 'About Us'
-
+        verbose_name = 'Who We are'
+        verbose_name_plural = 'Who We are'
 
     @property
     def short_description(self):
         return truncatechars(self.description, 50)
 
     def __str__(self):
-        return self.short_description
+        return self.title
+
+
+class Functions(models.Model):
+    title = models.CharField(max_length=200, default='Mandate & Functions')
+    content = models.TextField()
+    status = models.IntegerField(
+        choices=STATUS, default=0, help_text='Change to Publish for it to be seen')
+
+    class Meta:
+        verbose_name = 'Mandate & Function'
+
+    def __str__(self):
+        return self.title
+
+
+class Objectives(models.Model):
+    title = models.CharField(max_length=200, default='Strategic Objectives')
+    content = models.TextField()
+    status = models.IntegerField(
+        choices=STATUS, default=0, help_text='Change to Publish for it to be seen')
+
+    class Meta:
+        verbose_name = 'Strategic Objective'
+
+    def __str__(self):
+        return self.title
 
 
 class Mission(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, default='Our Mission')
     statement = models.TextField()
+    image = models.ImageField(upload_to='media',
+        blank=True, help_text='The Image shoulde be at least 10px by 720px and either .jpg or .png')
     status = models.IntegerField(
         choices=STATUS, default=0, help_text='Change to Publish for it to be seen')
 
@@ -105,10 +136,23 @@ class Mission(models.Model):
         verbose_name = 'Mission Statement'
 
 
+class Vision(models.Model):
+    title = models.CharField(max_length=200, default='Our Vision')
+    statement = models.TextField()
+    image = models.ImageField( upload_to='media',
+        blank=True, help_text='The Image shoulde be at least 10px by 720px and either .jpg or .png')
+    status = models.IntegerField(
+        choices=STATUS, default=0, help_text='Change to Publish for it to be seen')
+
+    class Meta:
+        verbose_name = 'Vision Statement'
+
+
 class Department(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
-    status = models.IntegerField(choices=STATUS, default=0, help_text='Change to Publish for it to be seen')
+    status = models.IntegerField(
+        choices=STATUS, default=0, help_text='Change to Publish for it to be seen')
 
     @property
     def short_content(self):

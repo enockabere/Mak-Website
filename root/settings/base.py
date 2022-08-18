@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'gallery',
     'resources',
     'projects',
-
+    'career',
 ]
+
 
 # from easy_thumbnails.conf import Settings as thumbnail_settings
 # THUMBNAIL_PROCESSORS = (

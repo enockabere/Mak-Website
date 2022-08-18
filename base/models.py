@@ -1,5 +1,3 @@
-from email import message
-from inspect import trace
 from django.utils.safestring import mark_safe
 from django.template.defaultfilters import truncatechars
 from django.db import models
@@ -61,7 +59,7 @@ class Patner(models.Model):
 
 class CallToActionPanel(models.Model):
     title = models.CharField(max_length=200, primary_key=True)
-    image = models.ImageField()
+    image = models.ImageField(upload_to='media')
     description = models.TextField(blank=True, null=True)
     url = models.URLField(blank=True, null=True)
     status = models.IntegerField(choices=STATUS, default=0, help_text = 'Change to Publish for it to be seen')
@@ -83,7 +81,7 @@ class CallToActionPanel(models.Model):
 class Empowerment(models.Model):
     title = models.CharField(max_length=200)
     message = models.TextField()
-    image = models.ImageField(upload_to='media') #0704521519
+    image = models.ImageField(upload_to='media') 
     pub_date = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0, help_text='change to published to show front end')
 

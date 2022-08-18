@@ -3,8 +3,15 @@
     margin-inline: 2em;
     margin-block: 1em;
 
-    .header h1{
+    .heading h1{
         text-align: center;
+    }
+    &__items{
+        
+        @include breakpoint(medium){
+            display: grid;
+            grid-template-columns: auto auto;
+        }
     }
 
     &__main{
@@ -13,8 +20,10 @@
         margin-bottom: 1em;
         padding: 1em;
 
-        &:last-child{
-            border-bottom: none;
+        @include breakpoint-down(small){
+            &:last-child{
+                border-bottom: none;
+            }
         }
 
         h1{
@@ -24,8 +33,12 @@
         }
         img{
             width: 100%;
+            aspect-ratio: 4/3;
+            max-width: 30em;
+            -o-object-fit: cover;
+            object-fit: cover;
         }
-        @include breakpoint(medium){
+        @include breakpoint(xlarge){
             display: grid;
             grid-template-columns: auto auto;
             grid-template-rows: auto;
