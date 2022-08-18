@@ -53,8 +53,8 @@ class MDsMessage(models.Model):
     title = models.CharField(
         max_length=200, help_text="e.g. John's Message", default='Message from the Managing Director')
     message = models.TextField()
-    image = models.ImageField( upload_to='media',
-        blank=True, help_text='The profile picture shoulde be at least 512px by 512px and either .jpg or .png')
+    image = models.ImageField(
+        upload_to='media', help_text='The profile picture shoulde be at least 512px by 512px and either .jpg or .png')
     name_of_md = models.CharField(
         max_length=255, help_text='Write the full name')
     position = models.CharField(max_length=50)
@@ -126,7 +126,7 @@ class Mission(models.Model):
     title = models.CharField(max_length=200, default='Our Mission')
     statement = models.TextField()
     image = models.ImageField(upload_to='media',
-        blank=True, help_text='The Image shoulde be at least 10px by 720px and either .jpg or .png')
+                              blank=True, help_text='The Image shoulde be at least 10px by 720px and either .jpg or .png')
     status = models.IntegerField(
         choices=STATUS, default=0, help_text='Change to Publish for it to be seen')
 
@@ -137,8 +137,8 @@ class Mission(models.Model):
 class Vision(models.Model):
     title = models.CharField(max_length=200, default='Our Vision')
     statement = models.TextField()
-    image = models.ImageField( upload_to='media',
-        blank=True, help_text='The Image shoulde be at least 10px by 720px and either .jpg or .png')
+    image = models.ImageField(upload_to='media',
+                              blank=True, help_text='The Image shoulde be at least 10px by 720px and either .jpg or .png')
     status = models.IntegerField(
         choices=STATUS, default=0, help_text='Change to Publish for it to be seen')
 
