@@ -98,10 +98,10 @@
                             <a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
                         </h2>
 
-                        <p>{{post.content|slice:":150"}}...</p>
+                        <p>{{ post.content|slice:":250" | safe }}...</p>
                         <small>
-                            <span class="visuallyhidden">Uploaded</span>
-                            2 weeks ago
+                            <span class="visuallyhidden">Uploaded | </span>
+                            {{ post.created_on | date }}
                         </small>
                     </div>
                     <div class="read__more">

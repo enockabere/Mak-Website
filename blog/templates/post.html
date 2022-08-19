@@ -26,10 +26,10 @@
                             <a href="{% url 'post_detail' post.slug  %}">{{ post.title }}</a>
                         </h2>
                        
-                        <p>{{ post.content|slice:":150"}}...</p>
+                        <p>{{ post.content | slice:":250" | safe }}...</p>
                         <small>
-                            <span class="visuallyhidden">Uploaded</span>
-                            2 weeks ago
+                            <span class="visuallyhidden">Uploaded | </span>
+                            {{ post.created_on | date }}
                         </small>
                     </div>
                 </a>
@@ -47,15 +47,15 @@
                 <input type="search" id="gsearch" name="gsearch" placeholder="Search here...">
             </form>
         </div>
-        <div class="bloggrid__sidebar--categories">
+        <!-- <div class="bloggrid__sidebar--categories">
             <h1>Categories</h1>
             <ul class="Category__list">
                 <li><a href="">Default Category &raquo;</a></li>
                 
             </ul>
-        </div>
+        </div> -->
 
-        <hr class="my-2 px-1">
+        <!-- <hr class="my-2 px-1"> -->
 
         <div class="bloggrid__sidebar--categories">
             <h1>Useful Links</h1>
