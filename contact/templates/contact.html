@@ -39,11 +39,12 @@
     
     <div class="contact__form">
 
-        <form action="" >
+        <form action="" method="post">
+            {% csrf_token %}
             <div class="form-control">
                 <label for="response"> Response options</label>
                 <div class="select">
-                    <select id="response" name="response">
+                    <select id="id_type" name="type" required>
                         <option value="default">-- type of response ---</option>
                         <option value="0">Inquiry</option>
                         <option value="1">Suggestions</option>
@@ -53,28 +54,25 @@
             </div>
             <div class="form-control">
                 <label for="name"> Name</label>
-                <input type="text" id="name" placeholder="e.g  John Doe">
+                {{ form.name }}
             </div>
 
             <div class="form-control">
                 <label for="email">Email</label>
-                <input type="text" id="email" placeholder="e.g. info@example.com">
+                {{ form.email }}
             </div>
 
             <div class="form-control">
                 <label for="subject">Subject</label>
-                <input type="text" id="subject" placeholder="e.g Inqury">
+                {{ form.subject }}
             </div>
 
             <div class="form-control">
                 <label for="message">Message</label>
-                <textarea name="message" id="message" placeholder="Message"></textarea>
+                {{ form.message }}
             </div>
 
-
-
-
-            <button class="btn btn-secondary"> Send</button>
+            <button type="submit" class="btn btn-secondary"> Send</button>
         </form>
     </div>
 
