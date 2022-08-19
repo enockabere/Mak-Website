@@ -8,10 +8,10 @@ from blog.models import STATUS
 
 class Carousel(models.Model):
     image = models.ImageField(upload_to='media', help_text='Image size should be 2646px X 1330px')
-    title = models.CharField(max_length=100)
-    caption = models.TextField(max_length=100)
+    title = models.CharField(max_length=100, blank=True, default='Our Sand, Our livelihood')
+    caption = models.TextField(max_length=100, blank=True)
     created_on = models.DateTimeField(auto_now_add=True, editable=False)
-    status = models.IntegerField(choices=STATUS, default=0, help_text = 'Change to Publish for it to be seen')
+    status = models.IntegerField(choices=STATUS, default=0, help_text = 'Change to Published for it to be seen')
 
     class Meta:
         verbose_name_plural = 'Carousel'
