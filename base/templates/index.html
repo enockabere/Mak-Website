@@ -98,7 +98,7 @@
                             <a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
                         </h2>
 
-                        <p>{{ post.content|slice:":250" | safe }}...</p>
+                        <p>{{ post.content |safe | truncatewords_html:20  }}</p>
                         <small>
                             <span class="visuallyhidden">Uploaded | </span>
                             {{ post.created_on | date }}
