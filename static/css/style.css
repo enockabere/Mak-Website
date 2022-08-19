@@ -1619,6 +1619,11 @@ textarea {
 }
 .patners__list ul img {
   max-height: 100px;
+  object-fit: contain;
+}
+.patners__list ul a {
+  display: flex;
+  flex-direction: column;
 }
 
 .action {

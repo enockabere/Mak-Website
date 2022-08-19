@@ -135,8 +135,14 @@
             gap: 2em;
 
             img{
-                
+
                 max-height: 100px;
+                object-fit: contain;
+            }
+
+            a{
+                display: flex;
+                flex-direction: column;
             }
 
         }
