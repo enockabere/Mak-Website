@@ -40,11 +40,14 @@ class Post(models.Model):
     def short_description(self):
         return truncatechars(self.content, 20)
 
+
+
     def blog_photo(self):
         return mark_safe('<img src="{}" width="150px" />'.format(self.image.url))
 
     blog_photo.short_description = 'Image'
     blog_photo.allow_tags = True
+
 
     def __str__(self):
         return self.title
