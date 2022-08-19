@@ -8,6 +8,7 @@ class CareerList(ListView):
     template_name = 'career.html'
     paginate_by: int = 8
     queryset = JobAdvert.objects.filter(status=1).order_by('pub_date')
+    
 
 
 class careerDetail(DetailView):
