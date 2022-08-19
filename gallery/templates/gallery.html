@@ -18,14 +18,16 @@
     </div>
     <div class="tabs__body">
         <div class="tabs__content is-active">
-            {% for photo in photos %}
             <div class="tabs__media--container">
                 
+                {% for photo in photos %}
                 <div class="img">
                     <img src="{{ photo.image.url }}" alt="" onclick="openFullMedia(this.src)">
                 </div>
+                {% endfor %}
                 
             </div>
+            {% for photo in photos %}
             <!-- full image prieview -->
             <div class="full__media--image" id="fullMediaBox">
                 
@@ -42,14 +44,16 @@
 
         <div class="tabs__content">
 
-            {% for video in videos %}
             <div class="tabs__media--container">
+                {% for video in videos %}
                 <div class="video">
                     <video src="{{ video.video.url }}"  onclick="openFullVideo(this.src)"></video>
                 </div>
                 
+                {% endfor %}
             </div>
-
+            
+            {% for video in videos %}
             <!-- Full Video preview -->
             <div class="full__media--image" id="fullVideoBox">
     
