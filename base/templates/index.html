@@ -48,6 +48,11 @@
                 environmental and socio-economic development.</p>
         </div>
 
+        <div class="grid__main--items">
+            <h2>Our Vision &rarr;</h2>
+            <p>To be a world class Authority in sand conservation and utilization for sustainable development.</p>
+        </div>
+
         
 
     </main>
@@ -61,8 +66,8 @@
         Recent Articles Begin
  ----------------------------------------------------------------->
 {% for emp in emp %}
-<section class="paralax" style="background: url('{{ emp.image.url }}') center no-repeat;">
-    <div class="paralax__inner">
+<section class="paralax" >
+    <div class="paralax__inner" style="background: url('{{ emp.image.url }}') no-repeat center; background-size: cover;">
         <div class="paralax__title">
             <h1>Community Empowerment</h1>
         </div>
