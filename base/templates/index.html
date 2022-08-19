@@ -28,7 +28,7 @@
 
 
 <div class="grid">
-    <main class="grid__main">
+    <main class="grid__main home">
 
 
         <div class="grid__main--items">
@@ -135,7 +135,7 @@
             {% for patner in patners %}
             <li>
                 <a href="{{ patner.url }}">
-                    <img src="{{ patner.image.url }}" width="200" alt="{{patner.name}}" />
+                    <img src="{{ patner.image.url }}" alt="{{patner.name}}" />
                 </a>
             </li>
             {% endfor %}

@@ -17,14 +17,19 @@
         padding: 40px;
     }
 
+    .home {
+        grid-template-columns: auto auto;
+    }
+    
     &__main {
         background-color: inherit;
 
         @include u.breakpoint(large) {
             display: grid;
-            grid-template-columns: auto auto;
-        }
+            grid-template-columns: auto;
 
+        }
+        
         &--items {
             h2 {
                 color: $secondary_color;
@@ -239,6 +244,7 @@
 
             .desc-btn {
                 text-align: right;
+
                 a {
                     justify-self: end;
                     padding: .5em 1em;

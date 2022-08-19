@@ -985,13 +985,16 @@ textarea {
 .grid__main, .grid__sidebar {
   padding: 40px;
 }
+.grid .home {
+  grid-template-columns: auto auto;
+}
 .grid__main {
   background-color: inherit;
 }
 @media (min-width: 1024px) {
   .grid__main {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
   }
 }
 .grid__main--items h2 {
@@ -1614,6 +1617,9 @@ textarea {
   justify-content: center;
   gap: 2em;
 }
+.patners__list ul img {
+  max-height: 100px;
+}
 
 .action {
   background-color: #90cd4b;
@@ -2079,6 +2085,11 @@ footer .footer__content {
     gap: 2em;
     grid-template-columns: auto auto auto auto;
   }
+}
+footer .footer__content--item h4 {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
 }
 footer .footer__content--item a {
   color: inherit;

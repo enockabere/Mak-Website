@@ -134,6 +134,11 @@
             justify-content: center;
             gap: 2em;
 
+            img{
+                
+                max-height: 100px;
+            }
+
         }
     }
 }
@@ -680,6 +685,12 @@ footer {
 
             &--item {
                 // margin-bottom: 2em;
+
+                h4{
+                    text-decoration: underline;
+                    text-underline-offset: 5px;
+                    text-decoration-thickness: 2px;
+                }
 
                 a {
                     color: inherit;
