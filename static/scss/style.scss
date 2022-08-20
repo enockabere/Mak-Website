@@ -55,7 +55,10 @@
         opacity: 1;
     }
 
-    &.visible {
-        right: 40px;
-    }
+}
+.visible {
+    right: 40px;
+}
+.gone{
+    right: 0;
 }

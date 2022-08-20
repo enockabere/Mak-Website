@@ -166,6 +166,14 @@ function showHidebackToTop() {
 
 
 
+
+// smooth scroll
+
+var scroll = new SmoothScroll('a[href*="#"]', {
+  speed: 1000
+});
+
+
 // Modal popup
 
 const modal = document.querySelector('#modal');
@@ -179,12 +187,4 @@ openModal.addEventListener('click', () => {
 closeModal.addEventListener('click', () => {
   modal.close();
 })
-
-
-// smooth scroll
-
-var scroll = new SmoothScroll('a[href*="#"]', {
-  speed: 1000
-});
-
 

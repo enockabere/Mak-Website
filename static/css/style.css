@@ -607,7 +607,7 @@ textarea {
 .logo h2 {
   font-size: 1em;
   line-height: 1;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .header__top {
@@ -2788,6 +2788,11 @@ footer .copyright ul li:hover {
   background-color: rgb(184, 121, 5);
   opacity: 1;
 }
-#back-to-top.visible {
+
+.visible {
   right: 40px;
+}
+
+.gone {
+  right: 0;
 }
