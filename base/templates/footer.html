@@ -54,9 +54,10 @@
 
             <div class="footer__content--item">
                 <h4>Subscribe to our Newsletter</h4>
-                <form action="">
+                <form action="" method="post">
+                    {% csrf_token %}
                     <div class="form-control">
-                        <input type="email" id="subscribe" placeholder="name@example.com">
+                        {{ form.email }}
                     </div>
                     <button class="btn btn-secondary">Subscribe</button>
                 </form>
