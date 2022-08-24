@@ -5,15 +5,6 @@
     <ul class="easy-contact">
         <li>
             <div class="easy-contact-icon">
-                <span><i class="fa-solid fa-clock"></i></span>
-            </div>
-            <div class="easy-contact-info">
-                <!-- <span>Open Hours</span> -->
-                <p>Mon - Fri, 8:00am - 5:00pm</p>
-            </div>
-        </li>
-        <li>
-            <div class="easy-contact-icon">
                 <span><i class="fa-solid fa-phone"></i></span>
             </div>
             <div class="easy-contact-info">
@@ -32,8 +23,12 @@
         </li>
 
     </ul>
+    <div class="search">
+        <input type="search" id="search" placeholder="search here...">
+        <button><i class="fa fa-search"></i></button>
+    </div>
     <div class="cta">
-        <a href="">Take Action</a>
+        <a href="">Learn More</a>
     </div>
 </div>
 
@@ -45,7 +40,7 @@
     <div class="logo" title="Makueni sand Conservation and Utilization Authority">
         <a href="/">
             <img src="{% static 'img/logo1.png' %}" alt="">
-            <h2>Makueni County <br> sand Conservation &  <br> Utilization Authority </h2>
+            <h2 style="font-family: serif;">Makueni County <br> sand Conservation &  <br> Utilization Authority </h2>
         </a>
     </div>
 
@@ -55,57 +50,51 @@
             <li>
                 <a href="/">Home</a>
             </li>
-            <li>
-                <a>About Us</a> <i class="las la-angle-down"></i></i>
+            <li class="dropdown">
+                <span>About Us <i class="las la-angle-down"></i></span>
                 <div class="sub-menu">
-                    <ul>
-                        <li><a href="{% url 'about' %}">Who we are</a></li>
-                        <li><a href="{% url 'services' %}">Our Mandate and Functions </a></li>
-                        <li><a href="{% url 'departments' %}">Departments</a></li>
-                        <hr>
-                        <li><a href="{% url 'team' %}">Board of directors</a></li>
-                        <li><a href="{% url 'md' %}">Message from MD</a></li>
-                    </ul>
+                        <a href="{% url 'about' %}">Who we are</a>
+                        <a href="{% url 'values' %}">Our Mission & Vision </a>
+                        <a href="{% url 'services' %}">Our Mandate and Functions </a>
+                        <a href="{% url 'service-charter' %}">Service Charter</a>
+                        <a href="{% url 'strategic-plan' %}">Strategic plan</a>
+                        <a href="{% url 'departments' %}">Departments</a>
+                        <a href="{% url 'team' %}">Board of directors</a>
+                        <a href="{% url 'md' %}">Message from MD</a>
                 </div>
             </li>
-           
 
             <li>
                 <a href="{% url 'projects' %}">Projects</a>
             </li>
 
-            <li>
-                <a href="{% url 'post' %}">Articles</a>
-            </li>
-            <li>
-                <a href="{% url 'publication' %}">Resource Center</a>
-            </li>
-            
-            <li>
-                <a href="{% url 'gallery' %}">Media Hub</a>
-            </li>
-            <li>
-                <a>Work with Us</a><i class="las la-angle-down"></i></i>
+            <li class="dropdown">
+                <span>Resource Center<i class="las la-angle-down"></i></span>
                 <div class="sub-menu">
-                    <ul>
-                        <li><a href="{% url 'career' %}">Career/Vacancies</a></li>
-                        <li><a href="{% url 'tender' %}">TENDERS</a></li>
-                        <hr>
-                        <li><a href="">Internships</a></li>
-                    </ul>
+                    <a href="{% url 'publication' %}">Reports</a>  
+            </div>
+            </li>
+            <li class="dropdown">
+                <span>Media Hub<i class="las la-angle-down"></i></span>
+                <div class="sub-menu">
+                        <a href="{% url 'post' %}">Articles</a>
+                        <a href="{% url 'gallery' %}">Gallery</a>
+                        <a href="{% url 'faq' %}">FAQs</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <span>Work with Us<i class="las la-angle-down"></i></span>
+                <div class="sub-menu">
+
+                        <a href="{% url 'tender' %}">Tenders</a>
+                        <a href="{% url 'career' %}">Careers</a>
+                        <a href="">Internships & Attahcments</a>
+                    
                 </div>
             </li>
 
             <li>
                 <a href="{% url 'contact' %}">Contact Us</a>
-            </li>
-
-
-            <li class="search__global" >
-                <button onclick="search()" class="search__global--btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <div class="search__global--form" id="globalSearch">
-                    <input type="search">
-                </div>
             </li>
         </ul>
 

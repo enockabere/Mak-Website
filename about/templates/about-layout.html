@@ -1,33 +1,24 @@
-{% extends 'about-layout.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block title %} About {% endblock title %}
 
-{% block hero %} About Us {% endblock hero %}
+{% block body %}
+<section class="hero">
+    <div class="hero__title">
+        <h1>
+            {% block hero %} {% endblock hero %}
+        </h1>
+    </div>
+</section>
 {% block about %}
 
-<setion class="about mt-3 mb-3">
-    <div class="about__title mt-2">
-        <h4>Background Information</h4>
-    </div>
-    <div class="about__content">
-        {% for content in about_us %}
-
-        <p>
-
-            {{ content.description | safe }}
-
-        </p>
-        {% endfor %}
-
-    </div>
-
-</setion>
 
 
 {% endblock about %}
 
 {% include 'section/cta_panel.html' %}
 
+{% endblock body %}
 <section class="paralax paralax__about">
     {% for statement in mission %}
     <div class="paralax__inner" style="background-image:url('{{ statement.image.url }}') ;">

@@ -27,7 +27,7 @@ $metric-interaction-padding: 0.6rem 0.6rem;
         justify-content: center;
 
         @include u.breakpoint(small){
-            grid-template-columns: repeat(auto-fit, minmax(20rem, 20rem));
+            grid-template-columns: repeat(auto-fit, minmax(12rem, 17rem));
         }
 
     }

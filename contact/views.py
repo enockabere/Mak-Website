@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from base.models import CallToActionPanel
 from .forms import FeedbackForm
+from base.forms import SubscriptionForm
 
 # Create your views here.
 
@@ -8,6 +9,7 @@ from .forms import FeedbackForm
 def contact_view(request):
     if request.method == 'POST':
         form = FeedbackForm(request.POST)
+        form2 = SubscriptionForm(request.POST)
         if form.is_valid():
             form.save()
 

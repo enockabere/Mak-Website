@@ -33,7 +33,8 @@
 
         <div class="grid__main--items">
             <h2><a href="{% url 'about' %}">Who we are &rarr;</a></h2>
-            <p>A taskforce was then appointed to review sand harvesting and how the sand resource could be harnessed for socio-economic development....  </p>
+            <p>A taskforce was then appointed to review sand harvesting and how the sand resource could be harnessed for
+                socio-economic development.... </p>
         </div>
 
         <div class="grid__main--items">
@@ -53,12 +54,16 @@
             <p>To be a world class Authority in sand conservation and utilization for sustainable development.</p>
         </div>
 
-        
+
 
     </main>
     <aside class="grid__sidebar">
         <h1>A Future Where People & Nature Thrive</h1>
-        <p>As an organization we are keen on sustainable conservation and utilization of sand within Makueni County. We enhance community’s knowledge on importance of environmental protection and sustainable sand utilization through public barazas and partner other organizations in construction of sand dams. Makueni County has an effective framework to oversee sand activities thus serves as a case study for how other counties can ameliorate illegal sand harvesting.</p>
+        <p>As an organization we are keen on sustainable conservation and utilization of sand within Makueni County. We
+            enhance community’s knowledge on importance of environmental protection and sustainable sand utilization
+            through public barazas and partner other organizations in construction of sand dams. Makueni County has an
+            effective framework to oversee sand activities thus serves as a case study for how other counties can
+            ameliorate illegal sand harvesting.</p>
     </aside>
 </div>
 
@@ -66,8 +71,9 @@
         Recent Articles Begin
  ----------------------------------------------------------------->
 {% for emp in emp %}
-<section class="paralax" >
-    <div class="paralax__inner" style="background: url('{{ emp.image.url }}') no-repeat center; background-size: cover;">
+<section class="paralax">
+    <div class="paralax__inner"
+        style="background: url('{{ emp.image.url }}') no-repeat center; background-size: cover;">
         <div class="paralax__title">
             <h1>Community Empowerment</h1>
         </div>
@@ -90,9 +96,7 @@
     <ul class="cards mb-3">
         {% for post in post %}
         <li class="card">
-            <a href="{% url 'post_detail' post.slug %}">
-                <div>
-
+                <a href="{% url 'post_detail' post.slug %}">
                     <div class="card__img">
                         <div class="img__cover">
                             <img src="{{ post.image.url }}" alt="" />
@@ -100,21 +104,17 @@
                     </div>
                     <div class="[ card__text ] [ flow ]">
                         <h2>
-                            <a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
+                            <span>{{ post.title }}</span>
                         </h2>
 
-                        <p>{{ post.content |safe | truncatewords_html:20  }}</p>
+                        <p>{{ post.content |safe | truncatewords_html:20 }}</p>
                         <small>
                             <span class="visuallyhidden">Uploaded | </span>
                             {{ post.created_on | date }}
                         </small>
                     </div>
-                    <div class="read__more">
-                        <a href="{% url 'post_detail' post.slug %}">Read More &rarr;</a>
-                    </div>
-                </div>
-        </li>
-        </a>
+                </a>
+            </li>
         {% endfor %}
 
     </ul>

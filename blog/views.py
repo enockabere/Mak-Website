@@ -8,7 +8,7 @@ from .models import Post
 
 class PostList(ListView):
     template_name = 'post.html'
-    paginate_by: int = 12
+    paginate_by: int = 9
     queryset = Post.objects.filter(status=1).order_by('-created_on')
 
 
@@ -41,7 +41,7 @@ def search(request):
                     else:
                         all_queries = all_queries & keyword_query
 
-        articles = models.Post.objects.filter(all_queries).distinct()
+        articles = Post.objects.filter(all_queries).distinct()
         context = {'articles':articles}
         return render(request, 'search.html', context)
 

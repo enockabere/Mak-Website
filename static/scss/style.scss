@@ -13,12 +13,12 @@
     bottom: 60px;
     width: 40px;
     height: 40px;
-    background-color: #000;
+    background-color: $primary_color_darker;
     color: #fafafa;
     font-size: 30px;
     text-align: center;
     text-decoration: none;
-    opacity: 0.5;
+    border-radius: 50%;
     cursor: pointer;
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;

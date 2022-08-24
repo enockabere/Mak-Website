@@ -254,22 +254,25 @@
 // about section
 
 .about {
-    display: flex;
+    display: block;
     width: 100%;
     gap: 2em;
     overflow: hidden;
+    padding-inline: 6rem;
 
     @include u.breakpoint-down(medium) {
         display: block;
+        margin-inline: unset;
     }
 
     &__title {
-        width: 50vw;
+       
         margin-inline: 1em;
         text-align: center;
 
         @include u.breakpoint-down(medium) {
             width: 100vw;
+            text-align: center;
         }
 
         h1 {
@@ -285,17 +288,32 @@
     }
 
     &__content {
-        width: 50vw;
         padding: 1em;
 
         @include u.breakpoint-down(medium) {
             width: 100vw;
-            text-align: center;
+            text-align: left;
             padding: 1.5em;
         }
 
         p {
             padding: 1em;
+        }
+
+        &--inner{
+            display: flex;
+            position: relative;
+            
+            .item{
+                text-align: center;
+
+                h1{
+                    font-size: 1.5em;
+                    text-transform: capitalize;
+                    font-weight: 600;
+                }
+                
+            }
         }
     }
 }
@@ -721,12 +739,15 @@ footer {
     }
 
     .copyright {
+        @include set_background($primary_color_darker);
+        margin-top: 1em;
         text-align: left;
-        padding-block: 1em;
+        padding-block: .5em;
         display: flex;
-        justify-content: space-between;
+        gap: 10px;
+        justify-content: center;
         padding-inline: 2em;
-
+        font-size: small;
 
         @include u.breakpoint-down(xsmall) {
             display: block;
@@ -734,10 +755,17 @@ footer {
 
         ul {
             display: flex;
-            gap: 10px;
+
             padding-inline-end: 1em;
 
             li {
+
+                border-right: 1PX solid;
+                padding-inline: .5em;
+
+                &:last-child{
+                    border-right: none;
+                }
 
                 &:hover {
                     text-decoration: underline;
@@ -757,4 +785,21 @@ footer {
     width: 100%;
     position: fixed;
     z-index: 99999;
+}
+
+
+.pagination{
+    .nav-links{
+        text-align: center;
+        .page-numbers{
+            padding: 10px;
+            border-radius: 4px;
+            @include set_background($primary_color_dark);
+            margin-right: 5px;
+
+        }
+        .current{
+            @include set_background($secondary_color)
+        }
+    }
 }
