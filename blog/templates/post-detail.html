@@ -9,19 +9,6 @@
     </div>
 </section>
 
-<div class="grid">
-    <main class="grid__main">
-        <div class="grid__main--item">
-            
-            
-        </div>
-
-    </main>
-    <aside class="grid__sidebar">
-        {% include 'aside.html' %}
-    </aside>
-</div>
-
 <section class="bloggrid">
     <div class="bloggrid__main">
 
@@ -46,11 +33,11 @@
                     </div>
                 </div>
             </div>
-
-
+            
+            
         </div>
         <hr class="my-2">
-
+        
         <!-- <h1>Related Posts</h1> -->
         <!-- <ul class="cards">
             <li class="card">
@@ -77,8 +64,8 @@
             </li>
         </ul> -->
     </div>
-
-
+    
+    
     <div class="bloggrid__sidebar">
         <div class="bloggrid__sidebar--search mb-2 mt-2">
             <form>
@@ -95,12 +82,12 @@
                 <li><a href="">Default Category &raquo;</a></li>
             </ul>
         </div>
-
+        
         <hr class="my-2 px-1"> -->
-
+        
         <div class="bloggrid__sidebar--categories">
             <h1>Useful Links</h1>
-
+            
             <ul class="Category__list">
                 <li><a href="">TENDER &raquo;</a></li>
                 <li><a href="{% url 'career' %}">Career/Vacancies &raquo;</a></li>
@@ -115,3 +102,16 @@
 </section>
 
 {% endblock body %}
+
+<div class="grid">
+    <main class="grid__main">
+        <div class="grid__main--item">
+            
+            
+        </div>
+
+    </main>
+    <aside class="grid__sidebar">
+        {% include 'aside.html' %}
+    </aside>
+</div>
