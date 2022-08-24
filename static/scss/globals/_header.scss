@@ -156,7 +156,7 @@
     @include set_background($white);
     width: 100%;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding-block: .1em;
     margin: 0;
     z-index: 9999;
@@ -164,7 +164,11 @@
 
 
     @include u.breakpoint-down(xsmall) {
-        @include set_background($white)
+        @include set_background($white);
+        justify-content: space-between;
+    }
+    @include u.breakpoint-down(medium){
+        justify-content: space-between;
     }
 
     nav {
