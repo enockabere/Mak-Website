@@ -258,13 +258,15 @@
 .about {
     display: block;
     width: 100%;
-    gap: 2em;
     overflow: hidden;
     padding-inline: 6rem;
 
     @include u.breakpoint-down(medium) {
         display: block;
-        margin-inline: unset;
+        margin-inline: 1em;
+        padding-inline: 1em;
+        width: 100%;
+        word-wrap: normal;
     }
 
     &__title {
@@ -273,7 +275,7 @@
         text-align: center;
 
         @include u.breakpoint-down(medium) {
-            width: 100vw;
+            width: 100%;
             text-align: center;
         }
 
@@ -291,15 +293,18 @@
 
     &__content {
         padding: 1em;
+        display: grid;
+        grid-template-columns: auto;
+        max-width: 100vw;
 
         @include u.breakpoint-down(medium) {
-            width: 100vw;
+            width: 100%;
             text-align: left;
             padding: 1.5em;
         }
 
         p {
-            padding: 1em;
+            padding-block: 0.5em;
         }
 
         &--inner{
