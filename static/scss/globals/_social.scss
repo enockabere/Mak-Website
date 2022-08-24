@@ -7,13 +7,13 @@
     right: 0;
 
     &__links {
-       
+
         background: #fff;
-        
 
-        
 
-        
+
+
+
 
         ul {
             display: flex;
@@ -29,9 +29,9 @@
 
                 border-bottom: 1px solid;
 
-                    &:last-child{
-                        border-bottom: none;
-                    }
+                &:last-child {
+                    border-bottom: none;
+                }
 
                 @include u.breakpoint-down(small) {
                     width: 40px;
@@ -42,29 +42,40 @@
                     font-size: 30px;
                     object-fit: cover;
                     -o-object-fit: cover;
-                    
 
-                    .fa-linkedin-in{
-                        color: #144477;
-                    }
-                    
-                    .fa-twitter{
-                        color: #1c93e4;
-                    }
-                    
-                    .fa-facebook-f{
-                        color: #1771e6;
-                    }
-                    
 
-                    &:hover{
+                    
+                    
+                    &:hover {
                         color: $secondary_color;
                     }
                 }
                 
-
+                a {}
             }
         }
-
+        
     }
+}
+
+.fa-linkedin,
+.fa-linkedin-in{
+    color: #144477;
+}
+
+.fa-twitter {
+    color: #1c93e4;
+}
+
+.fa-facebook-square ,
+.fa-facebook ,
+.fa-facebook-f {
+    color: #1771e6;
+}
+
+.la-youtube {
+    color: #f20000;
+}
+.fa-youtube {
+    color: #f20000;
 }

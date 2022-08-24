@@ -6,59 +6,48 @@
 
 // back to top
 
-#back-to-top {
-    position: fixed;
-    z-index: 1010;
-    right: 10px;
-    bottom: 60px;
+.back-to-top {
+    display: inline-block;
+    background-color: $secondary_color;
     width: 40px;
     height: 40px;
-    background-color: $primary_color_darker;
-    color: #fafafa;
-    font-size: 30px;
     text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
-    cursor: pointer;
-    -webkit-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
+    border-radius: 20px;
+    position: fixed;
+    bottom: 30px;
+    right: 10px;
+    transition: background-color .3s,
+        opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100000;
 
-    
-
-    i {
-        font-size: 24px;
-        line-height: 40px;
+    &::after {
+        content: "\f077";
+        font-family: FontAwesome;
         font-weight: normal;
-        vertical-align: top;
-        -webkit-transition: all 0.3s ease 0s;
-        transition: all 0.3s ease 0s;
-
-        &:hover {
-            color: #fff;
-        }
+        font-style: normal;
+        font-size: 1.5em;
+        line-height: 40px;
+        color: #fff;
     }
-
-    div{
-        font-size: 13px;
-        opacity: 1;
-        color: #000;
-
-        &:hover{
-            color: $secondary_color;
-        }
-    }
-
 
     &:hover {
-        border-radius: 50%;
-        background-color: $secondary_color;
-        opacity: 1;
+        cursor: pointer;
+        background-color: #333;
     }
 
+    &:active {
+        background-color: #555;
+    }
+
+    
+    @include u.breakpoint(small){
+        margin: 30px;
+    }
 }
-.visible {
-    right: 40px;
-}
-.gone{
-    right: 0;
+
+.show {
+    opacity: 1;
+    visibility: visible;
 }

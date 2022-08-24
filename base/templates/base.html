@@ -11,13 +11,19 @@
     </title>
     <link rel="icon" type="image/x-icon" href="{% static 'img/assets/favicon.ico' %}">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css" integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
+        integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- goole fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <!-- Custom css -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
@@ -30,14 +36,18 @@
     <section class="social">
         <div class="social__links">
             <ul>
-                <li><a href="https://www.facebook.com/makuenicountysand" title="Facebook"><i
+                <li><a href="https://www.facebook.com/makuenicountysand" target="_blank" title="Facebook"><i
                             class="fa-brands fa-facebook-f"></i></a></li>
 
                 <li><a href="https://ke.linkedin.com/company/makueni-county-sand-conservation-and-utilization-authority"
-                        title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
 
-                <li><a href="https://mobile.twitter.com/makueni_sand" title="Twitter"><i
+                <li><a href="https://mobile.twitter.com/makueni_sand" target="_blank" title="Twitter"><i
                             class="fa-brands fa-twitter"></i></a></li>
+
+
+                <li><a href="https://www.youtube.com/channel/UCbK70DfJZGkTIr_lNJT6iWg" target="_blank" title="Youtube"><i
+                            class="fa-brands fa-youtube"></i></a></li>
             </ul>
         </div>
     </section>
@@ -49,24 +59,17 @@
     {# {% include 'chat.html' %} #}
     {% include 'footer.html' %}
 
-    <a id="back-to-top" href="#">
-        <span>
-            <i>&uarr;</i>
-        </span>
-        <div>
-           To Top
-        </div> 
-    </a>
+    <a class="back-to-top" id="back-to-top"></a>
 
     <script>
         var loader = document.getElementById("preloader");
         window.addEventListener("load", function () {
             loader.style.display = "none";
-  
+
         });
-        
+
         // smooth scroll
-        
+
         var scroll = new SmoothScroll('a[href*="#"]', {
             speed: 1000
         });

@@ -98,30 +98,29 @@ tabs.forEach((tab, index) => {
   })
 })
 
-// handleBackToTop
 
 
-function handleBackToTop() {
+// function handleBackToTop() {
 
-  $('#back-to-top').on("click", function () {
-    $('html, body').animate({ scrollTop: 0 }, 800);
-    return false;
-  });
+//   $('#back-to-top').on("click", function () {
+//     $('html, body').animate({ scrollTop: 0 }, 800);
+//     return false;
+//   });
 
-}
+// }
 
 // showHidebackToTop
 
 
-function showHidebackToTop() {
+// function showHidebackToTop() {
 
-  if ($(window).scrollTop() > $(window).height() / 2) {
-    $("#back-to-top").removeClass('gone').addClass('visible');
-  } else {
-    $("#back-to-top").removeClass('visible').addClass('gone');
-  }
+//   if ($(window).scrollTop() > $(window).height() / 2) {
+//     $("#back-to-top").removeClass('gone').addClass('visible');
+//   } else {
+//     $("#back-to-top").removeClass('visible').addClass('gone');
+//   }
 
-}
+// }
 
 
 

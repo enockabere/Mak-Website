@@ -676,37 +676,10 @@ footer {
 
     .footer {
         display: grid;
-        grid-template-columns: 1fr;
         grid-template-rows: auto auto;
         gap: 40px;
         margin-inline: 1em;
-
-        @include u.breakpoint(large) {
-            // grid-template-columns: 1fr 6fr;
-            grid-template-rows: auto;
-        }
-
-        @include u.breakpoint-down(medium) {
-            gap: 0;
-        }
-
-        &__logo {
-            width: 100%;
-            display: table;
-            text-align: center;
-            align-items: center;
-            margin-block-start: 2em;
-
-            &--content {
-                display: table-cell;
-                align-items: center;
-            }
-
-            img {
-                width: 100px
-            }
-        }
-
+        
         &__content {
             display: grid;
             gap: 2em;
