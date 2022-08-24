@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %} Boad of Directors {% endblock title %}
+{% block title %} Management {% endblock title %}
 
 {% block body %}
 <section class="hero">
     <div class="hero__title">
-        <h1>Home / About Us / Boad of Directors</h1>
+        <h1>Home / About Us / Management</h1>
     </div>
 </section>
 
@@ -13,7 +13,7 @@
     <main class="grid__main">
         <div class="grid__main--item">
             <div class="heading mb-3">
-                <h1>Board of Directors</h1>
+                <h1>Management</h1>
                 <div class="linebg_2"></div>
             </div>
 
@@ -43,7 +43,7 @@
     <main class="grid__main">
         <div class="grid__main--item">
             <div class="heading mb-3">
-                <h1>Board of Directors</h1>
+                <h1>Management</h1>
                 <div class="linebg_2"></div>
             </div>
 
@@ -54,7 +54,6 @@
                     <img src="{{ bm.image.url }}" alt="profile picture">
                     <h2>{{ bm.position }}</h2>
                     <h1>{{ bm.first_name }} {{ bm.middle_name }} {{ bm.last_name }}</h1>
-                    <p>{{ bm.description | safe }}</p>
                     
                 </div>
                 {% endfor %}

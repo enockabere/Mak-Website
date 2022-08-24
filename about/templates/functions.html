@@ -1,0 +1,29 @@
+{% extends 'about-layout.html' %}
+{% load static %}
+{% block title %} Our Mandate & Functions {% endblock title %}
+
+{% block hero %} Our Mandate & Functions {% endblock hero %}
+{% block about %}
+
+<setion class="about mt-3 mb-3">
+    <div class="about__content">
+        <div class="mandate">
+            <div class="heading mb-3">
+                <h1>Mandate & Functions</h1>
+                <div class="linebg_2"></div>
+            </div>
+            {% for statement in functions %}
+            <div style="list-style: letter;">{{statement.content | safe }}</div>
+        
+            {% endfor %}
+        
+        </div>
+
+    </div>
+
+</setion>
+
+
+{% endblock about %}
+
+{% include 'section/cta_panel.html' %}

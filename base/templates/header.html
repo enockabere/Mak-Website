@@ -28,7 +28,7 @@
         <button><i class="fa fa-search"></i></button>
     </div>
     <div class="cta">
-        <a href="">Learn More</a>
+        <a href="{% url 'services' %}">Learn More</a>
     </div>
 </div>
 
@@ -51,15 +51,16 @@
                 <a href="/">Home</a>
             </li>
             <li class="dropdown">
-                <span>About Us <i class="las la-angle-down"></i></span>
+                <a href="">About Us <i class="las la-angle-down"></i></a>
                 <div class="sub-menu">
                         <a href="{% url 'about' %}">Who we are</a>
                         <a href="{% url 'values' %}">Our Mission & Vision </a>
-                        <a href="{% url 'services' %}">Our Mandate and Functions </a>
+                        <a href="{% url 'functions' %}">Our Mandate and Functions </a>
                         <a href="{% url 'service-charter' %}">Service Charter</a>
                         <a href="{% url 'strategic-plan' %}">Strategic plan</a>
                         <a href="{% url 'departments' %}">Departments</a>
-                        <a href="{% url 'team' %}">Board of directors</a>
+                        <a href="{% url 'management' %}">Management</a>
+                        <a href="{% url 'board' %}">Board of directors</a>
                         <a href="{% url 'md' %}">Message from MD</a>
                 </div>
             </li>
@@ -69,13 +70,13 @@
             </li>
 
             <li class="dropdown">
-                <span>Resource Center<i class="las la-angle-down"></i></span>
+                <a href="">Resource Center<i class="las la-angle-down"></i></a>
                 <div class="sub-menu">
                     <a href="{% url 'publication' %}">Reports</a>  
             </div>
             </li>
             <li class="dropdown">
-                <span>Media Hub<i class="las la-angle-down"></i></span>
+                <a href="">Media Hub<i class="las la-angle-down"></i></a>
                 <div class="sub-menu">
                         <a href="{% url 'post' %}">Articles</a>
                         <a href="{% url 'gallery' %}">Gallery</a>
@@ -83,7 +84,7 @@
                 </div>
             </li>
             <li class="dropdown">
-                <span>Work with Us<i class="las la-angle-down"></i></span>
+                <a href="">Work with Us<i class="las la-angle-down"></i></a>
                 <div class="sub-menu">
 
                         <a href="{% url 'tender' %}">Tenders</a>

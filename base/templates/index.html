@@ -4,28 +4,35 @@
 
 {% block body %}
 
-<!-- ---------------------------------------------------------
-    Main slider
- ------------------------------------------------------------->
-<div class="carousel">
+<!-- Slider 1 -->
+<div class="slider" id="slider1">
+    <!-- Slides -->
     {% for carousel in carousel%}
-    <div class="carousel__item" style="background-image: url('{{ carousel.image.url }}'); background-size: cover;">
-        <div class="carousel__inner">
-            <div class="carousel__inner--content">
-                <h1>{{carousel.title}}</h1>
-                <p>{{carousel.caption}}
-                </p>
-                <!-- <a href="" class="action__btn"> Take <strong>Action </strong> &rarr;</a> -->
-            </div>
-        </div>
+    <div style="background-image:url('{{ carousel.image.url }}')">
+        <span>
+            <h2>{{carousel.title}}</h2>
+            <p>{{carousel.caption}}</p>
+
+                <a href="{% url 'services' %}" class="action__btn"> Learn more &rarr;</a>
+                <a href="{% url 'contact' %}" class="contact__btn"> Contact us &rarr;</a>
+
+        </span>
     </div>
     {% endfor %}
-
+    
+    <!-- The Arrows -->
+    <i class="left" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100">
+        <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"></path>
+    </svg></i>
+    <i class="right" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100">
+        <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) "></path>
+    </svg></i>
+    <!-- Title Bar -->
+    <!-- <span class="titleBar">
+        <h1>Our Sand, Our Livelihood</h1>
+    </span> -->
 </div>
-<!-- end main slider -->
-
-
-
+<!-- end slider -->
 
 <div class="grid">
     <main class="grid__main home">
@@ -96,25 +103,25 @@
     <ul class="cards mb-3">
         {% for post in post %}
         <li class="card">
-                <a href="{% url 'post_detail' post.slug %}">
-                    <div class="card__img">
-                        <div class="img__cover">
-                            <img src="{{ post.image.url }}" alt="" />
-                        </div>
+            <a href="{% url 'post_detail' post.slug %}">
+                <div class="card__img">
+                    <div class="img__cover">
+                        <img src="{{ post.image.url }}" alt="" />
                     </div>
-                    <div class="[ card__text ] [ flow ]">
-                        <h2>
-                            <span>{{ post.title }}</span>
-                        </h2>
+                </div>
+                <div class="[ card__text ] [ flow ]">
+                    <h2>
+                        <span>{{ post.title }}</span>
+                    </h2>
 
-                        <p>{{ post.content |safe | truncatewords_html:20 }}</p>
-                        <small>
-                            <span class="visuallyhidden">Uploaded | </span>
-                            {{ post.created_on | date }}
-                        </small>
-                    </div>
-                </a>
-            </li>
+                    <p>{{ post.content |safe | truncatewords_html:20 }}</p>
+                    <small>
+                        <span class="visuallyhidden">Uploaded | </span>
+                        {{ post.created_on | date }}
+                    </small>
+                </div>
+            </a>
+        </li>
         {% endfor %}
 
     </ul>

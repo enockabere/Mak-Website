@@ -35,7 +35,7 @@ def about_view(request):
     return render(request, 'about.html', context)
 
 
-def our_team_view(request):
+def boardOfDirectorsView(request):
     post = Post.objects.filter(status=1).order_by('-created_on')[:5]
     board_member = Personel.objects.filter(status=1, category=0).all()
     if request.method == 'POST':
@@ -49,6 +49,23 @@ def our_team_view(request):
     }
 
     return render(request, 'board-of-directors.html', context)
+
+def ManagementView(request):
+    post = Post.objects.filter(status=1).order_by('-created_on')[:5]
+    board_member = Personel.objects.filter(status=1, category=1).all()
+    if request.method == 'POST':
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            form.save()
+    form = SubscriptionForm()
+    context = {
+        'post': post,
+        'board_members': board_member,
+    }
+
+    return render(request, 'management.html', context)
+
+
 
 
 def departments_view(request):
@@ -104,3 +121,11 @@ def strategic_plan(request):
         'cta': cta,
     }
     return render(request, 'strategic-plan.html', context)
+
+
+def functions_view(request):
+    cta = CallToActionPanel.objects.filter(status=1)[:1]
+    context = {
+        'cta': cta,
+    }
+    return render(request, 'functions.html', context)
