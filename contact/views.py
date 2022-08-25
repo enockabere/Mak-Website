@@ -8,17 +8,23 @@ from base.forms import SubscriptionForm
 
 def contact_view(request):
     if request.method == 'POST':
-        form = FeedbackForm(request.POST)
-        form2 = SubscriptionForm(request.POST)
+        form = SubscriptionForm(request.POST)
         if form.is_valid():
             form.save()
 
+    if request.method == 'POST':
+        form2 = FeedbackForm(request.POST)
+        if form2.is_valid():
+            form2.save()
 
-    form = FeedbackForm()
+    
+    form = SubscriptionForm()
+    form2 = FeedbackForm()
     cta = CallToActionPanel.objects.filter(status=1)[:1]
 
     context = {
         'form': form,
+        'form2': form2,
         'cta': cta,
     }
     return render(request, 'contact.html', context)

@@ -46,6 +46,7 @@ def boardOfDirectorsView(request):
     context = {
         'post': post,
         'board_members': board_member,
+        'form': form,
     }
 
     return render(request, 'board-of-directors.html', context)
@@ -61,6 +62,7 @@ def ManagementView(request):
     context = {
         'post': post,
         'board_members': board_member,
+        'form': form,
     }
 
     return render(request, 'management.html', context)
@@ -79,6 +81,7 @@ def departments_view(request):
     context = {
         'post': post,
         'dept': department,
+        'form': form,
     }
     return render(request, 'departments.html', context)
 
@@ -93,7 +96,8 @@ def md_message_view(request):
     form = SubscriptionForm()
     context = {
         'post': post,
-        'message': message
+        'message': message,
+        'form': form,
     }
     return render(request, 'md-message.html', context)
 
@@ -102,10 +106,16 @@ def core_values(request):
     mission = Mission.objects.filter(status=1)
     vision = Vision.objects.filter(status=1)
     cta = CallToActionPanel.objects.filter(status=1)[:1]
+    if request.method == 'POST':
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            form.save()
+    form = SubscriptionForm()
     context = {
         'mission': mission,
         'vision': vision,    
         'cta': cta,
+        'form': form,
     }
 
     return render(request, 'core-values.html', context)
@@ -114,17 +124,29 @@ def core_values(request):
 def service_charter(request):
     charter = ServiceCharter.objects.filter(status=1).all()
     cta = CallToActionPanel.objects.filter(status=1)[:1]
+    if request.method == 'POST':
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            form.save()
+    form = SubscriptionForm()
     context = {
         'cta': cta,
         'charter': charter,
+        'form': form,
     }
     return render(request, 'service-chater.html', context)
 
 
 def strategic_plan(request):
     cta = CallToActionPanel.objects.filter(status=1)[:1]
+    if request.method == 'POST':
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            form.save()
+    form = SubscriptionForm()
     context = {
         'cta': cta,
+        'form': form,
     }
     return render(request, 'strategic-plan.html', context)
 
@@ -132,8 +154,14 @@ def strategic_plan(request):
 def functions_view(request):
     functions = Functions.objects.filter(status=1)
     cta = CallToActionPanel.objects.filter(status=1)[:1]
+    if request.method == 'POST':
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            form.save()
+    form = SubscriptionForm()
     context = {
         'cta': cta,
         'functions': functions,
+        'form': form,
     }
     return render(request, 'functions.html', context)
