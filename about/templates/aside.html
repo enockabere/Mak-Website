@@ -23,7 +23,7 @@
         <div class="linebg_2 mb-1"></div>
         {% for post in post%}
         <div class="recent__news--item">
-            <a href="{% url 'post_detail' post.slug %}%}">
+            <a href="{% url 'post_detail' post.slug %}">
                 <img src="{{ post.image.url }}"
                     alt="">
                 <div class="info">
