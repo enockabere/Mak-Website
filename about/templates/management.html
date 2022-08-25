@@ -39,35 +39,4 @@
         {% include 'aside.html' %}
     </aside>
 </div>
-<div class="grid">
-    <main class="grid__main">
-        <div class="grid__main--item">
-            <div class="heading mb-3">
-                <h1>Management</h1>
-                <div class="linebg_2"></div>
-            </div>
-
-            <div class="leader mt-3 mb-3">
-
-                {% for bm in board_members %}
-                <div class="leader__content ">
-                    <img src="{{ bm.image.url }}" alt="profile picture">
-                    <h2>{{ bm.position }}</h2>
-                    <h1>{{ bm.first_name }} {{ bm.middle_name }} {{ bm.last_name }}</h1>
-                    
-                </div>
-                {% endfor %}
-
-                
-            </div>
-            
-        </div>
-
-    </main>
-    <aside class="grid__sidebar">
-        {% include 'aside.html' %}
-    </aside>
-</div>
-
-
 {% endblock body %}
