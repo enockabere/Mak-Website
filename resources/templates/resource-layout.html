@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Financial Reports {% endblock title %}
+
+{% block body %}
+<section class="hero">
+    <div class="hero__title">
+        <h1>{% block hero %} Financial Reports {% endblock hero %}</h1>
+    </div>
+</section>
+
+<div class="grid">
+    <main class="grid__main">
+        <div class="grid__main--item">
+            <div class="grid__main--list">
+                <div class="publication">
+                    <div class="publication__main">
+                        <p>{% block intro %} These are reports capturing the various financial expenditures. Reports
+                            are published here. {% endblock intro %}</p>
+                        <div class="publication__main--item">
+                            {% block files %}
+                            {% for pub in pub %}
+                            <div class="file__card">
+                                <div class="file__card--name">
+                                    <h1>
+                                        <a href="{{ pub.file.url }}" download="" target="_blank">
+                                            {{ pub.name }}
+                                        </a>
+                                    </h1>
+
+                                    <div class="file__card--name-lower">
+                                        <p>
+                                            <i class="fa-solid fa-copy"></i> 1 File(s)
+                                        </p>
+                                        <p>
+                                            <i class="las la-database"></i> <span>{{ pub.size|filesizeformat }}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="file__card--icon">
+                                    <a href="{{ pub.file.url }}" download="" target="_blank" title="Download File">
+                                        <img src="{% static 'img/assets/pdf-icon.ico'%}" alt="">
+                                    </a>
+                                </div>
+
+
+                            </div>
+                            {% endfor %}
+                            {% endblock files %}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+    <aside class="grid__sidebar">
+        {% include 'aside.html' %}
+    </aside>
+</div>
+
+{% endblock body %}

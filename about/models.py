@@ -92,6 +92,11 @@ class AboutUs(models.Model):
     def short_description(self):
         return truncatechars(self.description, 50)
 
+    def save(self, *args, **kwargs):
+        if self.__class__.objects.count():
+            self.pk = self.__class__.objects.first().pk
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return self.title
 
@@ -104,6 +109,14 @@ class Functions(models.Model):
 
     class Meta:
         verbose_name = 'Mandate & Function'
+
+    def __str__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        if self.__class__.objects.count():
+            self.pk = self.__class__.objects.first().pk
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.title
@@ -125,25 +138,39 @@ class Objectives(models.Model):
 class Mission(models.Model):
     title = models.CharField(max_length=200, default='Our Mission')
     statement = models.TextField()
-    image = models.ImageField(upload_to='media',
-                              blank=True, help_text='The Image shoulde be at least 10px by 720px and either .jpg or .png')
     status = models.IntegerField(
         choices=STATUS, default=0, help_text='Change to Publish for it to be seen')
 
     class Meta:
-        verbose_name = 'Mission Statement'
+        verbose_name = 'Our Mission'
+        verbose_name_plural = 'Our Mission'
+
+    def save(self, *args, **kwargs):
+        if self.__class__.objects.count():
+            self.pk = self.__class__.objects.first().pk
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.title
 
 
 class Vision(models.Model):
     title = models.CharField(max_length=200, default='Our Vision')
     statement = models.TextField()
-    image = models.ImageField(upload_to='media',
-                              blank=True, help_text='The Image shoulde be at least 10px by 720px and either .jpg or .png')
     status = models.IntegerField(
         choices=STATUS, default=0, help_text='Change to Publish for it to be seen')
 
     class Meta:
-        verbose_name = 'Vision Statement'
+        verbose_name = 'Our Vision'
+        verbose_name_plural = 'Our Vision'
+
+    def save(self, *args, **kwargs):
+        if self.__class__.objects.count():
+            self.pk = self.__class__.objects.first().pk
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.title
 
 
 class Department(models.Model):
@@ -155,6 +182,24 @@ class Department(models.Model):
     @property
     def short_content(self):
         return truncatechars(self.content, 30)
+
+    def __str__(self):
+        return self.title
+
+
+class ServiceCharter(models.Model):
+    title = models.CharField(max_length=200, default='Service Charter')
+    content = models.TextField()
+    status = models.IntegerField(
+        choices=STATUS, default=0, help_text='Change to Publish for it to be seen')
+
+    class Meta:
+        verbose_name_plural = 'Service charter'
+
+    def save(self, *args, **kwargs):
+        if self.__class__.objects.count():
+            self.pk = self.__class__.objects.first().pk
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.title

@@ -5,15 +5,14 @@
 {% block hero %} Our Mandate & Functions {% endblock hero %}
 {% block about %}
 
-<setion class="about mt-3 mb-3">
+<setion class="about mt-1 mb-3">
     <div class="about__content">
-        <div class="mandate">
-            <div class="heading mb-3">
-                <h1>Mandate & Functions</h1>
-                <div class="linebg_2"></div>
-            </div>
+        <div class="inner">
             {% for statement in functions %}
-            <div style="list-style: letter;">{{statement.content | safe }}</div>
+            
+            <div>
+                {{statement.content | safe }}
+            </div>
         
             {% endfor %}
         

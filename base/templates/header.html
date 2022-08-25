@@ -72,9 +72,10 @@
             <li class="dropdown">
                 <a>Resource Center<i class="las la-angle-down"></i></a>
                 <div class="sub-menu">
+                    <a href="{% url 'harvesting' %}">Designated sand Harvesting sites</a>  
+                    <a href="{% url 'dealers' %}">Licenced Sand Dealers</a>  
                     <a href="{% url 'publication' %}">Financial Reports</a>  
-                    <a href="">Licenced Sand Dealers</a>  
-                    <a href="">Designated sand Harvesting sites</a>  
+                    <a href="{% url 'acts' %}">Acts</a>  
                     <a href="">Feedback Forms</a>  
                     <a href="">Application Forms</a>  
             </div>
@@ -107,25 +108,3 @@
 
 </div>
 
-<script>
-    /* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-    function search() {
-        document.getElementById("globalSearch").classList.toggle("show");
-        // console.log('works')
-    }
-
-    // Close the dropdown menu if the user clicks outside of it
-    window.onclick = function (event) {
-        if (!event.target.matches('.search__global--btn')) {
-            var dropdowns = document.getElementsByClassName("search__global--form");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-            }
-        }
-    }
-</script>

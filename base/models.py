@@ -7,11 +7,14 @@ from blog.models import STATUS
 
 
 class Carousel(models.Model):
-    image = models.ImageField(upload_to='media', help_text='Image size should be 2646px X 1330px')
-    title = models.CharField(max_length=100, blank=True, default='Our Sand, Our livelihood')
+    image = models.ImageField(
+        upload_to='media', help_text='Image size should be 2646px X 1330px')
+    title = models.CharField(max_length=100, blank=True,
+                             default='Our Sand, Our livelihood')
     caption = models.TextField(max_length=100, blank=True)
     created_on = models.DateTimeField(auto_now_add=True, editable=False)
-    status = models.IntegerField(choices=STATUS, default=0, help_text = 'Change to Published for it to be seen')
+    status = models.IntegerField(
+        choices=STATUS, default=0, help_text='Change to Published for it to be seen')
 
     class Meta:
         verbose_name_plural = 'Carousel'
@@ -36,12 +39,14 @@ class Subscription(models.Model):
     def __str__(self):
         return self.email
 
+
 class Patner(models.Model):
-    name =  models.CharField(max_length=100, primary_key=True)
+    name = models.CharField(max_length=100, primary_key=True)
     image = models.ImageField(upload_to='media')
     caption = models.TextField(blank=True)
     url = models.URLField(max_length=200)
-    status = models.IntegerField(choices=STATUS, default=0, help_text = 'Change to Publish for it to be seen')
+    status = models.IntegerField(
+        choices=STATUS, default=0, help_text='Change to Publish for it to be seen')
 
     @property
     def short_description(self):
@@ -62,7 +67,8 @@ class CallToActionPanel(models.Model):
     image = models.ImageField(upload_to='media')
     description = models.TextField(blank=True, null=True)
     url = models.URLField(blank=True, null=True)
-    status = models.IntegerField(choices=STATUS, default=0, help_text = 'Change to Publish for it to be seen')
+    status = models.IntegerField(
+        choices=STATUS, default=0, help_text='Change to Publish for it to be seen')
 
     @property
     def short_description(self):
@@ -74,6 +80,11 @@ class CallToActionPanel(models.Model):
     photo.short_description = 'Image'
     photo.allow_tags = True
 
+    def save(self, *args, **kwargs):
+        if self.__class__.objects.count():
+            self.pk = self.__class__.objects.first().pk
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return self.title
 
@@ -81,9 +92,10 @@ class CallToActionPanel(models.Model):
 class Empowerment(models.Model):
     title = models.CharField(max_length=200)
     message = models.TextField()
-    image = models.ImageField(upload_to='media') 
+    image = models.ImageField(upload_to='media')
     pub_date = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0, help_text='change to published to show front end')
+    status = models.IntegerField(
+        choices=STATUS, default=0, help_text='change to published to show front end')
 
     class Meta:
         ordering = ['-pub_date']
@@ -97,6 +109,11 @@ class Empowerment(models.Model):
 
     bg_photo.short_description = 'Image'
     bg_photo.allow_tags = True
+
+    def save(self, *args, **kwargs):
+        if self.__class__.objects.count():
+            self.pk = self.__class__.objects.first().pk
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.title

@@ -9,13 +9,23 @@
     <div class="about__content">
         <div class="about__content--inner">
             <div class="item">
-                <h1>mission</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus praesentium, cupiditate saepe veritatis incidunt tenetur. Officiis quod nobis fuga adipisci, illum laboriosam delectus. Deserunt, fugiat mollitia voluptatem hic a odit!</p>
+                {% for statement in mission %}
+
+                <h1>{{ statement.title }}</h1>
+
+                <p>{{ statement.statement | safe }}</p>
+
+                {% endfor %}
             </div>
             
             <div class="item">
-                <h1>vision</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut nisi eaque, sapiente aliquam dignissimos soluta adipisci odit dolorum facilis dolores voluptates exercitationem commodi! Veniam ex amet impedit vel nulla autem?</p>
+                {% for statement in vision %}
+
+                <h1>{{ statement.title }}</h1>
+
+                <p>{{ statement.statement | safe }}</p>
+
+                {% endfor %}
             </div>
 
         </div>

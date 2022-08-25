@@ -26,8 +26,12 @@ class Publication(models.Model):
 
     PUB_CATEGORY = [
 
-        (0, 'Default'),
-        (1, 'Advertisement')
+        (0, 'Acts'),
+        (1, 'Sand Dealers'),
+        (2, 'Sand Harvesting Sites'),
+        (3, 'Financial Reports'),
+        (4, 'Application Form'),
+        (5, 'Feedback Form'),
     ]
 
     name = models.CharField(max_length=200)

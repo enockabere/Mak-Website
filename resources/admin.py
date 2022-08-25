@@ -18,10 +18,11 @@ class PrivacyAdmin(SummernoteModelAdmin):
 class TermsAdmin(SummernoteModelAdmin):
     list_display = ['title', 'modified', 'status']
 
-
+class PublicationAdmin(admin.ModelAdmin):
+    list_display= ['name', 'pub_date', 'category', 'status']
 
 # Register your models here.
-admin.site.register(Publication)
+admin.site.register(Publication, PublicationAdmin)
 admin.site.register(Faq, FaqAdmin)
 admin.site.register(Terms, TermsAdmin)
 admin.site.register(Privacy, PrivacyAdmin)

@@ -1,7 +1,7 @@
 from unicodedata import category
 from django.shortcuts import render
 from blog.models import Post
-from .models import MDsMessage, AboutUs, Mission, Personel, Department, Functions, Objectives, Vision
+from .models import MDsMessage, AboutUs, Mission, Personel, Department, Functions, Objectives, Vision,ServiceCharter
 from base.models import CallToActionPanel
 from base.forms import SubscriptionForm
 
@@ -14,7 +14,7 @@ def about_view(request):
     leader = Personel.objects.filter(status=1, category=1).all()
     cta = CallToActionPanel.objects.filter(status=1)[:1]
     objectives = Objectives.objects.filter(status=1)
-    functions = Functions.objects.filter(status=1)
+   
     vision = Vision.objects.filter(status=1)
     if request.method == 'POST':
         form = SubscriptionForm(request.POST)
@@ -27,7 +27,7 @@ def about_view(request):
         'leader': leader,
         'cta': cta,
         'objectives': objectives,
-        'functions': functions,
+        
         'vision': vision,
 
         'form': form,
@@ -99,8 +99,12 @@ def md_message_view(request):
 
 
 def core_values(request):
+    mission = Mission.objects.filter(status=1)
+    vision = Vision.objects.filter(status=1)
     cta = CallToActionPanel.objects.filter(status=1)[:1]
     context = {
+        'mission': mission,
+        'vision': vision,    
         'cta': cta,
     }
 
@@ -108,9 +112,11 @@ def core_values(request):
 
 
 def service_charter(request):
+    charter = ServiceCharter.objects.filter(status=1).all()
     cta = CallToActionPanel.objects.filter(status=1)[:1]
     context = {
         'cta': cta,
+        'charter': charter,
     }
     return render(request, 'service-chater.html', context)
 
@@ -124,8 +130,10 @@ def strategic_plan(request):
 
 
 def functions_view(request):
+    functions = Functions.objects.filter(status=1)
     cta = CallToActionPanel.objects.filter(status=1)[:1]
     context = {
         'cta': cta,
+        'functions': functions,
     }
     return render(request, 'functions.html', context)

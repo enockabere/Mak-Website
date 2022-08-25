@@ -269,7 +269,7 @@
 
     @include u.breakpoint-down(medium) {
         display: block;
-        margin-inline: 1em;
+        // margin-inline: 1em;
         padding-inline: 1em;
         width: 100%;
         word-wrap: normal;
@@ -313,9 +313,30 @@
             padding-block: 0.5em;
         }
 
+        .inner {
+
+            ul,
+            ol {
+                list-style: circle;
+                margin-left: 1em;
+
+                li,
+                p {
+                    padding-bottom: .5em;
+                    font-size: 1em;
+                }
+            }
+        }
+
         &--inner {
             display: flex;
             position: relative;
+            // flex-wrap: wrap;
+            gap: 2em;
+
+            @include u.breakpoint-down(xsmall){
+                flex-direction: column;
+            }
 
             .item {
                 text-align: center;
@@ -679,7 +700,7 @@ footer {
         grid-template-rows: auto auto;
         gap: 40px;
         margin-inline: 1em;
-        
+
         &__content {
             display: grid;
             gap: 2em;
@@ -732,7 +753,7 @@ footer {
                         padding-inline: 10px;
                     }
 
-                    .btn{
+                    .btn {
                         width: 100%;
                         margin: unset
                     }

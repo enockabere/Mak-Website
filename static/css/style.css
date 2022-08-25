@@ -1010,6 +1010,11 @@ textarea {
 .grid__main, .grid__sidebar {
   padding: 40px;
 }
+@media (max-width: 699.98px) {
+  .grid__main, .grid__sidebar {
+    padding: 10px;
+  }
+}
 .grid .home {
   grid-template-columns: auto auto;
 }
@@ -1911,7 +1916,6 @@ textarea {
 @media (max-width: 1023.98px) {
   .about {
     display: block;
-    margin-inline: 1em;
     padding-inline: 1em;
     width: 100%;
     word-wrap: normal;
@@ -1952,9 +1956,27 @@ textarea {
 .about__content p {
   padding-block: 0.5em;
 }
+.about__content .inner ul,
+.about__content .inner ol {
+  list-style: circle;
+  margin-left: 1em;
+}
+.about__content .inner ul li,
+.about__content .inner ul p,
+.about__content .inner ol li,
+.about__content .inner ol p {
+  padding-bottom: 0.5em;
+  font-size: 1em;
+}
 .about__content--inner {
   display: flex;
   position: relative;
+  gap: 2em;
+}
+@media (max-width: 699.98px) {
+  .about__content--inner {
+    flex-direction: column;
+  }
 }
 .about__content--inner .item {
   text-align: center;
@@ -2888,45 +2910,52 @@ footer .copyright ul li:hover {
 .publication {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 3fr;
   gap: 1em;
-}
-.publication__sidenav {
-  border-right: 1px solid rgb(66, 65, 65);
-}
-.publication__sidenav input {
-  margin-block: unset;
-  background-color: rgb(255, 255, 255);
-  padding: 0.5em;
-  border-radius: 20px;
 }
 .publication__main {
   padding-inline: 1em;
 }
-.publication__main--item a {
-  color: rgb(184, 121, 5);
+.publication__main--item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin-top: 2em;
 }
-.publication__main--item a:hover {
-  color: #90cd4b;
-  text-decoration-line: underline;
-}
-.publication__main--item li {
-  list-style: number;
-}
-
-.file a {
-  padding: 0.5em;
+.publication__main--item .file__card {
   border: 1px solid;
   border-radius: 4px;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  background-color: rgb(248, 248, 248);
+  color: #333333;
+  border-color: #333333;
 }
-.file a:hover {
-  background-color: #90cd4b;
-  color: rgb(255, 255, 255);
-  border-color: rgb(255, 255, 255);
-  border: none;
+.publication__main--item .file__card--name h1 {
+  font-size: 1.1em;
 }
-.file a i {
-  font-size: 16px;
+.publication__main--item .file__card--name h1 a:hover {
+  text-decoration: underline;
+  color: rgb(184, 121, 5);
+}
+.publication__main--item .file__card--name-lower {
+  display: flex;
+  justify-content: start;
+  gap: 5px;
+  font-size: small;
+  margin-top: 10px;
+}
+.publication__main--item .file__card--name-lower p {
+  display: flex;
+  gap: 5px;
+  justify-content: start;
+  align-items: center;
+}
+.publication__main--item .file__card--icon img:hover {
+  filter: brightness(50%);
+  margin-top: 5px;
+  scale: 0.9;
 }
 
 .projects {

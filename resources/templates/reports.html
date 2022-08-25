@@ -1,0 +1,45 @@
+{% extends 'resource-layout.html' %}
+{% load static %}
+
+
+{% block title %}
+
+{% block hero %} Financial Reports {% endblock hero %}
+
+{% endblock title %}
+
+
+{% block intro %}
+These are reports capturing the various financial expenditures. Reports are published here.
+{% endblock intro %}
+
+
+{% block files %}
+{% for pub in pub %}
+<div class="file__card">
+    <div class="file__card--name">
+        <h1>
+            <a href="{{ pub.file.url }}" download="" target="_blank">
+                {{ pub.name }}
+            </a>
+        </h1>
+
+        <div class="file__card--name-lower">
+            <p>
+                <i class="fa-solid fa-copy"></i> 1 File(s)
+            </p>
+            <p>
+                <i class="las la-database"></i> <span>{{ pub.size|filesizeformat }}</span>
+            </p>
+        </div>
+    </div>
+    <div class="file__card--icon">
+        <a href="{{ pub.file.url }}" download="" target="_blank" title="Download File">
+            <img src="{% static 'img/assets/pdf-icon.ico'%}" alt="">
+        </a>
+    </div>
+
+
+</div>
+{% endfor %}
+{% endblock files %}

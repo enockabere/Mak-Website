@@ -1,53 +1,70 @@
 .publication {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 3fr;
     gap: 1em;
-
-    &__sidenav {
-        border-right: 1px solid $dark_color;
-        input {
-            margin-block: unset;
-            background-color: $white;
-            padding: .5em;
-            border-radius: 20px;
-        }
-    }
 
     &__main {
         padding-inline: 1em;
+        
         &--item {
-            a {
-                color: $secondary_color;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+            margin-top: 2em;
 
-                &:hover {
-                    color: $primary_color;
-                    text-decoration-line: underline;
+            .file {
+                &__card {
+                    border: 1px solid;
+                    border-radius: 4px;
+                    padding: 1em;
+                    display: grid;
+                    grid-template-columns: auto auto auto;
+                    gap: 10px;
+                    @include set_background($fade);
+
+                    
+
+                    &--name {
+                        h1 {
+                            font-size: 1.1em;
+
+                            a{
+                                &:hover{
+                                    text-decoration: underline;
+                                    color: $secondary_color;
+                                }
+                            }
+                        }
+
+                        &-lower {
+                            display: flex;
+                            justify-content:start;
+                            gap: 5px;
+                            font-size: small;
+                            margin-top: 10px;
+                            p {
+                                display: flex;
+                                gap: 5px;
+                                justify-content: start;
+                                align-items: center;
+                            }
+                        }
+
+                    }
+
+                    &--icon{
+                        img{
+                            &:hover{
+                                filter: brightness(50%);
+                                margin-top: 5px;
+                                scale: .9;
+                            }
+                        }
+                    }
+
                 }
             }
 
-            li {
-                list-style: number;
-            }
-        }
-    }
-}
-
-
-
-.file{
-    a{
-        padding: .5em;
-        border: 1px solid;
-        border-radius: 4px;
-
-        &:hover{
-            @include set_background($primary_color);
-            border: none;
-        }
-
-        i{
-            font-size: 16px;
         }
     }
 }
