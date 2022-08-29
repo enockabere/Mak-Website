@@ -15,7 +15,7 @@
     &__main,
     &__sidebar {
         padding: 40px;
-        @include u.breakpoint-down(xsmall){
+        @include u.breakpoint-down(x-small){
             padding: 10px;
         }
     }
@@ -49,7 +49,7 @@
 
 
 
-            @include u.breakpoint-down(xsmall) {
+            @include u.breakpoint-down(x-small) {
                 display: grid;
                 grid-template-columns: 1fr;
                 grid-template-rows: auto auto;

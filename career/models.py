@@ -36,12 +36,17 @@ class JobAdvert(models.Model):
         return self.title
 
 class Tender(models.Model):
+    TENDER_STATUS = [
+        ('open', 'open'),
+        ('closed', 'closed')
+    ]
     title = models.CharField(max_length=200)
     ref_number = models.CharField(max_length=50, unique=True)
     description = models.TextField()
     file = models.FileField(upload_to='media')
     pub_date = models.DateTimeField(auto_now_add=True)
     deadline = models.DateTimeField()
+    tender_status = models.CharField(choices=TENDER_STATUS, max_length=20, default='open')
     status = models.IntegerField(choices=STATUS, default=0,help_text = 'Change to Publish for it to be seen')
 
 

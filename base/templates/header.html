@@ -40,7 +40,7 @@
     <div class="logo" title="Makueni sand Conservation and Utilization Authority">
         <a href="/">
             <img src="{% static 'img/logo1.png' %}" alt="">
-            <h2 style="font-family: serif;">Makueni County <br> sand Conservation &  <br> Utilization Authority </h2>
+            <h2 style="font-family: serif;">Makueni County <br> sand Conservation & <br> Utilization Authority </h2>
         </a>
     </div>
 
@@ -53,49 +53,68 @@
             <li class="dropdown">
                 <a>About Us <i class="las la-angle-down"></i></a>
                 <div class="sub-menu">
-                        <a href="{% url 'about' %}">Who we are</a>
-                        <a href="{% url 'values' %}">Our Mission & Vision </a>
-                        <a href="{% url 'functions' %}">Our Mandate and Functions </a>
-                        <a href="{% url 'service-charter' %}">Service Charter</a>
-                        <a href="{% url 'strategic-plan' %}">Strategic plan</a>
-                        <a href="{% url 'departments' %}">Departments</a>
-                        <a href="{% url 'management' %}">Management</a>
-                        <a href="{% url 'board' %}">Board of directors</a>
-                        <a href="{% url 'md' %}">Message from MD</a>
+                    <a href="{% url 'about' %}">Who we are</a>
+                    <a href="{% url 'values' %}">Our Mission & Vision </a>
+                    <a href="{% url 'functions' %}">Our Mandate and Functions </a>
+                    <a href="{% url 'service-charter' %}">Service Charter</a>
+                    <a href="{% url 'strategic-plan' %}">Strategic plan</a>
+                    <a href="{% url 'departments' %}">Departments</a>
+                    <a href="{% url 'management' %}">Management</a>
+                    <a href="{% url 'board' %}">Board of directors</a>
+                    <a href="{% url 'md' %}">Message from MD</a>
                 </div>
             </li>
 
-            <li>
-                <a href="{% url 'projects' %}">Projects</a>
+            <li class="dropdown">
+                <a>Projects <i class="las la-angle-down"></i></a>
+                <div class="sub-menu">
+                    <div class="sub-menu-row">
+                        <div class="sub-menu-col">
+                            <a class="sub-menu-heading" href=""> Sand Dams</a>
+                            <a href="">Kwa Ngesu Sand dam</a>
+                            <a href="">Kaiti Sand dam</a>
+                            <a href="">Matiliku </a>
+                        </div>
+                        <div class="sub-menu-col">
+                            <a class="sub-menu-heading" href=""> Check Dams</a>
+                            <a href="">Kwa Ngesu Sand dam</a>
+                        </div>
+                        <div class="sub-menu-col">
+                            <a class="sub-menu-heading" href=""> Garbions </a>
+                        </div>
+                    </div>
+                    
+                </div>
+
             </li>
 
             <li class="dropdown">
                 <a>Resource Center<i class="las la-angle-down"></i></a>
                 <div class="sub-menu">
-                    <a href="{% url 'harvesting' %}">Designated sand Harvesting sites</a>  
-                    <a href="{% url 'dealers' %}">Licenced Sand Dealers</a>  
-                    <a href="{% url 'publication' %}">Financial Reports</a>  
-                    <a href="{% url 'acts' %}">Acts</a>  
-                    <a href="">Feedback Forms</a>  
-                    <a href="">Application Forms</a>  
-            </div>
+                    <a href="{% url 'harvesting' %}">Designated sand Harvesting sites</a>
+                    <a href="{% url 'dealers' %}">Licenced Sand Dealers</a>
+                    <a href="{% url 'publication' %}">Financial Reports</a>
+                    <a href="{% url 'acts' %}">Acts</a>
+                    <a href="">Feedback Forms</a>
+                    <a href="">Application Forms</a>
+                </div>
             </li>
             <li class="dropdown">
                 <a>Media Hub<i class="las la-angle-down"></i></a>
                 <div class="sub-menu">
-                        <a href="{% url 'post' %}">Articles</a>
-                        <a href="{% url 'gallery' %}">Gallery</a>
-                        <a href="{% url 'faq' %}">FAQs</a>
+                    <a href="{% url 'post' %}">Articles</a>
+                    <a href="{% url 'gallery' %}">Gallery</a>
+                    <a href="{% url 'faq' %}">FAQs</a>
                 </div>
             </li>
             <li class="dropdown">
-                <a href="">Work with Us<i class="las la-angle-down"></i></a>
+                <a >Work with Us<i class="las la-angle-down"></i></a>
                 <div class="sub-menu">
 
-                        <a href="{% url 'tender' %}">Tenders</a>
-                        <a href="{% url 'career' %}">Careers</a>
-                        <a href="">Internships & Attahcments</a>
-                    
+                    <a href="{% url 'tender' %}">Tenders</a>
+                    <a href="{% url 'career' %}">Careers</a>
+                    <a href="">Internships & Attahcments</a>
+
                 </div>
             </li>
 
@@ -107,4 +126,3 @@
     </nav>
 
 </div>
-

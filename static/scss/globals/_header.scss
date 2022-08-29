@@ -49,7 +49,7 @@
             @include set_background($primary_color_dark);
             color: $white;
             width: 400px;
-            border:none;
+            border: none;
             padding-left: 1em;
             float: left;
             width: 80%;
@@ -70,9 +70,8 @@
             margin: 8px 0;
             border: none;
             border-top-right-radius: 20px;
-            border-bottom-right-radius:20px ;
+            border-bottom-right-radius: 20px;
             cursor: pointer
-
         }
     }
 
@@ -167,7 +166,8 @@
         @include set_background($white);
         justify-content: space-between;
     }
-    @include u.breakpoint-down(medium){
+
+    @include u.breakpoint-down(medium) {
         justify-content: space-between;
     }
 
@@ -223,6 +223,7 @@
             color: inherit;
             opacity: 1;
             position: relative;
+            cursor: pointer;
 
             &::before {
                 content: '';
@@ -236,10 +237,11 @@
                 transform: scale(0, 1);
                 transition: transform ease-in-out 250ms;
             }
-            
+
             @include u.breakpoint-down(large) {
                 font-size: .7em;
             }
+
             @include u.breakpoint-down(medium) {
                 font-size: .9em;
             }
@@ -287,11 +289,12 @@
                 text-align: left;
                 border-right: none;
                 text-transform: capitalize;
+                font-weight: 500;
 
                 &:hover {
                     @include set_background($light_color);
                     color: $secondary_color;
-                    font-weight: 700;
+                    font-weight: 600;
                     padding-left: 1.5em;
                 }
 
@@ -310,10 +313,31 @@
 
     }
 
-
-
     .sub-menu {
         display: none;
+        font-weight: 500;
+
+        .sub-menu {
+
+            &-row {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            &-col {
+                display: flex;
+                flex-direction: column;
+                border-left: 1px solid;
+
+
+            }
+
+            &-heading {
+                font-weight: 800;
+                color: $primary_color;
+            }
+        }
+
     }
 
 }

@@ -13,20 +13,21 @@
             <h2>{{carousel.title}}</h2>
             <p>{{carousel.caption}}</p>
 
-                <a href="{% url 'functions' %}" class="action__btn"> Learn more &rarr;</a>
-                <a href="{% url 'contact' %}" class="contact__btn"> Get Help &rarr;</a>
+            <a href="{% url 'functions' %}" class="action__btn"> Learn more &rarr;</a>
+            <a href="{% url 'contact' %}" class="contact__btn"> Get Help &rarr;</a>
 
         </span>
     </div>
     {% endfor %}
-    
+
     <!-- The Arrows -->
     <i class="left" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100">
-        <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"></path>
-    </svg></i>
+            <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"></path>
+        </svg></i>
     <i class="right" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100">
-        <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) "></path>
-    </svg></i>
+            <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) ">
+            </path>
+        </svg></i>
     <!-- Title Bar -->
     <!-- <span class="titleBar">
         <h1>Our Sand, Our Livelihood</h1>
@@ -127,6 +128,42 @@
     </ul>
 </section>
 <!-- recent Articles end -->
+
+<!---------------------------------------------------------------- 
+        Feature articles
+ ----------------------------------------------------------------->
+<div class="featured">
+    <div class="heading mb-2 mt-2">
+        <h1>Featured Articles</h1>
+        <div class="linebg_1"></div>
+    </div>
+    <div class="featured__article">
+        {% for featured in featured %}
+
+        <a href="{{ featured.url }}" target="_blank">
+            <div class="featured__article--card">
+                <img src="{{ featured.image.url }}" alt="">
+                <div class="featured__article--content">
+                    <div class="featured__article--title">
+                        <h2>{{ featured.title }}</h2>
+                    </div>
+                    <div class="featured__article--time">
+                        <p>
+                            Created | <span>{{ featured.created_on | date}}</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+
+<!-- end of feature articles -->
+
 
 <!---------------------------------------------------------------- 
         Patners Begin

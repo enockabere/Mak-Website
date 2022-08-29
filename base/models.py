@@ -41,7 +41,7 @@ class Subscription(models.Model):
 
 
 class Patner(models.Model):
-    name = models.CharField(max_length=100, primary_key=True)
+    name = models.CharField(max_length=100, primary_key=True, unique=True)
     image = models.ImageField(upload_to='media')
     caption = models.TextField(blank=True)
     url = models.URLField(max_length=200)
@@ -53,7 +53,7 @@ class Patner(models.Model):
         return truncatechars(self.caption, 20)
 
     def org_photo(self):
-        return mark_safe('<img src="{}" width="150px" />'.format(self.image.url))
+        return mark_safe('<img src="{}" width="80px" />'.format(self.image.url))
 
     org_photo.short_description = 'Image'
     org_photo.allow_tags = True

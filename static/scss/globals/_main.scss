@@ -168,9 +168,10 @@
             height: 50vh;
         }
 
-        @include u.breakpoint-down(xsmall) {
+        @include u.breakpoint-down(x-small) {
             height: 60vh;
             padding-inline: 1em;
+
         }
 
         &--title {
@@ -334,7 +335,7 @@
             // flex-wrap: wrap;
             gap: 2em;
 
-            @include u.breakpoint-down(xsmall){
+            @include u.breakpoint-down(x-small) {
                 flex-direction: column;
             }
 
@@ -776,7 +777,7 @@ footer {
         padding-inline: 2em;
         font-size: small;
 
-        @include u.breakpoint-down(xsmall) {
+        @include u.breakpoint-down(x-small) {
             display: block;
         }
 
@@ -829,6 +830,82 @@ footer {
 
         .current {
             @include set_background($secondary_color)
+        }
+    }
+}
+
+
+.featured {
+    text-align: center;
+
+    &__article {
+        text-align: unset;
+        margin-inline: 2em;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2em;
+        justify-content: center;
+
+        @include u.breakpoint-down(xx-small) {
+            margin-inline: 1em;
+            flex-direction: column;
+        }
+
+        &--card {
+            display: flex;
+            width: 25em;
+            border-radius: 4px;
+            @include set_background($fade);
+            box-shadow: 5px 5px 20px $dark_color_fade;
+
+            @include u.breakpoint-down(xx-small) {
+                width: 100%;
+                a{
+                    width: 100%;
+                }
+            }
+
+            &:hover {
+                @include set_background($white);
+                transform: scale(1.02);
+                transition: transform 200ms ease-in-out;
+            }
+
+
+            img {
+                width: 100px;
+                aspect-ratio: 3/4;
+                object-fit: cover;
+
+                @include u.breakpoint-down(xx-small) {
+                    width: 60px;
+                    aspect-ratio: 3/2;
+                    object-fit: cover;
+                }
+            }
+
+        }
+
+        &--content {
+            text-align: left;
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+        }
+
+        &--title {
+            h2 {
+                font-size: 1.2em;
+                font-weight: 600;
+
+                @include u.breakpoint-down(xx-small) {
+                    font-size: 1em;
+                    font-weight: 700;
+                }
+
+            }
         }
     }
 }
