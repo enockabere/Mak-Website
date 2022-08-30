@@ -22,22 +22,17 @@ class Faq(models.Model):
         return self.question
 
 
+class PubCategory(models.Model):
+    category = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.category
 class Publication(models.Model):
-
-    PUB_CATEGORY = [
-
-        (0, 'Acts'),
-        (1, 'Sand Dealers'),
-        (2, 'Sand Harvesting Sites'),
-        (3, 'Financial Reports'),
-        (4, 'Application Form'),
-        (5, 'Feedback Form'),
-    ]
 
     name = models.CharField(max_length=200)
     file = models.FileField(upload_to='media')
     pub_date = models.DateTimeField(auto_now_add=True)
-    category = models.IntegerField(choices=PUB_CATEGORY, default=0)
+    category = models.ForeignKey(PubCategory, on_delete=models.PROTECT)
     status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
@@ -46,6 +41,7 @@ class Publication(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Privacy(models.Model):
     title = models.CharField(max_length=200, default='Privacy Policy')

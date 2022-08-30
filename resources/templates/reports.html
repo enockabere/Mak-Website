@@ -1,45 +1,64 @@
-{% extends 'resource-layout.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 
-{% block title %}
 
-{% block hero %} Financial Reports {% endblock hero %}
+{% block body %}
+<section class="hero">
+    <div class="hero__title">
+        
+        <h1>{% block title %} {{ publication_category_in.category }} {% endblock title %}</h1>
+        
+    </div>
+</section>
 
-{% endblock title %}
+<div class="grid">
+    <main class="grid__main">
+        <div class="grid__main--item">
+            <div class="grid__main--list">
+                <div class="publication">
+                    <div class="publication__main">
+                        <p>Reports are published here. </p>
+                        <div class="publication__main--item">
+                            {% for pub in pub %}
+                            <div class="file__card">
+                                <div class="file__card--name">
+                                    <h1>
+                                        <a href="{{ pub.file.url }}" download="" target="_blank">
+                                            {{ pub.name }}
+                                        </a>
+                                    </h1>
+
+                                    <div class="file__card--name-lower">
+                                        <p>
+                                            <i class="fa-solid fa-copy"></i> 1 File(s)
+                                        </p>
+                                        <p>
+                                            <i class="las la-database"></i> <span>{{ pub.category }}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="file__card--icon">
+                                    <a href="{{ pub.file.url }}" download="" target="_blank" title="Download File">
+                                        <img src="{% static 'img/assets/pdf-icon.ico'%}" alt="">
+                                    </a>
+                                </div>
 
 
-{% block intro %}
-These are reports capturing the various financial expenditures. Reports are published here.
-{% endblock intro %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
 
+            </div>
 
-{% block files %}
-{% for pub in pub %}
-<div class="file__card">
-    <div class="file__card--name">
-        <h1>
-            <a href="{{ pub.file.url }}" download="" target="_blank">
-                {{ pub.name }}
-            </a>
-        </h1>
-
-        <div class="file__card--name-lower">
-            <p>
-                <i class="fa-solid fa-copy"></i> 1 File(s)
-            </p>
-            <p>
-                <i class="las la-database"></i> <span>{{ pub.size|filesizeformat }}</span>
-            </p>
         </div>
-    </div>
-    <div class="file__card--icon">
-        <a href="{{ pub.file.url }}" download="" target="_blank" title="Download File">
-            <img src="{% static 'img/assets/pdf-icon.ico'%}" alt="">
-        </a>
-    </div>
 
-
+    </main>
+    <aside class="grid__sidebar">
+        {% include 'aside.html' %}
+    </aside>
 </div>
-{% endfor %}
-{% endblock files %}
+
+{% endblock body %}

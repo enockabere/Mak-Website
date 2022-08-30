@@ -7,10 +7,10 @@ from blog.models import STATUS
 
 class JobAdvert(models.Model):
     POSITION_TYPE = [
-        (0, 'Full Time'),
-        (1, 'Part Time'),
-        (2, 'Internship'),
-        (3, 'Attachment')
+        ('Permanent', 'Permanent'),
+        ('Contract', 'Contract'),
+        ('Internship', 'Internship'),
+        ('Attachment', 'Attachment')
     ]
 
     title = models.CharField(max_length=200)
@@ -22,7 +22,7 @@ class JobAdvert(models.Model):
     advert_file = models.FileField(upload_to='media', blank=True)
     pub_date = models.DateTimeField(auto_now_add=True, help_text='Date Published')
     status = models.IntegerField(choices=STATUS, default=0,help_text = 'Change to Publish for it to be seen')
-    job_type = models.IntegerField(choices=POSITION_TYPE, default=0,help_text = 'Choose the appropriate job type to advertise')
+    job_type = models.CharField(choices=POSITION_TYPE, default='Contract', max_length=200, help_text = 'Choose the appropriate job type to advertise')
 
 
     class Meta:
@@ -59,3 +59,6 @@ class Tender(models.Model):
 
     def __str__(self):
         return self.title
+
+
+

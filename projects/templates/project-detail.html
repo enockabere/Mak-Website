@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<section class="hero">
+    <div class="hero__title">
+        <h1>Home / Projects / {{ projects.category }} / {{ projects.title }}</h1>
+    </div>
+</section>
+
+<div class="projects">
+    <div class="heading mb-2 mt-2">
+        <h1>{% block title %} {{ projects.title }} {% endblock title %}</h1>
+        <div class="linebg_1"></div>
+    </div>
+
+
+    <div class="projects__inner">
+
+        <div class="projects__inner--detail">
+            <img src="{{ projects.image.url }}" alt="">
+            <div class="projects__inner--content">
+                <p>{{ projects.description | safe }}
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+{% include 'section/cta_panel.html' %}
+
+
+{% endblock body %}

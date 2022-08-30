@@ -27,8 +27,14 @@
         <input type="search" id="search" placeholder="search here...">
         <button><i class="fa fa-search"></i></button>
     </div>
-    <div class="cta">
-        <a href="{% url 'functions' %}">Learn More</a>
+    <div class="top-links">
+        <div class="cta">
+            <a href="{% url 'functions' %}">Learn More</a>
+        </div>
+        <div class="login">
+            <a href="https://login.microsoftonline.com/" target="_blank">Staff login</a>
+        </div>
+        
     </div>
 </div>
 
@@ -64,37 +70,48 @@
                     <a href="{% url 'md' %}">Message from MD</a>
                 </div>
             </li>
-
             <li class="dropdown">
+                <a >Projects <i class="las la-angle-down"></i></a>
+                <div class="sub-menu">
+                    {% for list in project_category %}
+                    <a href="{% url 'projects' list.id %}">{{ list.category }}</a>
+                    {% endfor %}
+                </div>
+            </li>
+            <!-- <li class="dropdown">
                 <a>Projects <i class="las la-angle-down"></i></a>
                 <div class="sub-menu">
                     <div class="sub-menu-row">
+                        
                         <div class="sub-menu-col">
-                            <a class="sub-menu-heading" href=""> Sand Dams</a>
-                            <a href="">Kwa Ngesu Sand dam</a>
-                            <a href="">Kaiti Sand dam</a>
-                            <a href="">Matiliku </a>
+                            <a class="sub-menu-heading" href=""> </a>
+                            <div class="sub-menu-col-list">
+                                
+                                
+                                
+                                <a href=" projects/{{ project.id }}">projects}</a>
+                                
+                               
+                                
+                                
+                                
+                            </div> 
                         </div>
-                        <div class="sub-menu-col">
-                            <a class="sub-menu-heading" href=""> Check Dams</a>
-                            <a href="">Kwa Ngesu Sand dam</a>
-                        </div>
-                        <div class="sub-menu-col">
-                            <a class="sub-menu-heading" href=""> Garbions </a>
-                        </div>
+                        
+
+                        
                     </div>
                     
                 </div>
-
-            </li>
-
+                
+            </li> -->
+            
             <li class="dropdown">
                 <a>Resource Center<i class="las la-angle-down"></i></a>
                 <div class="sub-menu">
-                    <a href="{% url 'harvesting' %}">Designated sand Harvesting sites</a>
-                    <a href="{% url 'dealers' %}">Licenced Sand Dealers</a>
-                    <a href="{% url 'publication' %}">Financial Reports</a>
-                    <a href="{% url 'acts' %}">Acts</a>
+                    {% for list in publication_category %}
+                    <a href="{% url 'publication' list.id %}">{{ list.category }}</a>
+                    {% endfor %}
                     <a href="">Feedback Forms</a>
                     <a href="">Application Forms</a>
                 </div>
@@ -108,7 +125,7 @@
                 </div>
             </li>
             <li class="dropdown">
-                <a >Work with Us<i class="las la-angle-down"></i></a>
+                <a>Work with Us<i class="las la-angle-down"></i></a>
                 <div class="sub-menu">
 
                     <a href="{% url 'tender' %}">Tenders</a>

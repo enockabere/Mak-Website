@@ -110,9 +110,6 @@ class Functions(models.Model):
     class Meta:
         verbose_name = 'Mandate & Function'
 
-    def __str__(self):
-        return self.title
-
     def save(self, *args, **kwargs):
         if self.__class__.objects.count():
             self.pk = self.__class__.objects.first().pk
@@ -124,12 +121,18 @@ class Functions(models.Model):
 
 class Objectives(models.Model):
     title = models.CharField(max_length=200, default='Strategic Objectives')
-    content = models.TextField()
+    content = models.TextField(blank=True)
+    file = models.FileField(upload_to='media', blank=True, null=False)
     status = models.IntegerField(
         choices=STATUS, default=0, help_text='Change to Publish for it to be seen')
 
     class Meta:
         verbose_name = 'Strategic Objective'
+
+    def save(self, *args, **kwargs):
+        if self.__class__.objects.count():
+            self.pk = self.__class__.objects.first().pk
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.title

@@ -28,13 +28,14 @@
                     <div class="description">
                         <ul class="top">
                         <li>{{ tender.title }}</li>
-                        <li>Deadline: <span>{{tender.deadline}}</span></li>
+                        <li>Deadline: <span>{{tender.deadline | date }}</span></li>
                         </ul>
                         <ul class="bottom">
                             <li>Tender Reference No: <span>{{ tender.ref_number }}</span></li>
+                            <li>Status <span>{{ tender.tender_status }}</span></li>
                             <li>
                                 <div class="desc-btn">
-                                    <a href="{{ tender.file }}" download="">Download</a>
+                                    <a href="{{ tender.file.url }}" download="">Download</a>
                                 </div>
                             </li>
                         </ul>

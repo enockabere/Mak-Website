@@ -2,11 +2,15 @@ from django.shortcuts import render
 from base.models import CallToActionPanel
 from .forms import FeedbackForm
 from base.forms import SubscriptionForm
+from projects.models import Project, ProjectCategory
+from resources.models import PubCategory
 
 # Create your views here.
 
 
 def contact_view(request):
+    project_category = ProjectCategory.objects.all()
+    publication_category = PubCategory.objects.all()
     if request.method == 'POST':
         form = SubscriptionForm(request.POST)
         if form.is_valid():
@@ -26,6 +30,8 @@ def contact_view(request):
         'form': form,
         'form2': form2,
         'cta': cta,
+        'project_category': project_category,
+        'publication_category': publication_category,
     }
     return render(request, 'contact.html', context)
 

@@ -729,6 +729,7 @@ footer {
 
 
             &--item {
+                width: 300px;
 
                 h4 {
                     text-decoration: underline;
@@ -755,7 +756,7 @@ footer {
                     }
 
                     .btn {
-                        width: 100%;
+                        padding: 8px 20px;
                         margin: unset
                     }
                 }
@@ -897,8 +898,10 @@ footer {
 
         &--title {
             h2 {
-                font-size: 1.2em;
-                font-weight: 600;
+                font-size:smaller;
+                font-weight: 500;
+                line-height: 1.2;
+                text-align: justify;
 
                 @include u.breakpoint-down(xx-small) {
                     font-size: 1em;
@@ -907,5 +910,36 @@ footer {
 
             }
         }
+        &--time{
+            font-size: small;
+        }
+    }
+}
+
+
+.department{
+    border-radius: 4px;
+    margin-bottom: 2em;
+    &__title{
+        @include set_background($primary_color);
+        h2{
+            padding: 10px;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    }
+    &__content{
+        @include set_background($fade);
+        padding: 1em;
+        border: 1px solid;
+        border-top: none;
+        border-radius: 4px;
+
+        ul,ol{
+            list-style-type: disc;
+            list-style-position: inside;
+        }
+
     }
 }

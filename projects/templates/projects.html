@@ -1,37 +1,82 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %} Projects {% endblock title %}
 
 {% block body %}
 <section class="hero">
     <div class="hero__title">
-        <h1>Home / Projects</h1>
+        <h1>Home / Projects / {{ project_category_in.category }}</h1>
     </div>
 </section>
 
 <div class="projects">
     <div class="heading mb-2 mt-2">
-        <h1>Our Projects</h1>
+        <h1>{% block title %} {{ project_category_in.category }} {% endblock title %}</h1>
         <div class="linebg_1"></div>
     </div>
 
-    <div class="projects__items">
-        {% for project in projects %}
-        <div class="projects__main">
-            <div class="projects__content--image">
-                <img src="{{project.image.url}}" alt="">
-            </div>
-            <div class="projects__content--content">
-                <h1>{{ project.title }}</h1>
-                <p>{{ project.description | safe}}</p>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
+    
+   <div class="projects__inner">
+       {% for list in projects %}
+       <div class="projects__inner--item">
+           
+           <img src="{{ list.image.url }}" alt="">
+           <div class="projects__inner--content">
+
+               <h2>
+                {{list.title}}
+               </h2>
+               <p>
+                   {{list.description | safe | truncatewords_html:20 }}
+               </p>
+               <a href="{% url 'project-detail' list.slug %}">Read more &rarr;</a>
+           </div>
+           </div> 
+
+
+    {% endfor %}
+   </div>
+    
+
 </div>
+
+
+
+
+
 
 
 {% include 'section/cta_panel.html' %}
 
 
 {% endblock body %}
+
+
+{% for post in projects %}
+    <p>{{post.title}}</p>
+{% endfor %}
+
+{% for ct in all_categs %}
+<div>
+    <div> <a href="{{ ct.category.id }}">{{ct.category}}</a></div>
+    {% for post in ct.postcategory.all %}
+       <p> {{post.title}} </p>
+    
+    {% endfor %}
+ </div>
+{% endfor %}
+
+
+
+{% regroup object_list by category as post_list %}
+
+<ul>
+    {% for post_category in post_list %}
+        <li>{{ post_category.grouper }}
+            <ul>
+            {% for post in post_category.list %}
+                <li>{{ post.title }}</li>
+            {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+</ul>

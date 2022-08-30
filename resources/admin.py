@@ -1,5 +1,5 @@
 from django.contrib import admin
-from resources.models import Faq, Publication, Privacy,Terms
+from resources.models import Faq, Publication, Privacy,Terms, PubCategory
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -19,10 +19,11 @@ class TermsAdmin(SummernoteModelAdmin):
     list_display = ['title', 'modified', 'status']
 
 class PublicationAdmin(admin.ModelAdmin):
-    list_display= ['name', 'pub_date', 'category', 'status']
+    list_display= ['name', 'category', 'status']
 
 # Register your models here.
 admin.site.register(Publication, PublicationAdmin)
 admin.site.register(Faq, FaqAdmin)
 admin.site.register(Terms, TermsAdmin)
 admin.site.register(Privacy, PrivacyAdmin)
+admin.site.register(PubCategory)
