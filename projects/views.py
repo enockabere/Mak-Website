@@ -1,9 +1,4 @@
-import imp
-from turtle import title
-from unicodedata import category
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
-from base import models
 from .models import Project, ProjectCategory
 from base.models import CallToActionPanel, Subscription
 from base.forms import SubscriptionForm
