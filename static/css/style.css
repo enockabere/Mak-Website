@@ -3163,6 +3163,67 @@ footer .certified {
   padding-block: 7px;
 }
 
+.error {
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.error__number {
+  font-size: 10rem;
+}
+.error__text h2 {
+  text-transform: uppercase;
+}
+.error__text p {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+.error__text--link {
+  margin-top: 2em;
+}
+.error__text--link a {
+  padding: 0.5em 2em;
+  background-color: rgb(66, 65, 65);
+  color: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
+  border-radius: 4px;
+}
+.error__text--link a:hover {
+  background-color: rgb(255, 255, 255);
+  color: #333333;
+  border-color: #333333;
+  border: 1px solid;
+}
+.error__bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  text-align: center;
+  width: 100%;
+}
+.error__bottom--content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding-block: 0.5em;
+  background-color: rgb(66, 65, 65);
+  color: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
+  justify-content: center;
+}
+.error__bottom--content ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.error__bottom--content ul a {
+  text-decoration: underline;
+}
+
 .back-to-top {
   display: inline-block;
   background-color: rgb(184, 121, 5);

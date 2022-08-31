@@ -35,10 +35,10 @@ urlpatterns = [
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
-# handler403 = 'base.views.error_403'
-# handler500 = 'base.views.error_500'
+handler403 = 'base.views.error_403'
+handler500 = 'base.views.error_500'
 
-# handler404 = 'base.views.error_404'
+handler404 = 'base.views.error_404'
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
