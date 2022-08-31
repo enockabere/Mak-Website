@@ -1,11 +1,25 @@
+
 from django.shortcuts import render
-from base.models import Carousel, Patner,CallToActionPanel, Empowerment
+from django.http import HttpResponse, Http404
+from django.template import loader
+from base.models import Carousel, Patner, CallToActionPanel, Empowerment
 from blog.models import Post, Featured
 from .forms import SubscriptionForm
 from projects.models import Project, ProjectCategory
 from resources.models import PubCategory
 
 # Create your views here.
+
+def error_404(request, exception):
+    return render(request, '404.html', status=404)
+
+def error_403(request, exception):
+    return render(request, '403.html', status=403)
+
+def error_500(request, * args, ** argv):
+    return render(request, '500.html', status=500)
+
+
 def index_view(request):
     carousel = Carousel.objects.order_by('-created_on').filter(status=1)[:7]
     post = Post.objects.order_by('-created_on')[:4]
@@ -17,7 +31,6 @@ def index_view(request):
     publication_category = PubCategory.objects.all()
     project_category = ProjectCategory.objects.all()
     projects = Project.objects.filter(category__category__in=category_names)
-    
 
     if request.method == 'POST':
         form = SubscriptionForm(request.POST)
@@ -36,5 +49,5 @@ def index_view(request):
         'project_category': project_category,
         'projects': projects
     }
-        
-    return render(request, 'index.html', context)
+    template = loader.get_template('index.html')
+    return HttpResponse(template.render(context, request))

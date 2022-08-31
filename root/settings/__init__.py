@@ -4,5 +4,5 @@
 #     live = False
 # except ImportError:
 #     live = True
-# if live
+# if live:
 from .production import *

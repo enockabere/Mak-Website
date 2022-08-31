@@ -768,7 +768,7 @@ footer {
 
     .copyright {
         @include set_background($primary_color_darker);
-        margin-top: 1em;
+        
         text-align: left;
         padding-block: .5em;
         display: flex;
@@ -801,6 +801,14 @@ footer {
                 }
             }
         }
+    }
+
+    .certified{
+        padding-top: .5em;
+        font-family: sans-serif;
+        font-size: medium;
+        text-align: center;
+        // @include set_background($primary_color_darker);
     }
 }
 

@@ -10,7 +10,7 @@ SECRET_KEY = 'django-insecure-kos#arysn&f%^lq3#ey2$_%46@u+$%&7blhxt86&iizicrjaf@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'makueni-sand-authotiry.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'makueni-sand-authotiry.herokuapp.com']
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
