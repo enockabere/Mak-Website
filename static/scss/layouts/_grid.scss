@@ -41,6 +41,8 @@
                     img {
                         float: left;
                         width: 200px;
+                        aspect-ratio: 1;
+                        object-fit: cover;
                         padding-right: 1em;
                         padding-bottom: 1em;
                     }
