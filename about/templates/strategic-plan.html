@@ -8,19 +8,17 @@
 <setion class="about mt-3 mb-3">
     <div class="about__content">
         <div class="inner">
-            {% if objectives %}
+
+            
+
             {% for object in objectives %}
-            
-            <div>
-            
-                {{ object.content | safe }}
-            
-            </div>
+           
+            <iframe src="{{ object.file.url }}" width="70%" height="800" style="border: none;" allowFullScreen>
+            </iframe>
+    
             
             {% endfor %}
-            {% else %}
-                <p>The data will be in soon...</p>
-            {% endif %}
+            
         </div>
     </div>
 

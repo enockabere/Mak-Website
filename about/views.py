@@ -15,7 +15,7 @@ def about_view(request):
     mission = Mission.objects.filter(status=1)[:1]
     leader = Personel.objects.filter(status=1, category=1).all()
     cta = CallToActionPanel.objects.filter(status=1)[:1]
-    objectives = Objectives.objects.filter(status=1)
+   
     project_category = ProjectCategory.objects.all()
     publication_category = PubCategory.objects.all()
     vision = Vision.objects.filter(status=1)
@@ -29,7 +29,7 @@ def about_view(request):
         'mission': mission,
         'leader': leader,
         'cta': cta,
-        'objectives': objectives,
+        
         
         'vision': vision,
 
@@ -167,6 +167,7 @@ def service_charter(request):
 
 
 def strategic_plan(request):
+    objectives = Objectives.objects.filter(status=1)
     cta = CallToActionPanel.objects.filter(status=1)[:1]
     project_category = ProjectCategory.objects.all()
     publication_category = PubCategory.objects.all()
@@ -176,6 +177,7 @@ def strategic_plan(request):
             form.save()
     form = SubscriptionForm()
     context = {
+        'objectives': objectives,
         'cta': cta,
         'form': form,
         'project_category': project_category,
