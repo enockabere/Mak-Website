@@ -329,6 +329,49 @@
                     font-size: 1em;
                 }
             }
+            .iframe{
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                align-items: center;
+
+                &__card{
+                    width: 70%;
+                    border: 1px solid;
+                    border-radius: 4px;
+                    display: flex;
+                    justify-content: flex-start;
+                    gap: 1em;
+                    margin-bottom:1em ;
+                    padding: 1em;
+
+                    &--content{
+                        display: flex;
+                        justify-content: space-between;
+                        align-self: center;
+                        width: 100%;
+
+                        a{
+                            @include set_background($primary_color);
+                            border-radius: 4px;
+                            padding: 8px 20px;
+
+                            &:hover{
+                                @include set_background($fade);
+                                padding-block: 7px;
+                                border: 1px solid;
+                            }
+                        }
+
+                    }
+                }
+
+                iframe{
+                    width: 70%;
+                    height: 800px;
+                    border: none;
+                }
+            }
         }
 
         &--inner {

@@ -66,8 +66,9 @@ class FunctionsAdmin(SummernoteModelAdmin):
     list_display = ['title', 'status']
 
 
-class ObjectivesAdmin(SummernoteModelAdmin):
-    list_display = ['title', 'status']
+class ObjectivesAdmin(admin.ModelAdmin):
+    list_display = ['title','created_on', 'status']
+    readonly_fields = ['created_on', ]
 
 
 class VisionAdmin(admin.ModelAdmin):
@@ -78,8 +79,9 @@ class MissionAdmin(admin.ModelAdmin):
     list_display = ['title', 'status']
 
 
-class ServiceCharterAdmin(SummernoteModelAdmin):
-    list_display = ['title', 'status']
+class ServiceCharterAdmin(admin.ModelAdmin):
+    list_display = ['title','created_on', 'status']
+    readonly_fields = ['created_on', ]
 
 
 # Register your models here.

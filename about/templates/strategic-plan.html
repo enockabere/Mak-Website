@@ -12,9 +12,22 @@
             
 
             {% for object in objectives %}
+            <div class="iframe">
+                <div class="iframe__card">
+                    <div class="iframe__card--icon">
+                        <a href="{{ object.file.url }}" download="" target="_blank" title="Download File">
+                            <img src="{% static 'img/assets/pdf-icon.ico'%}" alt="">
+                        </a>
+                    </div>
+                    <div class="iframe__card--content">
+                        <h2>{{object.title}}</h2>
+                        <a href="{{ object.file.url }}" download="{{object.title}}"> Download </a>
+                    </div>
+                </div>
+                <iframe src="{{ object.file.url }}"  allowFullScreen>
+                </iframe>
+            </div>
            
-            <iframe src="{{ object.file.url }}" width="70%" height="800" style="border: none;" allowFullScreen>
-            </iframe>
     
             
             {% endfor %}

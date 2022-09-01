@@ -10,11 +10,20 @@
         <div class="inner">
             {% if charter %}
             {% for charter in charter %}
-            
-            <div>
-            
-                {{ charter.content | safe }}
-            
+            <div class="iframe">
+                <div class="iframe__card">
+                    <div class="iframe__card--icon">
+                        <a href="{{ charter.file.url }}" download="" target="_blank" title="Download File">
+                            <img src="{% static 'img/assets/pdf-icon.ico'%}" alt="">
+                        </a>
+                    </div>
+                    <div class="iframe__card--content">
+                        <h2>{{ charter.title }}</h2>
+                        <a href="{{ charter.file.url }}" download="{{ charter.title }}"> Download </a>
+                    </div>
+                </div>
+                <iframe src="{{ charter.file.url }}"  allowFullScreen>
+                </iframe>
             </div>
             
             {% endfor %}

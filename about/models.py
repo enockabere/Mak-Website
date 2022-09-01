@@ -2,6 +2,7 @@ from django.utils.safestring import mark_safe
 from django.template.defaultfilters import truncatechars
 from django.db import models
 from blog.models import STATUS
+from datetime import datetime  
 
 # Create your models here.
 
@@ -120,9 +121,10 @@ class Functions(models.Model):
 
 
 class Objectives(models.Model):
-    title = models.CharField(max_length=200, default='Strategic Objectives')
+    title = models.CharField(max_length=200, default='Strategic Plan')
     content = models.TextField(blank=True)
     file = models.FileField(upload_to='media', blank=True, null=False)
+    created_on = models.DateTimeField(default=datetime.now, blank=True)
     status = models.IntegerField(
         choices=STATUS, default=0, help_text='Change to Publish for it to be seen')
 
@@ -130,10 +132,6 @@ class Objectives(models.Model):
         verbose_name = 'Strategic Plan'
         verbose_name_plural = 'Strategic Plan'
 
-    def save(self, *args, **kwargs):
-        if self.__class__.objects.count():
-            self.pk = self.__class__.objects.first().pk
-        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.title
@@ -193,17 +191,15 @@ class Department(models.Model):
 
 class ServiceCharter(models.Model):
     title = models.CharField(max_length=200, default='Service Charter')
-    content = models.TextField()
+    content = models.TextField(blank=True)
+    file = models.FileField(upload_to='media', blank=True, null=False)
+    created_on = models.DateTimeField(default=datetime.now, blank=True)
     status = models.IntegerField(
         choices=STATUS, default=0, help_text='Change to Publish for it to be seen')
 
     class Meta:
         verbose_name_plural = 'Service charter'
 
-    def save(self, *args, **kwargs):
-        if self.__class__.objects.count():
-            self.pk = self.__class__.objects.first().pk
-        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.title

@@ -167,7 +167,7 @@ def service_charter(request):
 
 
 def strategic_plan(request):
-    objectives = Objectives.objects.filter(status=1)
+    objectives = Objectives.objects.filter(status=1).order_by('-created_on')[:1]
     cta = CallToActionPanel.objects.filter(status=1)[:1]
     project_category = ProjectCategory.objects.all()
     publication_category = PubCategory.objects.all()
@@ -207,7 +207,7 @@ def functions_view(request):
 
 
 def strategic_plan_view(request):
-    objectives = Objectives.objects.filter(status=1)
+    objectives = Objectives.objects.filter(status=1).order_by('-created_on')[:1]
     cta = CallToActionPanel.objects.filter(status=1)[:1]
     project_category = ProjectCategory.objects.all()
     publication_category = PubCategory.objects.all()
