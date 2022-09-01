@@ -80,7 +80,7 @@ class MDsMessage(models.Model):
 
 
 class AboutUs(models.Model):
-    title = models.CharField(max_length=200, default='Who we are')
+    title = models.CharField(max_length=200, default='Background Infomation')
     description = models.TextField()
     status = models.IntegerField(
         choices=STATUS, default=0, help_text='Change to Publish for it to be seen')

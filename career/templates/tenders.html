@@ -22,6 +22,7 @@
                 
             </div>
             <div class="grid__main--list">
+                {% if tender %}
 
                 {% for tender in tender %}
                 <div class="grid__main--tender">
@@ -43,6 +44,9 @@
 
                 </div>
                 {% endfor %}
+                {% else %}
+                    <p>No Tenders currently available.</p>
+                {% endif %}
 
             </div>
 

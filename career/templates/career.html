@@ -16,6 +16,7 @@
                 <h1>Vacancies</h1>
                 <div class="linebg_2"></div>
             </div>
+            {% if object_list %}
             {% for job in object_list %}
             <div class="grid__main--list">
                 <div class="grid__main--card">
@@ -38,6 +39,9 @@
                 </div>
             </div>
             {% endfor %}
+            {% else %}
+                <p>No vacancies at the moment</p>
+            {% endif %}
 
             <!-- <div class="more">
                 <a href="">Load More</a>
