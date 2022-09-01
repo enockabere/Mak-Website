@@ -3,6 +3,7 @@ from .models import Project, ProjectCategory
 from base.models import CallToActionPanel, Subscription
 from base.forms import SubscriptionForm
 from resources.models import PubCategory
+from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -17,6 +18,12 @@ def projects_view(request, pk):
         if form.is_valid():
             form.save()
     form = SubscriptionForm()
+
+    paginator = Paginator(projects, 8) # Show 8 projects per page.
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     context = {
         'cta': cta,
         'projects': projects,
@@ -24,6 +31,7 @@ def projects_view(request, pk):
         'project_category': project_category,
         'publication_category': publication_category,
         'project_category_in': project_category_in,
+        'page_obj': page_obj,
     }
     return render(request, 'projects.html', context)
 

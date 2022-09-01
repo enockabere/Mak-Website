@@ -37,6 +37,7 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-created_on']
+        verbose_name = 'Article'
 
     @property
     def short_description(self):
@@ -61,7 +62,7 @@ class Featured(models.Model):
         choices=STATUS, default=0, help_text='Change to Publish for it to be seen')
 
     class Meta:
-        verbose_name_plural = 'Featured'
+        verbose_name = 'Featured Article'
 
     @property
     def short_description(self):

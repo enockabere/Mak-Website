@@ -41,7 +41,7 @@ def about_view(request):
 
 
 def boardOfDirectorsView(request):
-    post = Post.objects.filter(status=1).order_by('-created_on')[:5]
+    post = Post.objects.filter(status=1).order_by('-created_on')[:4]
     board_member = Personel.objects.filter(status=1, category=0).all()
     project_category = ProjectCategory.objects.all()
     publication_category = PubCategory.objects.all()
@@ -61,7 +61,7 @@ def boardOfDirectorsView(request):
     return render(request, 'board-of-directors.html', context)
 
 def ManagementView(request):
-    post = Post.objects.filter(status=1).order_by('-created_on')[:5]
+    post = Post.objects.filter(status=1).order_by('-created_on')[:4]
     board_member = Personel.objects.filter(status=1, category=1).all()
     project_category = ProjectCategory.objects.all()
     publication_category = PubCategory.objects.all()
@@ -84,7 +84,7 @@ def ManagementView(request):
 
 
 def departments_view(request):
-    post = Post.objects.filter(status=1).order_by('-created_on')[:5]
+    post = Post.objects.filter(status=1).order_by('-created_on')[:4]
     project_category = ProjectCategory.objects.all()
     department = Department.objects.filter(status=1).all()
     publication_category = PubCategory.objects.all()
@@ -104,7 +104,7 @@ def departments_view(request):
 
 
 def md_message_view(request):
-    post = Post.objects.filter(status=1).order_by('-created_on')[:5]
+    post = Post.objects.filter(status=1).order_by('-created_on')[:4]
     message = MDsMessage.objects.filter(status=1)[:1]
     project_category = ProjectCategory.objects.all()
     publication_category = PubCategory.objects.all()

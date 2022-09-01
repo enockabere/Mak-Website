@@ -23,7 +23,7 @@ def error_500(request, * args, ** argv):
 def index_view(request):
     carousel = Carousel.objects.order_by('-created_on').filter(status=1)[:7]
     post = Post.objects.order_by('-created_on')[:4]
-    patners = Patner.objects.all()
+    patners = Patner.objects.filter(status=1).all()
     cta = CallToActionPanel.objects.filter(status=1)[:1]
     empowerment = Empowerment.objects.filter(status=1)[:1]
     featured = Featured.objects.filter(status=1).order_by('-created_on')[:6]

@@ -19,7 +19,7 @@ class CareerList(ListView):
         
 
         context['post'] = Post.objects.filter(
-            status=1).order_by('created_on')[:4]
+            status=1).order_by('-created_on')[:4]
         context['publication_category'] = PubCategory.objects.all()
         context['project_category'] = ProjectCategory.objects.all()
 
