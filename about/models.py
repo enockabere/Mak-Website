@@ -127,7 +127,8 @@ class Objectives(models.Model):
         choices=STATUS, default=0, help_text='Change to Publish for it to be seen')
 
     class Meta:
-        verbose_name = 'Strategic Objective'
+        verbose_name = 'Strategic Plan'
+        verbose_name_plural = 'Strategic Plan'
 
     def save(self, *args, **kwargs):
         if self.__class__.objects.count():

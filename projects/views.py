@@ -19,7 +19,7 @@ def projects_view(request, pk):
             form.save()
     form = SubscriptionForm()
 
-    paginator = Paginator(projects, 8) # Show 8 projects per page.
+    paginator = Paginator(projects, 1) # Show 8 projects per page.
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
