@@ -86,8 +86,8 @@ class AboutUs(models.Model):
         choices=STATUS, default=0, help_text='Change to Publish for it to be seen')
 
     class Meta:
-        verbose_name = 'Who We are'
-        verbose_name_plural = 'Who We are'
+        verbose_name = 'Background Info'
+        verbose_name_plural = 'Background Info'
 
     @property
     def short_description(self):
