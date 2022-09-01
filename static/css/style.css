@@ -1057,6 +1057,12 @@ textarea {
     grid-template-columns: auto;
   }
 }
+.grid__main--item .message-container .msg img {
+  float: left;
+  width: 200px;
+  padding-right: 1em;
+  padding-bottom: 1em;
+}
 .grid__main--items h2 {
   color: rgb(184, 121, 5);
 }
@@ -3204,6 +3210,7 @@ footer .certified {
   z-index: 100;
   text-align: center;
   width: 100%;
+  font-size: smaller;
 }
 .error__bottom--content {
   display: flex;
