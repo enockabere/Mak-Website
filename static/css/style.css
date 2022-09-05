@@ -1789,16 +1789,19 @@ textarea {
   border-color: rgb(255, 255, 255);
   width: 100%;
   height: 100%;
+}
+.paralax__inner .backdrop {
+  background-color: hsla(0deg, 0%, 0%, 0.705);
   padding: 2em;
 }
 @media (min-width: 1024px) {
-  .paralax__inner {
+  .paralax__inner .backdrop {
     padding: 3em;
     text-align: center;
   }
 }
 @media (max-width: 899.98px) {
-  .paralax__inner {
+  .paralax__inner .backdrop {
     padding: 1em;
   }
 }
