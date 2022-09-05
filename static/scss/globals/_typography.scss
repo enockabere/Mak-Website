@@ -61,6 +61,14 @@ table, th, td{
 table {
     width: 100%;
 
+    ul{
+        list-style: disc;
+        list-style-position: inside;
+    }
+    ol{
+        list-style: disc;
+    }
+
 }
 
 textarea {

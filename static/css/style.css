@@ -288,6 +288,13 @@ table, th, td {
 table {
   width: 100%;
 }
+table ul {
+  list-style: disc;
+  list-style-position: inside;
+}
+table ol {
+  list-style: disc;
+}
 
 textarea {
   resize: none;
@@ -1865,7 +1872,7 @@ textarea {
   gap: 2em;
 }
 .patners__list ul img {
-  max-height: 100px;
+  max-height: 70px;
   object-fit: contain;
 }
 .patners__list ul a {
@@ -2029,7 +2036,7 @@ textarea {
 .about__content .inner ul,
 .about__content .inner ol {
   list-style: circle;
-  margin-left: 1em;
+  margin-left: 1.2em;
 }
 .about__content .inner ul li,
 .about__content .inner ul p,
@@ -2037,6 +2044,14 @@ textarea {
 .about__content .inner ol p {
   padding-bottom: 0.5em;
   font-size: 1em;
+}
+.about__content .inner__buttons a:visited {
+  background-color: #90cd4b;
+  color: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
+}
+.about__content .inner__buttons .btn-primary {
+  padding-inline: 2em;
 }
 .about__content .inner .iframe {
   display: flex;
