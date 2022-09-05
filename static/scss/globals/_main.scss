@@ -314,7 +314,19 @@
             padding-block: 0.5em;
         }
         
+        .charter{
+            h2{
+                text-transform: uppercase;
+                font-size: 1.2em;
+                padding-block: .5em;
 
+            }
+            ol{
+                list-style-type: disc;
+                list-style-position: inside;
+                padding-block: 1em;
+            }
+        }
 
         .inner {
 

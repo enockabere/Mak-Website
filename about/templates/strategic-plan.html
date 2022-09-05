@@ -21,11 +21,12 @@
                     </div>
                     <div class="iframe__card--content">
                         <h2>{{object.title}}</h2>
-                        <a href="{{ object.file.url }}" download="{{object.title}}"> Download </a>
+                        <a href="{{ object.file }}" download="{{object.title}}.pdf"> Download </a>
                     </div>
                 </div>
                 <iframe src="{{ object.file.url }}"  allowFullScreen>
                 </iframe>
+                
             </div>
            
     

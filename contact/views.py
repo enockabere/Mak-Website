@@ -1,29 +1,45 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from base.models import CallToActionPanel
 from .forms import FeedbackForm
 from base.forms import SubscriptionForm
 from projects.models import Project, ProjectCategory
 from resources.models import PubCategory
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse
 
 # Create your views here.
-
-
 def contact_view(request):
     project_category = ProjectCategory.objects.all()
     publication_category = PubCategory.objects.all()
+
+    #  subscription form feedback
     if request.method == 'POST':
         form = SubscriptionForm(request.POST)
         if form.is_valid():
             form.save()
+    form = SubscriptionForm()
 
+    # contact us form feedback
     if request.method == 'POST':
         form2 = FeedbackForm(request.POST)
         if form2.is_valid():
+            subject = form2.cleaned_data['subject']
+            body = {
+                'Name': form2.cleaned_data['name'],
+                'Email': form2.cleaned_data['email'],
+                'Type': form2.cleaned_data['type'],
+                'Message': form2.cleaned_data['message'],
+            }
+            message = "\n".join(body)
+            try:
+                send_mail(subject, message, 'admin@example.com',
+                          ['admin@example.com'])
+            except:
+                return HttpResponse('Invalid header found.')
             form2.save()
-
-    
-    form = SubscriptionForm()
+            return redirect('contact')
     form2 = FeedbackForm()
+
     cta = CallToActionPanel.objects.filter(status=1)[:1]
 
     context = {

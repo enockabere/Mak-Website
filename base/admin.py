@@ -61,12 +61,15 @@ class EmpowermentAdmin(admin.ModelAdmin):
     list_filter = ['pub_date']
 
 
+class SubscriptionAdmin(admin.ModelAdmin):
 
+    def has_add_permission(self, request, obj=None):
+        return False
 
 # Register your models here.
 admin.site.register(Carousel, CarouselAdmin)
 admin.site.register(Patner, PatnerAdmin)
-admin.site.register(Subscription)
+admin.site.register(Subscription, SubscriptionAdmin)
 admin.site.register(CallToActionPanel, CallToActionPanelAdmin)
 admin.site.register(Empowerment)
 

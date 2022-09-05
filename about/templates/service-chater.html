@@ -7,29 +7,282 @@
 
 <setion class="about mt-3 mb-3">
     <div class="about__content">
-        <div class="inner">
-            {% if charter %}
-            {% for charter in charter %}
-            <div class="iframe">
-                <div class="iframe__card">
-                    <div class="iframe__card--icon">
-                        <a href="{{ charter.file.url }}" download="" target="_blank" title="Download File">
-                            <img src="{% static 'img/assets/pdf-icon.ico'%}" alt="">
-                        </a>
-                    </div>
-                    <div class="iframe__card--content">
-                        <h2>{{ charter.title }}</h2>
-                        <a href="{{ charter.file.url }}" download="{{ charter.title }}"> Download </a>
-                    </div>
-                </div>
-                <iframe src="{{ charter.file.url }}"  allowFullScreen>
-                </iframe>
+        <div class="charter">
+
+            <h2>Mission</h2>
+            <p>To be a leading Sand Authority in sand conservation and utilization activities, for sustainable development in the world</p>
+            <h2>vision</h2>
+            <p>To conserve, manage and regulate sand utilization through community participation to ensure sustainable environment and social economic benefits to our community</p>
+            <h2>core values</h2>
+            <ol>
+                <li>Public participation</li>
+                <li>Quality </li>
+                <li>Colaboration</li>
+                <li>Efficency</li>
+                <li>Responsiveness</li>
+                <li>Integrity</li>
+            </ol>
+            <div class="table">
+                <p>Service hours: Monday to Friday from 8.00 a.m. to 1.00 p.m. and 2.00 p.m. to 5.00 p.m.</p>
+                <table>
+                    <thead>
+                        <th>No.</th>
+                        <th>Service Rendered</th>
+                        <th>Customer Obligation</th>
+                        <th>User Charges</th>
+                        <th colspan="2">Time Lines</th>
+                    </thead>
+    
+                    <tr >
+                        <td>1</td>
+                        <td>Attending to customers at our Premises</td>
+                        <td>Courtecy and clarity</td>
+                        <td>Free</td>
+                        <td colspan="2">Within 5 minutes</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="6">2</td>
+                        <td rowspan="6">Response to complaints and inquries</td>
+                        <th colspan="4">Use of approprate channels:</th>
+    
+                    </tr>
+                    <tr >
+                        <td> Visit our offices</td>
+                        <td>Free</td>
+                        <td>Personal visit</td>
+                        <td>5-15 mins </td>
+                    </tr>
+                    <tr>
+                        
+                        <td>Call or office line : +254708274961</td>
+                        <td>Free</td>
+                        <td>Phone Call</td>
+                        <td>Four (4) rings and answered promptly</td>
+                    </tr>
+                    <tr>
+                        
+                        <td>Letter to the MD P.O Box  183 -90300 Makueni</td>
+                        <td>Free</td>
+                        <td>Letters</td>
+                        <td>1-14 days</td>
+                    </tr>
+                    <tr>
+                        
+                        <td>Use suggestion box at the office</td>
+                        <td>Free</td>
+                        <td>Field visit</td>
+                        <td>7-14 days</td>
+                    </tr>
+                    <tr>
+                        
+                        <td>Email us at sandauthority@makueni.go.ke</td>
+                        <td>Free</td>
+                        <td>Email: Acknowledge Response</td>
+                        <td>
+                            <ul>
+                                <li>One (1) working day of receipt</li>
+                                <li>Five (5) working days</li>
+                            </ul>
+                        </td>
+                    </tr>                
+                    
+                    <tr>
+                        <td>3</td>
+                        <td>Procurement of goods and services</td>
+                        <td>
+                            <Ul>
+                                <li>Ensure prequalification as applicable</li>
+                                <li>Adhere to the Public Procurement and Disposal Act 2015 and Regulations 2015</li>
+                                <li>Compliance with contract provisions</li>
+                                <li>Provide timely and adequate feedback for prompt resolution of contractual matters</li>
+                            </Ul>
+                        </td>
+                        <td>As  advertised</td>
+                        <td colspan="2">As per contract</td>
+                    </tr>
+    
+                    <tr>
+                        <td>4</td>
+                        <td>Payment for Goods and Services</td>
+                        <td>
+                            Timely availing of relevant documents, including but not limited to;
+                            <ul>
+                                <li>Invoices</li>
+                                <li>Delivery notes</li>
+                            </ul>
+    
+                        </td>
+                        <td>Free</td>
+                        <td colspan="2">Within fourteen(14) working days upon receipt of the requisite documents</td>
+                    </tr>
+    
+                    <tr>
+                        <td>5</td>
+                        <td>Recruitment & Interview</td>
+                        <td>
+                            <ul>
+                                <li>Letter of application</li>
+                                <li>Requirements in response to Advertisement</li>
+                            </ul>
+                        </td>
+                        <td>Free</td>
+                        <td colspan="2">Communication on shortlist within one (1) month of application Communication of interview results within one (1) month</td>
+                    </tr>
+    
+                    <tr>
+                        <td rowspan="7">6</td>
+                        <td rowspan="7">Instant fines</td>
+                        <td rowspan="7">Prove of payment</td>
+                        <td>Storage fee=2000.00</td>
+                        <td colspan="2">Receipt of payment issued immediately</td>
+                    </tr>
+                    <tr>
+                        <td>Escort fee=Ksh 5000.00  per  5km</td>
+                        <td colspan="2">Receipt of payment issued immediately</td>
+                    </tr>
+                    <tr>
+                        
+                        <th colspan="3">First  offence as per section 26 of the Makueni County Sand Conservation and Utilization Act, 2015</th>
+                    </tr>
+                    <tr>
+                        <td>Tractor  = Ksh 65,000.00</td>
+                        <td colspan="2">
+                            <ul>
+                                <li>Receipt of payment issued immediately</li>
+                                <li>Release note issued</li>
+                            </ul>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Lorries = Ksh, 130,000.00</td>
+                        <td colspan="2">
+                            <ul>
+                                <li>Receipt of payment issued immediately</li>
+                                <li>Release note issued</li>
+                            </ul>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Second time offence the charges double to:
+                            <ul>
+                                <li>Tractor = Ksh 130,000.00</li>
+                                <li>Lorries = Ksh 260,000.00</li>
+                            </ul> 
+                           </td>
+                           <td colspan="2">
+                            <ul>
+                                <li>Receipt of payment issued immediately</li>
+                                <li>Release note issued</li>
+                            </ul>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Any vehicles arrested at night(6 pm to 6 am)  per section 30 of Makueni County Sand Conservation and Utilization Act, 2015 = Ksh 200,000.00</td>
+                        <td colspan="2">
+                            <ul>
+                                <li>Receipt of payment issued immediately</li>
+                                <li>Release note issued</li>
+                            </ul>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>7</td>
+                        <td>Domestic sand below 2 tons</td>
+                        <td>Not for stock piling for commercial purposes</td>
+                        <td>Free</td>
+                        <td colspan="2">Nil</td>
+                    </tr>
+    
+                    <tr>
+                        <td rowspan="4">8</td>
+                        <td rowspan="4">Sand for local use</td>
+                        <td rowspan="4">Prove of Payment</td>
+                        <td>Tractor =Ksh  200.00 per trip</td>
+                        <td colspan="2">Receipt of payment issued immediately</td>
+                    </tr>
+                    <tr>
+                        <td>Vehicle up to 5 tons =Ksh  1000.00 per trip</td>
+                        <td colspan="2">Receipt of payment issued immediately</td>
+                    </tr>
+                    <tr>
+                        <td>Lorry of  6-8 tons = Ksh 2000.00 per trip</td>
+                        <td colspan="2">Receipt of payment issued immediately</td>
+                    </tr>
+                    <tr>
+                        <td>Lorry above 8 tons = Ksh 4000.00 per trip</td>
+                        <td colspan="2">Receipt of payment issued immediately</td>
+                    </tr>
+                    
+    
+                    <tr>
+                        <td rowspan="8">9</td>
+                        <td rowspan="8">Sand for local commercial  use( above  100 tons)</td>
+                        <td rowspan="8">Prove of payment</td>
+                        <td>Tractor =Ksh  1000.00 per trip</td>
+                        <td colspan="2">Within 5 minutes</td>
+                    </tr>
+                    <tr>
+                        <td>Vehicle up to 5 tons =Ksh  4000.00 per trip</td>
+                        <td colspan="2">Receipt of payment issued immediately</td>
+                    </tr>
+                    <tr>
+                        <td>Six wheeler = Ksh 4,800.00 per trip</td>
+                        <td colspan="2">Receipt of payment issued immediately</td>
+                    </tr>
+                    <tr>
+                        <td>Ten wheeler = Ksh 6,000.00 per trip</td>
+                        <td colspan="2">Receipt of payment issued immediately</td>
+                    </tr>
+                    <tr>
+                        <td>Tractor =Ksh  10,000.00 Monthly</td>
+                        <td colspan="2">Receipt of payment issued immediately</td>
+                    </tr>
+                    <tr>
+                        <td>Vehicle up to (5 tons) =Ksh 16,000.00 Monthly</td>
+                        <td colspan="2">Receipt of payment issued immediately</td>
+                    </tr>
+                    <tr>
+                        <td>Six wheeler = Ksh 20,000.00 Monthly</td>
+                        <td colspan="2">Receipt of payment issued immediately</td>
+                    </tr>
+                    <tr>
+                        <td>Ten wheeler = Ksh 30,000.00 Monthly</td>
+                        <td colspan="2">Receipt of payment issued immediately</td>
+                    </tr>
+                    
+    
+                    <tr>
+                        <td>10</td>
+                        <td>Licensing</td>
+                        <td>Fill application forms</td>
+                        <td>License fees= Ksh 10,000.00 Semi annually</td>
+                        <td colspan="2">
+                            <ul>
+                                <li>Receipt of payment issued immediately</li>
+                                <li>Issued within fourteen (14)working days</li>
+                            </ul>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>11</td>
+                        <td>License renewal</td>
+                        <td> Make an application for renewal</td>
+                        <td>Renewal fees= Ksh 10,000.00 </td>
+                        <td colspan="2">
+                            <ul>
+                                <li>Receipt of payment issued immediatel</li>
+                                <li>Issued within fourteen (14)working days</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
             </div>
-            
-            {% endfor %}
-            {% else %}
-                <p>The data will be in soon...</p>
-            {% endif %}
         </div>
     </div>
 

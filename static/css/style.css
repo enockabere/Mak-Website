@@ -278,6 +278,17 @@ textarea:focus-visible {
   border-bottom: 3px solid rgb(184, 121, 5);
 }
 
+table, th, td {
+  border: 1px solid;
+  border-collapse: collapse;
+  padding: 1em;
+  text-align: left;
+}
+
+table {
+  width: 100%;
+}
+
 textarea {
   resize: none;
   height: 100px;
@@ -2004,6 +2015,16 @@ textarea {
 }
 .about__content p {
   padding-block: 0.5em;
+}
+.about__content .charter h2 {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  padding-block: 0.5em;
+}
+.about__content .charter ol {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding-block: 1em;
 }
 .about__content .inner ul,
 .about__content .inner ol {

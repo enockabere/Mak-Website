@@ -52,6 +52,17 @@ textarea {
     }
 }
 
+table, th, td{
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: 1em;
+    text-align: left;
+}
+table {
+    width: 100%;
+
+}
+
 textarea {
     resize: none;
     height: 100px;
