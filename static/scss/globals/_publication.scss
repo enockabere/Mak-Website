@@ -5,7 +5,7 @@
 
     &__main {
         padding-inline: 1em;
-        
+
         &--item {
             display: flex;
             flex-wrap: wrap;
@@ -18,18 +18,31 @@
                     border-radius: 4px;
                     padding: 1em;
                     display: grid;
-                    grid-template-columns: auto auto auto;
+                    grid-template-columns: auto auto;
                     gap: 10px;
                     @include set_background($fade);
+                    width: 48%;
 
-                    
+                    @include u.breakpoint-down(medium) {
+                        width: 100%;
+                    }
+
+                    @include u.breakpoint-down(small) {
+                        width: 47%;
+                    }
+
+                    @include u.breakpoint-down(x-small) {
+                        width: 100%;
+                    }
+
+
 
                     &--name {
                         h1 {
                             font-size: 1.1em;
 
-                            a{
-                                &:hover{
+                            a {
+                                &:hover {
                                     text-decoration: underline;
                                     color: $secondary_color;
                                 }
@@ -38,10 +51,11 @@
 
                         &-lower {
                             display: flex;
-                            justify-content:start;
+                            justify-content: start;
                             gap: 5px;
                             font-size: small;
                             margin-top: 10px;
+
                             p {
                                 display: flex;
                                 gap: 5px;
@@ -52,9 +66,9 @@
 
                     }
 
-                    &--icon{
-                        img{
-                            &:hover{
+                    &--icon {
+                        img {
+                            &:hover {
                                 filter: brightness(50%);
                                 margin-top: 5px;
                                 scale: .9;

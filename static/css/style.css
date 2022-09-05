@@ -3168,11 +3168,27 @@ footer .certified {
   border-radius: 4px;
   padding: 1em;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
   gap: 10px;
   background-color: rgb(248, 248, 248);
   color: #333333;
   border-color: #333333;
+  width: 48%;
+}
+@media (max-width: 1023.98px) {
+  .publication__main--item .file__card {
+    width: 100%;
+  }
+}
+@media (max-width: 899.98px) {
+  .publication__main--item .file__card {
+    width: 47%;
+  }
+}
+@media (max-width: 699.98px) {
+  .publication__main--item .file__card {
+    width: 100%;
+  }
 }
 .publication__main--item .file__card--name h1 {
   font-size: 1.1em;
