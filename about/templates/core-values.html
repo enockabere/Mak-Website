@@ -27,7 +27,16 @@
 
                 {% endfor %}
             </div>
+            <div class="item">
+                {% for statement in core_values %}
 
+                <h1>{{ statement.title }}</h1>
+
+                <p>{{ statement.statement | safe }}</p>
+
+                {% endfor %}
+            </div>
+            
         </div>
     </div>
 

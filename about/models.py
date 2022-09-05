@@ -175,6 +175,22 @@ class Vision(models.Model):
         return self.title
 
 
+class CoreValue(models.Model):
+    title = models.CharField(max_length=200, default='Core Values')
+    statement = models.TextField()
+    status = models.IntegerField(
+        choices=STATUS, default=0, help_text='Change to Publish for it to be seen')
+
+
+    def save(self, *args, **kwargs):
+        if self.__class__.objects.count():
+            self.pk = self.__class__.objects.first().pk
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.title
+
+
 class Department(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()

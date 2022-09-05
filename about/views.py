@@ -1,7 +1,7 @@
 
 from django.shortcuts import render
 from blog.models import Post
-from .models import MDsMessage, AboutUs, Mission, Personel, Department, Functions, Objectives, Vision,ServiceCharter
+from .models import MDsMessage, AboutUs, Mission, Personel, Department, Functions, Objectives, Vision,ServiceCharter, CoreValue
 from base.models import CallToActionPanel
 from base.forms import SubscriptionForm
 from projects.models import ProjectCategory
@@ -126,6 +126,7 @@ def md_message_view(request):
 def core_values(request):
     mission = Mission.objects.filter(status=1)
     vision = Vision.objects.filter(status=1)
+    core_values = CoreValue.objects.filter(status=1)
     cta = CallToActionPanel.objects.filter(status=1)[:1]
     project_category = ProjectCategory.objects.all()
     publication_category = PubCategory.objects.all()
@@ -141,6 +142,7 @@ def core_values(request):
         'form': form,
         'project_category': project_category,
         'publication_category': publication_category,
+        'core_values': core_values,
     }
 
     return render(request, 'core-values.html', context)
