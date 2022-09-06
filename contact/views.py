@@ -1,3 +1,4 @@
+from pyexpat.errors import messages
 from django.shortcuts import render, redirect
 from base.models import CallToActionPanel
 from .forms import FeedbackForm
@@ -7,7 +8,10 @@ from resources.models import PubCategory
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 
+from django.contrib import messages
 # Create your views here.
+
+
 def contact_view(request):
     project_category = ProjectCategory.objects.all()
     publication_category = PubCategory.objects.all()
@@ -37,7 +41,12 @@ def contact_view(request):
             except:
                 return HttpResponse('Invalid header found.')
             form2.save()
+            messages.success(request, 'The Request was submitted successfully.')
             return redirect('contact')
+        else:
+            messages.error(request, 'Invalid form submission.')
+            messages.error(request, form.errors)
+
     form2 = FeedbackForm()
 
     cta = CallToActionPanel.objects.filter(status=1)[:1]

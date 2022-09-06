@@ -1,0 +1,23 @@
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-dismissible alert-success">
+    <span class="button closebtn" type="button" class="close" data-dismiss="alert">
+        &times;
+    </span>
+    {{message}}
+</div>
+{% endfor %}
+{% endif %}
+
+<script>
+    var close = document.getElementsByClassName("closebtn");
+    var i;
+
+    for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+            var div = this.parentElement;
+            div.style.opacity = "0";
+            setTimeout(function () { div.style.display = "none"; }, 600);
+        }
+    }
+</script>

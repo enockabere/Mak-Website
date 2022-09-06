@@ -34,7 +34,7 @@
         <div class="login">
             <a href="https://outlook.office.com/mail/" target="_blank">Staff login</a>
         </div>
-        
+
     </div>
 </div>
 
@@ -71,49 +71,22 @@
                 </div>
             </li>
             <li class="dropdown">
-                <a >Projects <i class="las la-angle-down"></i></a>
+                <a>Projects <i class="las la-angle-down"></i></a>
                 <div class="sub-menu">
                     {% for list in project_category %}
                     <a href="{% url 'projects' list.id %}">{{ list.category }}</a>
                     {% endfor %}
                 </div>
             </li>
-            <!-- <li class="dropdown">
-                <a>Projects <i class="las la-angle-down"></i></a>
-                <div class="sub-menu">
-                    <div class="sub-menu-row">
-                        
-                        <div class="sub-menu-col">
-                            <a class="sub-menu-heading" href=""> </a>
-                            <div class="sub-menu-col-list">
-                                
-                                
-                                
-                                <a href=" projects/{{ project.id }}">projects}</a>
-                                
-                               
-                                
-                                
-                                
-                            </div> 
-                        </div>
-                        
 
-                        
-                    </div>
-                    
-                </div>
-                
-            </li> -->
-            
             <li class="dropdown">
                 <a>Resource Center<i class="las la-angle-down"></i></a>
                 <div class="sub-menu">
                     {% for list in publication_category %}
                     <a href="{% url 'publication' list.id %}">{{ list.category }}</a>
                     {% endfor %}
-                    <a href="">Feedback Forms</a>
-                    <a href="">Application Forms</a>
+                    <!-- <a href="">Feedback Forms</a>
+                    <a href="">Application Forms</a> -->
                 </div>
             </li>
             <li class="dropdown">
@@ -130,7 +103,7 @@
 
                     <a href="{% url 'tender' %}">Tenders</a>
                     <a href="{% url 'career' %}">Careers</a>
-                    <a href="">Internships & Attahcments</a>
+                    <a href="{% url 'career' %}">Internships & Attahcments</a>
 
                 </div>
             </li>
