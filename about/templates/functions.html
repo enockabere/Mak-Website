@@ -6,16 +6,19 @@
 {% block about %}
 
 <setion class="about mt-1 mb-3">
-    <div class="about__content">
-        <div class="inner">
-            {% for statement in functions %}
-            
-            <div>
-                {{statement.content | safe }}
+    <div class="column__2">
+
+        <div class="about__content">
+            <div class="inner">
+                {% for statement in functions %}
+
+                <div>
+                    {{statement.content | safe }}
+                </div>
+
+                {% endfor %}
+
             </div>
-        
-            {% endfor %}
-        
         </div>
 
     </div>
