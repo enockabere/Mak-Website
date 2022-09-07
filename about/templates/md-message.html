@@ -22,9 +22,10 @@
             </div>
             {% for message in message %}
             <div class="message-container">
-                <p class="mb-1">Dear Reader, <br></p>
+                
                 <div class="msg">
                     <img src="{{ message.image.url }}" alt="" class="img__wrap">
+                    <p class="mb-1">Dear Reader, <br></p>
                     {{ message.message|safe }}
                 </div>
                 <div class="md-info mt-2">
