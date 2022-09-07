@@ -24,6 +24,7 @@ class JobAdvert(models.Model):
     job_description = models.TextField()
     resposibilities = models.TextField()
     qualification = models.TextField()
+    how_to_apply = models.TextField(blank=True)
     advert_file = models.FileField(upload_to='media', blank=True)
     pub_date = models.DateTimeField(auto_now_add=True, help_text='Date Published')
     deadline = models.DateField(default=date.today, blank=True, help_text='deadline for application')

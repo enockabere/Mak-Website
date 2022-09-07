@@ -13,7 +13,10 @@ class JobAdvertAdmin(SummernoteModelAdmin):
         'job_description',
         'qualification',
         'resposibilities',
+        'how_to_apply',
         'advert_file',
+        'deadline',
+        'job_status',
         'job_type',
         'status'
     )
