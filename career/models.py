@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.safestring import mark_safe
 from django.template.defaultfilters import truncatechars
 from blog.models import STATUS
+from datetime import datetime 
 # Create your models here.
 
 
@@ -12,6 +13,10 @@ class JobAdvert(models.Model):
         ('Internship', 'Internship'),
         ('Attachment', 'Attachment')
     ]
+    JOB_STATUS = [
+        ('open', 'open'),
+        ('closed', 'closed')
+    ]
 
     title = models.CharField(max_length=200)
     job_ID = models.CharField(max_length=50)
@@ -21,6 +26,8 @@ class JobAdvert(models.Model):
     qualification = models.TextField()
     advert_file = models.FileField(upload_to='media', blank=True)
     pub_date = models.DateTimeField(auto_now_add=True, help_text='Date Published')
+    deadline = models.DateTimeField(default=datetime.now, blank=True, help_text='deadline for application')
+    job_status = models.CharField(choices=JOB_STATUS, max_length=20, default='open')
     status = models.IntegerField(choices=STATUS, default=0,help_text = 'Change to Publish for it to be seen')
     job_type = models.CharField(choices=POSITION_TYPE, default='Contract', max_length=200, help_text = 'Choose the appropriate job type to advertise')
 
