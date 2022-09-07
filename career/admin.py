@@ -4,7 +4,7 @@ from .models import JobAdvert, Tender
 
 
 class JobAdvertAdmin(SummernoteModelAdmin):
-    summernote_fields = ['qualification', 'resposibilities']
+    summernote_fields = ['qualification', 'resposibilities', 'how_to_apply']
 
     fields = (
         'title',
@@ -22,7 +22,7 @@ class JobAdvertAdmin(SummernoteModelAdmin):
     )
 
     list_display = ('title', 'job_ID', 'short_description',
-                    'job_type', 'status')
+                    'job_type', 'deadline', 'status')
     list_display_links = ('title', 'job_ID')
     list_filter = ('pub_date',)
     search_fields = ('title', 'job_ID')

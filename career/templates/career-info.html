@@ -16,8 +16,10 @@
                 <p><span>Job ID:</span> {{ object.job_ID }}</p>
                 <p>{{ object.description | safe }}</p>
                 <div class="job__desc--top-rqm">
-                    <p><i class="fa-solid fa-clock"></i>Post Date: 3 Days ago</p>
+                    <p><i class="fa-solid fa-clock"></i>Post Date: {{ object.pub_date | date }}</p>
                     <p><i class="fa-solid fa-briefcase"></i>Job Type: {{ object.job_type |safe }}</p>
+                    <p><i class="fa-solid fa-briefcase"></i>Deadline : {{ object.deadline | date }}</p>
+                    <p><i class="fa-solid fa-briefcase"></i>Status: {{ object.job_status |safe }}</p>
                 </div>
                 <div class="job__desc--items">
                     <div class="job__desc--rqm">
@@ -28,17 +30,22 @@
                         <h1>Qualification</h1>
                         <div>{{ object.qualification | safe }}</div>
                     </div>
+                    <div class="job__desc--rqm">
+                        <h1>How to Apply</h1>
+                        <div>{{ object.how_to_apply | safe }}</div>
+                    </div>
 
                 </div>
                 <div class="advert__file py-3">
-                    <a style="text-decoration: underline;" href="{{ object.advert_file.url }}">Download the job advertisement &rarr;</a>
+                    <a style="text-decoration: underline;" href="{{ object.advert_file.url }}">Download the job
+                        advertisement &rarr;</a>
                 </div>
                 <!-- <div class="job__desc--button">
                     <button class="btn btn-primary open-button">Apply</button>
                 </div> -->
                 <dialog class="modal" id="modal">
                     <h1>Fill in the form to apply </h1>
-                    
+
                     <form action="" class="form" method="dialog">
                         <div class="form-control">
                             <label for="name"> Name</label>
@@ -47,10 +54,10 @@
                                 <input type="text" id="lname" placeholder="Last Name" required>
                             </div>
                         </div>
-                        
+
                         <div class="form-control">
                             <label for="subject">Phone Number</label>
-                            <input type="tel" id="subject" placeholder="Telephone"  required>
+                            <input type="tel" id="subject" placeholder="Telephone" required>
                         </div>
 
                         <div class="form-control">
@@ -72,7 +79,7 @@
                             <label for="">You Can upload your Resume</label>
                             <input type="file">
                         </div>
-            
+
 
                         <button class="btn btn-secondary" type="submit">Apply</button>
                         <button class="close-button"><i class="fa-solid fa-xmark"></i></button>
