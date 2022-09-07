@@ -22,6 +22,7 @@ class CareerList(ListView):
             status=1).order_by('-created_on')[:4]
         context['publication_category'] = PubCategory.objects.all()
         context['project_category'] = ProjectCategory.objects.all()
+        context['form'] = SubscriptionForm()
 
         return context
 
@@ -36,6 +37,7 @@ class careerDetail(DetailView):
             status=1).order_by('created_on')[:4]
         context['publication_category'] = PubCategory.objects.all()
         context['project_category'] = ProjectCategory.objects.all()
+        context['form'] = SubscriptionForm()
 
         return context
 

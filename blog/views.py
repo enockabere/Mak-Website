@@ -4,6 +4,7 @@ from django.db.models import Q
 from .models import Post
 from projects.models import Project, ProjectCategory
 from resources.models import PubCategory
+from base.forms import SubscriptionForm
 
 
 # Create your views here.
@@ -17,6 +18,7 @@ class PostList(ListView):
         context = super(PostList, self).get_context_data(**kwargs)
         context['publication_category'] = PubCategory.objects.all()
         context['project_category'] = ProjectCategory.objects.all()
+        context['form'] = SubscriptionForm()
 
         return context
 
@@ -29,6 +31,7 @@ class PostDetail(DetailView):
         context = super(PostDetail, self).get_context_data(**kwargs)
         context['publication_category'] = PubCategory.objects.all()
         context['project_category'] = ProjectCategory.objects.all()
+        context['form'] = SubscriptionForm()
 
         return context
 
