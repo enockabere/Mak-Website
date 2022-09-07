@@ -2026,15 +2026,25 @@ textarea {
 .about__content p {
   padding-block: 0.5em;
 }
+.about__content .charter {
+  text-align: center;
+  overflow-x: auto;
+}
 .about__content .charter h2 {
   text-transform: uppercase;
-  font-size: 1.2em;
+  font-size: 1.1em;
   padding-block: 0.5em;
 }
 .about__content .charter ol {
   list-style-type: disc;
   list-style-position: inside;
   padding-block: 1em;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  justify-content: center;
+  column-gap: 2em;
+  margin-inline: auto;
 }
 .about__content .inner ul,
 .about__content .inner ol {
@@ -2627,7 +2637,8 @@ footer .certified {
   border-top: none;
   border-radius: 4px;
 }
-.department__content ul, .department__content ol {
+.department__content ul,
+.department__content ol {
   list-style-type: disc;
   list-style-position: inside;
 }

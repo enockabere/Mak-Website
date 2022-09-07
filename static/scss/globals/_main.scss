@@ -41,8 +41,8 @@
         width: 100%;
         height: 100%;
 
-        
-        .backdrop{
+
+        .backdrop {
             background-color: hsla(0, 0%, 0%, 0.705);
             padding: 2em;
 
@@ -50,7 +50,7 @@
                 padding: 3em;
                 text-align: center;
             }
-    
+
             @include u.breakpoint-down(small) {
                 padding: 1em;
             }
@@ -319,18 +319,28 @@
         p {
             padding-block: 0.5em;
         }
-        
-        .charter{
-            h2{
+
+        .charter {
+            text-align: center;
+            overflow-x: auto;
+
+            h2 {
                 text-transform: uppercase;
-                font-size: 1.2em;
+                font-size: 1.1em;
                 padding-block: .5em;
 
             }
-            ol{
+
+            ol {
                 list-style-type: disc;
                 list-style-position: inside;
                 padding-block: 1em;
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-template-rows: auto;
+                justify-content: center;
+                column-gap: 2em;
+                margin-inline: auto;
             }
         }
 
@@ -348,44 +358,46 @@
                 }
             }
 
-            &__buttons{
-                a:visited{
+            &__buttons {
+                a:visited {
                     @include set_background($primary_color)
                 }
-                .btn-primary{
-                    padding-inline:2em ;
 
-                    
+                .btn-primary {
+                    padding-inline: 2em;
+
+
                 }
             }
-            .iframe{
+
+            .iframe {
                 display: flex;
                 flex-flow: column;
                 justify-content: center;
                 align-items: center;
 
-                &__card{
+                &__card {
                     width: 70%;
                     border: 1px solid;
                     border-radius: 4px;
                     display: flex;
                     justify-content: flex-start;
                     gap: 1em;
-                    margin-bottom:1em ;
+                    margin-bottom: 1em;
                     padding: 1em;
 
-                    &--content{
+                    &--content {
                         display: flex;
                         justify-content: space-between;
                         align-self: center;
                         width: 100%;
 
-                        a{
+                        a {
                             @include set_background($primary_color);
                             border-radius: 4px;
                             padding: 8px 20px;
 
-                            &:hover{
+                            &:hover {
                                 @include set_background($fade);
                                 padding-block: 7px;
                                 border: 1px solid;
@@ -395,7 +407,7 @@
                     }
                 }
 
-                iframe{
+                iframe {
                     width: 70%;
                     height: 800px;
                     border: none;
@@ -842,7 +854,7 @@ footer {
 
     .copyright {
         @include set_background($primary_color_darker);
-        
+
         text-align: left;
         padding-block: .5em;
         display: flex;
@@ -877,7 +889,7 @@ footer {
         }
     }
 
-    .certified{
+    .certified {
         padding-top: .5em;
         font-family: sans-serif;
         font-size: medium;
@@ -943,7 +955,8 @@ footer {
 
             @include u.breakpoint-down(xx-small) {
                 width: 100%;
-                a{
+
+                a {
                     width: 100%;
                 }
             }
@@ -980,7 +993,7 @@ footer {
 
         &--title {
             h2 {
-                font-size:smaller;
+                font-size: smaller;
                 font-weight: 500;
                 line-height: 1.2;
                 text-align: justify;
@@ -992,33 +1005,38 @@ footer {
 
             }
         }
-        &--time{
+
+        &--time {
             font-size: small;
         }
     }
 }
 
 
-.department{
+.department {
     border-radius: 4px;
     margin-bottom: 2em;
-    &__title{
+
+    &__title {
         @include set_background($primary_color);
-        h2{
+
+        h2 {
             padding: 10px;
             font-size: 1.4rem;
             text-transform: uppercase;
             font-weight: 600;
         }
     }
-    &__content{
+
+    &__content {
         @include set_background($fade);
         padding: 1em;
         border: 1px solid;
         border-top: none;
         border-radius: 4px;
 
-        ul,ol{
+        ul,
+        ol {
             list-style-type: disc;
             list-style-position: inside;
         }
