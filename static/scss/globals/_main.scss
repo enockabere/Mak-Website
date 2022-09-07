@@ -280,7 +280,21 @@
         padding-inline: 1em;
         width: 100%;
         word-wrap: normal;
+
+        $column_sizes: (1, 2, 3, 4);
+
+        @each $column in $column_sizes {
+
+            .column {
+                &__#{$column} {
+                    column-count: $column;
+                }
+
+            }
+        }
     }
+
+
 
     &__title {
 

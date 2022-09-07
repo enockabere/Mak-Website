@@ -6,19 +6,21 @@
 {% block about %}
 
 <setion class="about mt-3 mb-3">
-    <div class="about__title mt-2">
-        <h4>Background Information</h4>
-    </div>
-    <div class="about__content">
-        {% for content in about_us %}
-
-        <p>
-
-            {{ content.description | safe }}
-
-        </p>
-        {% endfor %}
-
+    <div class="column__2">
+        <div class="about__title mt-2">
+            <h4>Background Information</h4>
+        </div>
+        <div class="about__content">
+            {% for content in about_us %}
+    
+            <p>
+    
+                {{ content.description | safe }}
+    
+            </p>
+            {% endfor %}
+    
+        </div>
     </div>
 
 </setion>

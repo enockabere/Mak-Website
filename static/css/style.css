@@ -275,7 +275,7 @@ input[type=tel]:focus-visible,
 textarea:focus,
 textarea:focus-visible {
   outline: none;
-  border-bottom: 3px solid rgb(184, 121, 5);
+  border-bottom: 3px solid #762403;
 }
 
 table, th, td {
@@ -396,7 +396,7 @@ textarea {
 }
 
 .btn-secondary {
-  background-color: rgb(184, 121, 5);
+  background-color: #762403;
   color: rgb(255, 255, 255);
   border-color: rgb(255, 255, 255);
 }
@@ -723,7 +723,7 @@ textarea {
   text-transform: uppercase;
 }
 .header__top .top-links .login a:hover {
-  color: rgb(184, 121, 5);
+  color: #762403;
 }
 
 @media (max-width: 899.98px) {
@@ -838,7 +838,7 @@ textarea {
   content: "";
   display: block;
   height: 2px;
-  background-color: rgb(184, 121, 5);
+  background-color: #762403;
   position: absolute;
   bottom: -0.3em;
   left: 0;
@@ -864,7 +864,7 @@ textarea {
 }
 .header .primary-navigation a:hover,
 .header .primary-navigation span:hover {
-  color: rgb(184, 121, 5);
+  color: #762403;
 }
 .header .primary-navigation li {
   padding-inline: 10px;
@@ -902,7 +902,7 @@ textarea {
   background-color: rgb(244, 244, 244);
   color: #333333;
   border-color: #333333;
-  color: rgb(184, 121, 5);
+  color: #762403;
   font-weight: 600;
   padding-left: 1.5em;
 }
@@ -1017,7 +1017,7 @@ textarea {
   -o-object-fit: cover;
 }
 .social__links ul > li i:hover {
-  color: rgb(184, 121, 5);
+  color: #762403;
 }
 .fa-linkedin,
 .fa-linkedin-in {
@@ -1084,7 +1084,7 @@ textarea {
   padding-bottom: 1em;
 }
 .grid__main--items h2 {
-  color: rgb(184, 121, 5);
+  color: #762403;
 }
 .grid__main .leader {
   display: flex;
@@ -1156,7 +1156,7 @@ textarea {
 }
 .grid__main .leader__content--social > ul i {
   font-size: 1.3em;
-  color: rgb(184, 121, 5);
+  color: #762403;
 }
 .grid__main--list {
   margin-bottom: 2em;
@@ -1210,7 +1210,7 @@ textarea {
   font-weight: 700;
 }
 .grid__main--tender .description .bottom .desc-btn a:hover {
-  color: rgb(184, 121, 5);
+  color: #762403;
 }
 .grid__main--tender .description .bottom i {
   margin-right: 0.5em;
@@ -1472,7 +1472,7 @@ textarea {
 .bloggrid__sidebar--categories h1 {
   font-size: 1.2em;
   font-weight: 700;
-  color: rgb(184, 121, 5);
+  color: #762403;
 }
 .bloggrid__sidebar--categories li {
   list-style: none;
@@ -1486,7 +1486,7 @@ textarea {
 }
 .bloggrid__sidebar--categories li a:hover {
   text-decoration: underline;
-  color: rgb(184, 121, 5);
+  color: #762403;
   font-weight: 500;
   padding-left: 2em;
 }
@@ -1718,7 +1718,7 @@ textarea {
   border-color: rgb(255, 255, 255);
 }
 .slider > div span .action__btn:hover {
-  background-color: rgb(184, 121, 5);
+  background-color: #762403;
   color: rgb(255, 255, 255);
   border-color: rgb(255, 255, 255);
 }
@@ -1728,7 +1728,7 @@ textarea {
   border-color: #333333;
 }
 .slider > div span .contact__btn:hover {
-  background-color: rgb(184, 121, 5);
+  background-color: #762403;
   color: rgb(255, 255, 255);
   border-color: rgb(255, 255, 255);
 }
@@ -1842,7 +1842,7 @@ textarea {
 }
 
 .hero {
-  background-color: rgb(184, 121, 5);
+  background-color: #762403;
   color: rgb(255, 255, 255);
   border-color: rgb(255, 255, 255);
   width: 100%;
@@ -1989,6 +1989,18 @@ textarea {
     padding-inline: 1em;
     width: 100%;
     word-wrap: normal;
+  }
+  .about .column__1 {
+    column-count: 1;
+  }
+  .about .column__2 {
+    column-count: 2;
+  }
+  .about .column__3 {
+    column-count: 3;
+  }
+  .about .column__4 {
+    column-count: 4;
   }
 }
 .about__title {
@@ -2180,7 +2192,7 @@ textarea {
 }
 .leadership .leader__content--social ul li i {
   font-size: 1.5em;
-  color: rgb(184, 121, 5);
+  color: #762403;
 }
 .leadership .leader__content--social ul li i:hover {
   transform: scale(1.3);
@@ -2254,7 +2266,7 @@ textarea {
   font-weight: 500;
 }
 .services-hero__inner--card a:hover {
-  color: rgb(184, 121, 5);
+  color: #762403;
   font-weight: 600;
   font-size: 0.9em;
 }
@@ -2405,7 +2417,7 @@ textarea {
 .contact__address ul i {
   font-size: 2em;
   margin-bottom: 1em;
-  color: rgb(184, 121, 5);
+  color: #762403;
 }
 
 footer {
@@ -2532,7 +2544,7 @@ footer .certified {
   margin-right: 5px;
 }
 .pagination .nav-links .current {
-  background-color: rgb(184, 121, 5);
+  background-color: #762403;
   color: rgb(255, 255, 255);
   border-color: rgb(255, 255, 255);
 }
@@ -3154,7 +3166,7 @@ footer .certified {
   aspect-ratio: 1;
 }
 .modal .close-button:hover {
-  background-color: rgb(184, 121, 5);
+  background-color: #762403;
   color: rgb(255, 255, 255);
   border-color: rgb(255, 255, 255);
   border-radius: 100%;
@@ -3206,7 +3218,7 @@ footer .certified {
 }
 .publication__main--item .file__card--name h1 a:hover {
   text-decoration: underline;
-  color: rgb(184, 121, 5);
+  color: #762403;
 }
 .publication__main--item .file__card--name-lower {
   display: flex;
@@ -3262,7 +3274,7 @@ footer .certified {
 .projects__inner--item h2 {
   font-size: 1.4em;
   font-weight: 700;
-  color: rgb(184, 121, 5);
+  color: #762403;
 }
 .projects__inner--item p {
   text-align: justify;
@@ -3377,7 +3389,7 @@ footer .certified {
 
 .back-to-top {
   display: inline-block;
-  background-color: rgb(184, 121, 5);
+  background-color: #762403;
   width: 40px;
   height: 40px;
   text-align: center;
