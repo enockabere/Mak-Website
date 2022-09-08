@@ -6,33 +6,37 @@
 {% block about %}
 
 <setion class="about mt-3 mb-3">
-    <div class="about__content">
-        <div class="inner">
-            <p>The current Strategic Plan covers the period 2022-2026. It identifies three key issues for strategic
-                focus. These are:</p>
-            <ul>
-                <li>Sustainable sand conservation and utilization</li>
-                <li>Research Development and Innovation</li>
-                <li>Corporate and Institutional strengthening.</li>
-                <li>To promote sustainable sand conservation and utilization within Makueni County</li>
-            </ul>
+    <div class="column__2">
 
-            <p>The key result areas will be achieved through the following strategic objectives:</p>
-            <ul>
-                <li>Sand conservation will be achieved through implementation of strategies aimed at promoting
-                    conservation while sand utilization will be achieved through regulation. </li>
-                <li>To Promote Research, Development, Innovation and Knowledge management on Sand Resources.</li>
-                <li>This will be achieved through promotion of research, development, innovation and knowledge
-                    management on sand and sand resources and making use of the research recommendations.</li>
-                <li>To Strengthen Corporate and Institutional Capacity</li>
-            </ul>
+        <div class="about__content">
+            <div class="inner">
+                <p>The current Strategic Plan covers the period 2022-2026. It identifies three key issues for strategic
+                    focus. These are:</p>
+                <ul>
+                    <li>Sustainable sand conservation and utilization</li>
+                    <li>Research Development and Innovation</li>
+                    <li>Corporate and Institutional strengthening.</li>
+                    <li>To promote sustainable sand conservation and utilization within Makueni County</li>
+                </ul>
 
-            {% for object in objectives %}
-            <div class="inner__buttons">
-                <a class="btn btn-primary" href="{{ object.file.url }}" download="{{object.title}}">Download File</a>
-                <a class="btn btn-primary" href="{{ object.file.url }}" target="_blank">Open File</a>
+                <p>The key result areas will be achieved through the following strategic objectives:</p>
+                <ul>
+                    <li>Sand conservation will be achieved through implementation of strategies aimed at promoting
+                        conservation while sand utilization will be achieved through regulation. </li>
+                    <li>To Promote Research, Development, Innovation and Knowledge management on Sand Resources.</li>
+                    <li>This will be achieved through promotion of research, development, innovation and knowledge
+                        management on sand and sand resources and making use of the research recommendations.</li>
+                    <li>To Strengthen Corporate and Institutional Capacity</li>
+                </ul>
+
+                {% for object in objectives %}
+                <div class="inner__buttons">
+                    <a class="btn btn-primary" href="{{ object.file.url }}" download="{{object.title}}">Download
+                        File</a>
+                    <a class="btn btn-primary" href="{{ object.file.url }}" target="_blank">Open File</a>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
     </div>
 
