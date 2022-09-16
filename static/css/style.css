@@ -1990,17 +1990,47 @@ textarea {
     width: 100%;
     word-wrap: normal;
   }
+}
+@media (min-width: 700px) {
   .about .column__1 {
     column-count: 1;
+    justify-content: center;
+    align-items: center;
+    -webkit-column-rule: 1px solid #762403;
+    -moz-column-rule: 1px solid #762403;
+    column-rule: 1px solid #762403;
+    margin-top: 20px;
+    margin-bottom: 40px;
   }
   .about .column__2 {
     column-count: 2;
+    justify-content: center;
+    align-items: center;
+    -webkit-column-rule: 1px solid #762403;
+    -moz-column-rule: 1px solid #762403;
+    column-rule: 1px solid #762403;
+    margin-top: 20px;
+    margin-bottom: 40px;
   }
   .about .column__3 {
     column-count: 3;
+    justify-content: center;
+    align-items: center;
+    -webkit-column-rule: 1px solid #762403;
+    -moz-column-rule: 1px solid #762403;
+    column-rule: 1px solid #762403;
+    margin-top: 20px;
+    margin-bottom: 40px;
   }
   .about .column__4 {
     column-count: 4;
+    justify-content: center;
+    align-items: center;
+    -webkit-column-rule: 1px solid #762403;
+    -moz-column-rule: 1px solid #762403;
+    column-rule: 1px solid #762403;
+    margin-top: 20px;
+    margin-bottom: 40px;
   }
 }
 .about__title {
@@ -2018,12 +2048,13 @@ textarea {
   font-weight: 700;
 }
 .about__title h4 {
-  font-size: 1.2em;
-  font-weight: 400;
+  font-size: 1.3em;
+  font-weight: 800;
   text-transform: uppercase;
+  margin-bottom: revert;
 }
 .about__content {
-  padding: 1em;
+  padding-inline: 1em;
   display: grid;
   grid-template-columns: auto;
   max-width: 100vw;
@@ -2036,7 +2067,7 @@ textarea {
   }
 }
 .about__content p {
-  padding-block: 0.5em;
+  margin-block: 5px;
 }
 .about__content .charter {
   text-align: center;
@@ -2060,7 +2091,7 @@ textarea {
 }
 .about__content .inner ul,
 .about__content .inner ol {
-  list-style: circle;
+  list-style: decimal;
   margin-left: 1.2em;
 }
 .about__content .inner ul li,
@@ -3250,6 +3281,7 @@ footer .certified {
   display: flex;
   flex-wrap: wrap;
   gap: 2em;
+  justify-content: center;
 }
 .projects__inner--content {
   padding: 1em;
