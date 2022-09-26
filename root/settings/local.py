@@ -20,9 +20,9 @@ ALLOWED_HOSTS = ['127.0.0.1','localhost', 'makueni-sand-authotiry.herokuapp.com'
 DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'new',
-            'USER': 'postgres',
-            'PASSWORD': 'admin',
+            'NAME': 'makueni',
+            'USER': 'hypertext',
+            'PASSWORD': 'assassin',
             'HOST': 'localhost',
             'PORT': '',
         }
