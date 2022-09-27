@@ -1,11 +1,12 @@
 
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from blog.models import Post
-from .models import MDsMessage, AboutUs, Mission, Personel, Department, Functions, Objectives, Vision,ServiceCharter, CoreValue
+from .models import MDsMessage, AboutUs, Mission,ChairPerson, Personel, Department, Functions, Objectives, Vision,ServiceCharter, CoreValue
 from base.models import CallToActionPanel
 from base.forms import SubscriptionForm
 from projects.models import ProjectCategory
 from resources.models import PubCategory
+from django.views import View
 
 # Create your views here.
 
@@ -41,23 +42,30 @@ def about_view(request):
 
 
 def boardOfDirectorsView(request):
-    post = Post.objects.filter(status=1).order_by('-created_on')[:4]
-    board_member = Personel.objects.filter(status=1, category=0).all()
-    project_category = ProjectCategory.objects.all()
-    publication_category = PubCategory.objects.all()
-    if request.method == 'POST':
-        form = SubscriptionForm(request.POST)
-        if form.is_valid():
-            form.save()
-    form = SubscriptionForm()
-    context = {
-        'post': post,
-        'board_members': board_member,
-        'form': form,
-        'project_category': project_category,
-        'publication_category': publication_category,
-    }
+    try:
+        post = Post.objects.filter(status=1).order_by('-created_on')[:4]
+        board_member = Personel.objects.filter(status=1, category=0).all()
+        project_category = ProjectCategory.objects.all()
+        publication_category = PubCategory.objects.all()
+        chair = ChairPerson.objects.latest('id')
 
+        if request.method == 'POST':
+            form = SubscriptionForm(request.POST)
+            if form.is_valid():
+                form.save()
+        form = SubscriptionForm()
+    
+        context = {
+            'post': post,
+            'chair': chair,
+            'board_members': board_member,
+            'form': form,
+            'project_category': project_category,
+            'publication_category': publication_category,
+        }
+    except Exception as e:
+        print (e)
+        return redirect('board')
     return render(request, 'board-of-directors.html', context)
 
 def ManagementView(request):

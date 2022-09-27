@@ -1,5 +1,5 @@
 from django.contrib import admin
-from about.models import AboutUs, Personel, Mission, MDsMessage, Department, Functions, Objectives, Vision, ServiceCharter, CoreValue
+from about.models import AboutUs,ChairPerson, Personel, Mission, MDsMessage, Department, Functions, Objectives, Vision, ServiceCharter, CoreValue
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -8,6 +8,32 @@ class AboutUsAdmin(SummernoteModelAdmin):
     list_display = ['title', 'status']
     list_display_links = ['title']
 
+class ChairPersonAdmin(SummernoteModelAdmin):
+
+    fields = (
+        'first_name',
+        'middle_name',
+        'last_name',
+        'position',
+        'description',
+        'image',
+        'category',
+        'status'
+    )
+
+    list_display = [
+        'profile_photo',
+        'full_name',
+        'category',
+        'status',
+    ]
+    list_display_links = ['full_name']
+    list_filter = ["status", 'category']
+    search_fields = [
+        'first_name',
+        'middle_name',
+        'last_name',
+    ]
 
 class PersonelAdmin(SummernoteModelAdmin):
 
@@ -90,6 +116,7 @@ class ServiceCharterAdmin(admin.ModelAdmin):
 # Register your models here.
 admin.site.register(AboutUs, AboutUsAdmin)
 admin.site.register(Personel, PersonelAdmin)
+admin.site.register(ChairPerson, ChairPersonAdmin)
 admin.site.register(Mission, MissionAdmin)
 admin.site.register(MDsMessage, MDsMessageAdmin)
 admin.site.register(Department, DepartmentAdmin)
