@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_summernote',
     'star_ratings',
+    'django_social_share',
     'base',
     'about',
     'contact',
