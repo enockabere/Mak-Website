@@ -16,20 +16,15 @@
                 <h1>Board of Directors</h1>
                 <div class="linebg_2"></div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="leader">
-                        <div class="leader__content mx-auto tex my-3">
-                            <img src="{{ chair.image.url }}" alt="profile picture">
-                            <h2>{{ chair.position }}</h2>
-                            <h1>{{ chair.first_name }} {{ chair.middle_name }} {{ chair.last_name }}</h1>
-                            <p>{{ chair.description | safe }}</p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+    
             <div class="leader mt-3 mb-3">
+                <div class="leader__content ">
+                    <img src="{{ chair.image.url }}" alt="profile picture">
+                    <h2>{{ chair.position }}</h2>
+                    <h1>{{ chair.first_name }} {{ chair.middle_name }} {{ chair.last_name }}</h1>
+                    <p>{{ chair.description | safe }}</p>
+
+                </div>
                 {% for bm in board_members %}
                 <div class="leader__content ">
                     <img src="{{ bm.image.url }}" alt="profile picture">
